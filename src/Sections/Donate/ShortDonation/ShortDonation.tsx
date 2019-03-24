@@ -1,13 +1,34 @@
 import * as React from 'react';
-import { withFormik, FormikActions, FormikProps, FormikValues, FormikErrors } from 'formik';
+import { withFormik, FormikActions, FormikProps, FormikValues, FormikErrors, FormikConfig } from 'formik';
 
 interface FormValues {
   amount?: string;
 }
 
-const ShortDonationForm = (props: FormikProps<FormikValues>) => {
-  const { values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit, handleReset, dirty } = props;
+interface DonationProps {
+  bindSubmitForm: (props: any) => void;
+}
 
+interface DonationFormProps {
+  initialAmount?: string;
+  bindSubmitForm: (props: any) => void;
+}
+
+export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>) => {
+  const {
+    values,
+    touched,
+    bindSubmitForm,
+    errors,
+    isSubmitting,
+    submitForm,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    handleReset,
+    dirty,
+  } = props;
+  bindSubmitForm(submitForm);
   return (
     <div className="item-plan__top-part">
       <h3 className="item-plan__title">Another amount?</h3>
@@ -23,15 +44,19 @@ const ShortDonationForm = (props: FormikProps<FormikValues>) => {
         />
       </p>
       <p className="item-plan__per">Or give monthly</p>
-      {errors.amount && touched.amount && <div className="input-feedback">{errors.amount}</div>}
+      {errors.amount && touched.amount && (
+        <div className="input-feedback" test-id="donationForm">
+          {errors.amount}
+        </div>
+      )}
     </div>
   );
 };
-interface DonationFormProps {
-  initialAmount?: string;
-}
+
 const EnhancedDonationForm = withFormik<DonationFormProps, FormValues>({
-  mapPropsToValues: props => ({ amount: props.initialAmount || '' }),
+  mapPropsToValues: props => {
+    return { amount: props.initialAmount || '' };
+  },
   validate: (values: FormValues) => {
     const errors: FormikErrors<FormValues> = {};
     if (!values.amount) {
@@ -42,13 +67,9 @@ const EnhancedDonationForm = withFormik<DonationFormProps, FormValues>({
     return errors;
   },
 
-  handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+  handleSubmit: (props, values) => {
+    window.alert("We're currently not accepting donation right now.");
   },
-
   displayName: 'ShortDonationForm',
 })(ShortDonationForm);
 

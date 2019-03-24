@@ -81,7 +81,9 @@ exports[`Donate matches the snapshot 1`] = `
       <div
         className="item-plan__block"
       >
-        <WithFormik(ShortDonationForm) />
+        <WithFormik(ShortDonationForm)
+          bindSubmitForm={[Function]}
+        />
         <div
           className="item-plan__bottom-part"
         >
@@ -110,12 +112,12 @@ exports[`Donate matches the snapshot 1`] = `
               Subscribe
             </li>
           </ul>
-          <a
+          <div
             className="btn btn--primary large full-width"
-            href="#0"
+            onClick={[Function]}
           >
             Donate
-          </a>
+          </div>
         </div>
       </div>
     </div>

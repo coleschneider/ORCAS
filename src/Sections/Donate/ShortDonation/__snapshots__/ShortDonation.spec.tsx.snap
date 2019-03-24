@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DonationForm should match snapshot 1`] = `
+<Formik
+  displayName="ShortDonationForm"
+  enableReinitialize={false}
+  handleSubmit={[Function]}
+  initialValues={
+    Object {
+      "amount": "",
+    }
+  }
+  isInitialValid={false}
+  onSubmit={[Function]}
+  render={[Function]}
+  validate={[Function]}
+  validateOnBlur={true}
+  validateOnChange={true}
+/>
+`;

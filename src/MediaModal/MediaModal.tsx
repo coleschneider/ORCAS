@@ -46,8 +46,8 @@ const MediaModal = ({ history }) => {
     <ReactModal
       isOpen={true}
       onRequestClose={e => {
-        e.preventDefault();
-        e.stopPropagation();
+        // e.preventDefault();
+        // e.stopPropagation();
         history.goBack();
       }}
       style={customStyles}

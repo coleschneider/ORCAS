@@ -27,7 +27,7 @@ const MyForm = props => {
         />
         {errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
 
-        <input type="submit" name="subscribe" disabled={dirty || isSubmitting} value="Sign Up" />
+        <button type="submit" name="subscribe" disabled={dirty || isSubmitting} value="Sign Up" />
         <label className="subscribe-message" />
       </form>
     </div>
@@ -47,10 +47,7 @@ const MyEnhancedForm = withFormik({
   },
 
   handleSubmit: (values, { setSubmitting }) => {
-    setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
-      setSubmitting(false);
-    }, 1000);
+    window.alert("We're currently working on getting our email service set up. Please try again later.");
   },
 
   displayName: 'SubscribeForm', // helps with React DevTools
