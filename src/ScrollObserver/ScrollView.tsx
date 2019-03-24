@@ -12,7 +12,7 @@ interface EnhanceProps {
 }
 interface OuterProps {
   activeElement: string;
-  setActiveElement: (el: Element) => void;
+  cb: any;
   selector: string;
   Text: string;
 }
@@ -20,8 +20,11 @@ interface OuterProps {
 export const withScrollView = compose(
   defaultProps<DefaultProps>({ initial: 'Home', Text: 'Home' }),
   withHandlers<OuterProps, EnhanceProps>({
-    scrollIntoView: ({ selector, setActiveElement }) => () => {
+    scrollIntoView: ({ selector, cb }) => () => {
       const el = document.querySelector(selector);
+      if(typeof cb === 'function'){
+        cb()
+      }
       el.scrollIntoView({ behavior: 'smooth' });
     },
   }),
