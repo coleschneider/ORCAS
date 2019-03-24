@@ -22,8 +22,8 @@ export const withScrollView = compose(
   withHandlers<OuterProps, EnhanceProps>({
     scrollIntoView: ({ selector, cb }) => () => {
       const el = document.querySelector(selector);
-      if(typeof cb === 'function'){
-        cb()
+      if (typeof cb === 'function') {
+        cb();
       }
       el.scrollIntoView({ behavior: 'smooth' });
     },
