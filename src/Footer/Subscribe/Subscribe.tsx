@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { withFormik, FormikActions } from 'formik';
 
-// import './subscribe.scss';
+import './subscribe.scss';
+
 interface FormFields {
   email?: string;
 }
