@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { validateDonation } from '../../../utils/validate';
 import { withFormik, FormikActions, FormikProps, FormikValues, FormikErrors, FormikConfig } from 'formik';
 
 interface FormValues {
@@ -57,15 +58,7 @@ const EnhancedDonationForm = withFormik<DonationFormProps, FormValues>({
   mapPropsToValues: props => {
     return { amount: props.initialAmount || '' };
   },
-  validate: (values: FormValues) => {
-    const errors: FormikErrors<FormValues> = {};
-    if (!values.amount) {
-      errors.amount = 'Required';
-    } else if (!/^[0-9]+(\.[0-9]{1,2})?$/.test(values.amount)) {
-      errors.amount = 'Please enter a valid US Dollar amount';
-    }
-    return errors;
-  },
+  validate: validateDonation,
 
   handleSubmit: (props, values) => {
     window.alert("We're currently not accepting donation right now.");
