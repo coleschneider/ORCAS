@@ -1,0 +1,100 @@
+@import '../../scss/colors';
+
+.input-feedback {
+    color: $form-error;
+}
+ .footer__subscribe .subscribe-form {
+  margin: 4rem 0 0 0;
+  padding: 0;
+  position: relative;
+}
+
+.footer__subscribe #mc-form {
+  width: 100%;
+}
+
+.footer__subscribe #mc-form input[type="email"] {
+  width: 100%;
+  height: 6.8rem;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  padding: 1.8rem 140px 1.8rem 64px;
+  background: url(../../icons/icon-mail.svg) 24px center no-repeat, rgba(255, 255, 255, 0.03);
+  background-size: 24px 16px, auto;
+  color: white;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.footer__subscribe #mc-form input[type="email"]:hover,
+.footer__subscribe #mc-form input[type="email"]:focus {
+  box-shadow: none;
+}
+
+.footer__subscribe #mc-form input[type="email"]::-webkit-input-placeholder {
+
+  /* WebKit, Blink, Edge */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"]:-moz-placeholder {
+
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.footer__subscribe #mc-form input[type="email"]::-moz-placeholder {
+
+  /* Mozilla Firefox 19+ */
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.footer__subscribe #mc-form input[type="email"]:-ms-input-placeholder {
+
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"]::-ms-input-placeholder {
+
+  /* Microsoft Edge */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"]::placeholder {
+
+  /* Most modern browsers support this now. */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"].placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.footer__subscribe #mc-form input[type=submit] {
+  color: #ffffff;
+  background: #80d3d2;
+  border-color: #80d3d2;
+  margin-right: 0;
+  padding: 0 20px 0 24px;
+  height: 6.8rem;
+  line-height: 6.4rem;
+  border-radius: 0 4px 4px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.footer__subscribe #mc-form label {
+  color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.3rem;
+  padding: 0 2rem;
+}
+
+.footer__subscribe #mc-form label i {
+  padding-right: 6px;
+}
