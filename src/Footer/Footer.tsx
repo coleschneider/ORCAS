@@ -1,6 +1,9 @@
 import * as React from 'react';
+
 import Nav from '../Header/Nav/Nav';
+import Subscribe from './Subscribe/Subscribe';
 import './footer.scss';
+
 export default () => (
   <footer className="s-footer footer" id="contact">
     <div className="row section-header align-center">
@@ -11,22 +14,7 @@ export default () => (
     </div>
     <div className="row footer__top">
       <div className="col-full footer__subscribe end">
-        <div className="subscribe-form">
-          <form id="mc-form" className="group">
-            <input
-              autoComplete="off"
-              readOnly={true}
-              type="email"
-              value=""
-              name="EMAIL"
-              className="email"
-              id="mc-email"
-              placeholder="Email Address"
-            />
-            <input type="submit" name="subscribe" value="Sign Up" />
-            <label className="subscribe-message" />
-          </form>
-        </div>
+        <Subscribe />
       </div>
     </div>
     <div className="row footer__bottom">

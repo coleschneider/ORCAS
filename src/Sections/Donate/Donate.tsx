@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import ShortDonation from './ShortDonation/ShortDonation';
 export default () => (
   <section id="donate" className="s-donate target-section">
     <div className="row section-header align-center">
@@ -35,13 +35,7 @@ export default () => (
       </div>
       <div className="col-block item-plan item-plan--popular">
         <div className="item-plan__block">
-          <div className="item-plan__top-part">
-            <h3 className="item-plan__title">Another amount?</h3>
-            <p className="item-plan__price">
-              <input type="text" placeholder="Enter an amount to give" />
-            </p>
-            <p className="item-plan__per">Or give monthly</p>
-          </div>
+          <ShortDonation />
           <div className="item-plan__bottom-part">
             <ul className="item-plan__mission">
               <li>
