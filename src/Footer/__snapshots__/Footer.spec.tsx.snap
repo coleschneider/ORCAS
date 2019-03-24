@@ -29,33 +29,7 @@ exports[`Footer matches the snapshot 1`] = `
     <div
       className="col-full footer__subscribe end"
     >
-      <div
-        className="subscribe-form"
-      >
-        <form
-          className="group"
-          id="mc-form"
-        >
-          <input
-            autoComplete="off"
-            className="email"
-            id="mc-email"
-            name="EMAIL"
-            placeholder="Email Address"
-            readOnly={true}
-            type="email"
-            value=""
-          />
-          <input
-            name="subscribe"
-            type="submit"
-            value="Sign Up"
-          />
-          <label
-            className="subscribe-message"
-          />
-        </form>
-      </div>
+      <WithFormik(MyForm) />
     </div>
   </div>
   <div

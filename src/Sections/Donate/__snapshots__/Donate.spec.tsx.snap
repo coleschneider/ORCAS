@@ -81,28 +81,7 @@ exports[`Donate matches the snapshot 1`] = `
       <div
         className="item-plan__block"
       >
-        <div
-          className="item-plan__top-part"
-        >
-          <h3
-            className="item-plan__title"
-          >
-            Another amount?
-          </h3>
-          <p
-            className="item-plan__price"
-          >
-            <input
-              placeholder="Enter an amount to give"
-              type="text"
-            />
-          </p>
-          <p
-            className="item-plan__per"
-          >
-            Or give monthly
-          </p>
-        </div>
+        <WithFormik(ShortDonationForm) />
         <div
           className="item-plan__bottom-part"
         >

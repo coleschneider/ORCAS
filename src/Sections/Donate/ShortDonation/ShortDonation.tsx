@@ -49,7 +49,7 @@ const EnhancedDonationForm = withFormik<DonationFormProps, FormValues>({
     }, 1000);
   },
 
-  displayName: 'ShortDonationForm', 
+  displayName: 'ShortDonationForm',
 })(ShortDonationForm);
 
 export default EnhancedDonationForm;
