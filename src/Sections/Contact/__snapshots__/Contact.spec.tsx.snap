@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact matches the snapshot 1`] = `
+<section
+  className="s-contact target-section"
+  id="contact"
+>
+  <div
+    className="row section-header align-center"
+  >
+    <div
+      className="col-full"
+    >
+      <h1
+        className="display-1"
+      >
+        Join Our Community.
+      </h1>
+      <p
+        className="lead"
+      >
+        Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat omnis ea.
+      </p>
+    </div>
+  </div>
+</section>
+`;

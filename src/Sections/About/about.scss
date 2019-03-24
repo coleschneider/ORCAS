@@ -1,0 +1,241 @@
+
+/* ===================================================================
+ * # about
+ *
+ * ------------------------------------------------------------------- */
+ .s-about {
+  padding-top: 23.2rem;
+  padding-bottom: calc((62.4rem/2) + 6.4rem);
+  background-color: #80d3d2;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+.s-about .section-header.has-bottom-sep::before {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.s-about .display-1,
+.s-about h3 {
+  color: #ffffff;
+}
+
+.s-about p.lead {
+  color: rgba(255, 255, 255, 0.6);
+}
+.underlined {
+  height: 1px;
+  width: 100%;
+  background-color: #80d3d2;
+  top: -10px;
+  position: relative;
+  @media only screen and (max-width: 800px){
+    top: 0px;
+  }
+  
+}
+
+/* ------------------------------------------------------------------- 
+ * ## about-desc slider
+ * ------------------------------------------------------------------- */
+.about-desc {
+  margin-top: 6rem;
+}
+
+.about-desc__slider .slick-dots {
+  margin: .8rem 0 0 0;
+}
+
+.about-desc__slider .slick-dots li button {
+  background: #433a6e;
+}
+
+.about-desc__slider .slick-dots li.slick-active button,
+.about-desc__slider .slick-dots li:hover button {
+  background: #ffffff;
+}
+
+.about-desc__slide {
+  padding: 0 24px;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * about
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width:1400px) {
+  .s-about {
+    padding-bottom: calc((62.4rem/2) + 9.6rem);
+  }
+
+}
+
+@media only screen and (max-width:1200px) {
+  .s-about {
+    padding-top: 18.4rem;
+  }
+
+}
+
+@media only screen and (max-width:1000px) {
+  .s-about {
+    padding-top: 17.2rem;
+  }
+
+  .about-desc__slide {
+    padding: 0 20px;
+  }
+
+}
+
+@media only screen and (max-width:800px) {
+  .s-about {
+    padding-top: 16rem;
+  }
+
+}
+
+@media only screen and (max-width:700px) {
+  .about-desc {
+    max-width: 550px;
+  }
+
+  .about-desc__slide {
+    padding: 0 10px;
+    text-align: center;
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+  .s-about {
+    padding-top: 14.8rem;
+    padding-bottom: calc((60rem/2) + 9.6rem);
+  }
+
+  .about-desc {
+    max-width: 500px;
+  }
+
+  .about-desc__slide {
+    padding: 0;
+  }
+
+}
+
+@media only screen and (max-width:500px) {
+  .s-about {
+    padding-bottom: calc((52rem/2) + 9.6rem);
+  }
+
+}
+
+@media only screen and (max-width:400px) {
+  .s-about {
+    padding-top: 14rem;
+    padding-bottom: calc((48rem/2) + 9.6rem);
+  }
+
+}
+
+
+
+
+/* ===================================================================
+ * # s-about-how
+ *
+ * ------------------------------------------------------------------- */
+ .s-about-how {
+  background-color: #ffffff;
+  padding-bottom: 16rem;
+}
+
+.video-bg {
+  z-index: 1;
+  overflow: hidden;
+  height: 62.4rem;
+  margin-top: calc((62.4rem/2) * -1);
+  background-image: url(../../images/oxnard.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  position: relative;
+}
+
+.video-bg .shadow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .85;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 100%);
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## video button
+ * ------------------------------------------------------------------- */
+.btn-video {
+  display: inline-block;
+  text-align: center;
+  outline: none;
+  position: absolute;
+  top: 14%;
+  left: 10%;
+}
+
+.video-icon {
+  display: inline-block;
+  height: 112px;
+  width: 112px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  background-image: url(../../icons/icon-play-black.svg);
+  background-repeat: no-repeat;
+  background-position: 55% center;
+  background-size: 24px 27px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-video:hover .video-icon {
+  background-color: #80d3d2;
+  background-image: url(../../icons/icon-play.svg);
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## stats
+ * ------------------------------------------------------------------- */
+.stats {
+  width: 100%;
+  padding: 0 11%;
+  color: #ffffff;
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+}
+
+.item-stats {
+  float: left;
+  width: 50%;
+  font-family: "Chivo", sans-serif;
+  font-weight: 400;
+  font-size: 2.8rem;
+}
+
+.item-stats span {
+  display: inline-block;
+  line-height: 8rem;
+  vertical-align: middle;
+}
+
+.item-stats__num {
+  font-weight: 700;
+  font-size: 6.8rem;
+  margin-right: 2rem;
+}
+

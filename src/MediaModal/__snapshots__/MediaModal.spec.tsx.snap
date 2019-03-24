@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MediaModal matches the snapshot 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  closeTimeoutMS={0}
+  isOpen={true}
+  onRequestClose={[Function]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+  style={
+    Object {
+      "content": Object {
+        "alignItems": "stretch",
+        "borderRadius": "5px",
+        "bottom": "auto",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 1,
+        "justifyContent": "center",
+        "left": "50%",
+        "marginRight": "-50%",
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+        "position": "absolute",
+        "right": "auto",
+        "top": "50%",
+        "transform": "translate(-50%, -50%)",
+      },
+      "overlay": Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.3)",
+        "bottom": 0,
+        "display": "flex",
+        "justifyContent": "center",
+        "left": 0,
+        "position": "fixed",
+        "right": 0,
+        "top": 0,
+        "zIndex": 7,
+      },
+    }
+  }
+>
+  <ReactPlayer
+    config={
+      Object {
+        "vimeo": Object {
+          "playerOptions": Object {
+            "height": 200,
+          },
+        },
+      }
+    }
+    controls={false}
+    height="360px"
+    light={false}
+    loop={false}
+    muted={false}
+    onBuffer={[Function]}
+    onDisablePIP={[Function]}
+    onDuration={[Function]}
+    onEnablePIP={[Function]}
+    onEnded={[Function]}
+    onError={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onProgress={[Function]}
+    onReady={[Function]}
+    onSeek={[Function]}
+    onStart={[Function]}
+    pip={false}
+    playbackRate={1}
+    playing={false}
+    playsinline={false}
+    progressInterval={1000}
+    style={Object {}}
+    url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
+    volume={null}
+    width="640px"
+    wrapper="div"
+  />
+</Modal>
+`;

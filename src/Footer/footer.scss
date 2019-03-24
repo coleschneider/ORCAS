@@ -1,0 +1,392 @@
+
+
+/* ===================================================================
+ * # footer
+ *
+ * ------------------------------------------------------------------- */
+ .s-footer {
+  padding-top: 18.4rem;
+  padding-bottom: 4.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.s-footer a {
+  color: #ffffff;
+}
+
+.s-footer a:hover,
+.s-footer a:focus,
+.s-footer a:active {
+  color: #80d3d2;
+}
+
+.s-footer .display-1 {
+  color: #80d3d2;
+}
+
+.s-footer h4 {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+  color: #ffffff;
+}
+
+.s-footer p.lead {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.s-footer .footer__mail-link {
+  font-weight: 800;
+  color: #80d3d2;
+}
+
+.s-footer .footer__mail-link:hover,
+.s-footer .footer__mail-link:focus,
+.s-footer .footer__mail-link:active {
+  color: #ffffff;
+}
+
+.footer__bottom {
+  margin-top: 1.6rem;
+  padding-top: 3.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+
+/* -------------------------------------------------------------------
+ * ## subscribe form
+ * ------------------------------------------------------------------- */
+.footer__subscribe .subscribe-form {
+  margin: 4rem 0 0 0;
+  padding: 0;
+  position: relative;
+}
+
+.footer__subscribe #mc-form {
+  width: 100%;
+}
+
+.footer__subscribe #mc-form input[type="email"] {
+  width: 100%;
+  height: 6.8rem;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  padding: 1.8rem 140px 1.8rem 64px;
+  background: url(../icons/icon-mail.svg) 24px center no-repeat, rgba(255, 255, 255, 0.03);
+  background-size: 24px 16px, auto;
+  color: white;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.footer__subscribe #mc-form input[type="email"]:hover,
+.footer__subscribe #mc-form input[type="email"]:focus {
+  box-shadow: none;
+}
+
+.footer__subscribe #mc-form input[type="email"]::-webkit-input-placeholder {
+
+  /* WebKit, Blink, Edge */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"]:-moz-placeholder {
+
+  /* Mozilla Firefox 4 to 18 */
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.footer__subscribe #mc-form input[type="email"]::-moz-placeholder {
+
+  /* Mozilla Firefox 19+ */
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.footer__subscribe #mc-form input[type="email"]:-ms-input-placeholder {
+
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"]::-ms-input-placeholder {
+
+  /* Microsoft Edge */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"]::placeholder {
+
+  /* Most modern browsers support this now. */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__subscribe #mc-form input[type="email"].placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.footer__subscribe #mc-form input[type=submit] {
+  color: #ffffff;
+  background: #80d3d2;
+  border-color: #80d3d2;
+  margin-right: 0;
+  padding: 0 20px 0 24px;
+  height: 6.8rem;
+  line-height: 6.4rem;
+  border-radius: 0 4px 4px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.footer__subscribe #mc-form label {
+  color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1.3rem;
+  padding: 0 2rem;
+}
+
+.footer__subscribe #mc-form label i {
+  padding-right: 6px;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## footer social
+ * ------------------------------------------------------------------- */
+.footer__social {
+  list-style: none;
+  margin: -1.6rem 0 0 0;
+}
+
+.footer__social li {
+  display: inline-block;
+  font-size: 15px;
+  padding: 0;
+  margin-right: 4px;
+}
+
+.footer__social li a {
+  display: block;
+  line-height: 36px;
+  height: 36px;
+  width: 36px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+  border-radius: 50%;
+}
+
+.footer__social li a:hover,
+.footer__social li a:focus,
+.footer__social li a:active {
+  background-color: #80d3d2;
+  color: #ffffff;
+}
+
+.footer__social li:last-child {
+  margin-right: 0;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## footer site links
+ * ------------------------------------------------------------------- */
+.footer__site-links {
+  list-style: none;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.footer__site-links li {
+  padding-left: 0;
+}
+
+.footer__site-links li a {
+  display: block;
+}
+
+.footer__site-links li a,
+.footer__site-links li a:visited {
+  color: rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.footer__site-links li a:hover,
+.footer__site-links li a:focus,
+.footer__site-links li a:active {
+  color: #80d3d2;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## copyright
+ * ------------------------------------------------------------------- */
+.ss-copyright {
+  margin-top: 4.8rem;
+  text-align: center;
+}
+
+.ss-copyright span {
+  font-size: 17px;
+  line-height: 3.2rem;
+  display: inline-block;
+}
+
+.ss-copyright span::after {
+  content: "·";
+  display: inline-block;
+  padding: 0 1rem 0 1.2rem;
+  color: white;
+}
+
+.ss-copyright span:last-child::after {
+  display: none;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## go to top
+ * ------------------------------------------------------------------- */
+.go-top {
+  z-index: 600;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  -webkit-transform: translate3d(0, 200%, 0);
+  -ms-transform: translate3d(0, 200%, 0);
+  transform: translate3d(0, 200%, 0);
+  position: fixed;
+  bottom: 32px;
+  right: 40px;
+}
+
+.go-top a,
+.go-top a:visited {
+  text-decoration: none;
+  border: 0 none;
+  display: block;
+  height: 5.6rem;
+  width: 5.6rem;
+  line-height: 5.6rem;
+  text-align: center;
+  background-image: url(../icons/icon-arrow-up.svg);
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 10px 15px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.go-top a:hover,
+.go-top a:focus,
+.go-top a:active {
+  background-color: #514686;
+}
+
+.go-top.link-is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * footer
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width:1200px) {
+  .footer__bottom {
+    font-size: 1.7rem;
+    line-height: 1.882;
+  }
+
+}
+
+@media only screen and (max-width:900px) {
+  .go-top {
+    right: 3rem;
+  }
+
+}
+
+@media only screen and (max-width:800px) {
+  .s-footer {
+    padding-top: 14.8rem;
+  }
+
+  .footer__bottom .right {
+    margin-top: 5.6rem;
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+  .s-footer {
+    padding-top: 12rem;
+    padding-bottom: 4rem;
+  }
+
+  .s-footer h4 {
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  .footer__bottom {
+    border-top: none;
+  }
+
+  .footer__subscribe #mc-form input[type="email"] {
+    padding: 0 2.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    text-align: center;
+  }
+
+  .footer__subscribe #mc-form input[type=submit] {
+    position: static;
+    margin-right: 0;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .footer__contact {
+    margin-top: 4rem;
+  }
+
+  .ss-copyright {
+    margin-top: 2.4rem;
+  }
+
+  .ss-copyright span {
+    display: block;
+    text-align: left;
+  }
+
+  .ss-copyright span::after {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width:400px) {
+  .ss-copyright span {
+    font-size: 16px;
+  }
+
+  .go-top a {
+    height: 5.2rem;
+    width: 5.2rem;
+    background-size: 8px 12px;
+  }
+
+}

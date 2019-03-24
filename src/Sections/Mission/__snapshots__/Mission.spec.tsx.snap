@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mission matches the snapshot 1`] = `
+<section
+  className="s-about target-section"
+  id="mission"
+>
+  <Reveal
+    cascade={true}
+    count={1}
+    countOut={1}
+    delay={0}
+    delayOut={0}
+    duration={1000}
+    durationOut={1000}
+    inEffect={
+      Object {
+        "count": 1,
+        "delay": 0,
+        "duration": 1000,
+        "forever": undefined,
+        "make": [Function],
+        "reverse": undefined,
+        "style": Object {
+          "animationFillMode": "both",
+        },
+      }
+    }
+    outEffect={
+      Object {
+        "count": 1,
+        "delay": 0,
+        "duration": 1000,
+        "forever": undefined,
+        "make": [Function],
+        "reverse": undefined,
+        "style": Object {
+          "animationFillMode": "both",
+        },
+      }
+    }
+    top={true}
+  >
+    <div
+      className="row section-header has-bottom-sep"
+    >
+      <div
+        className="col-full"
+      >
+        <h1
+          className="display-1"
+        >
+          Our Mission
+        </h1>
+        <p
+          className="lead"
+        >
+          Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat omnis ea.
+        </p>
+      </div>
+    </div>
+    <div
+      className="row wide about-desc"
+    >
+      <div
+        className="col-full slick-slider about-desc__slider"
+      >
+        <div
+          className="about-desc__slide"
+        >
+          <h3
+            className="item-title"
+          >
+            Community.
+          </h3>
+          <p>
+            Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat omnis ea aut cumque eos.
+          </p>
+        </div>
+        <div
+          className="about-desc__slide"
+        >
+          <h3
+            className="item-title"
+          >
+            Family.
+          </h3>
+          <p>
+            Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat omnis ea aut cumque eos.
+          </p>
+        </div>
+        <div
+          className="about-desc__slide"
+        >
+          <h3
+            className="item-title"
+          >
+            Secure.
+          </h3>
+          <p>
+            Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat omnis ea aut cumque eos.
+          </p>
+        </div>
+        <div
+          className="about-desc__slide"
+        >
+          <h3
+            className="item-title"
+          >
+            Family.
+          </h3>
+          <p>
+            Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat omnis ea aut cumque eos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Reveal>
+</section>
+`;

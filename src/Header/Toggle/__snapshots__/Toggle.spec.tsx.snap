@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle matches the snapshot 1`] = `
+<div
+  className="header-menu-toggle false"
+  data-testid="toggle"
+  id="header-menu-toggle-it"
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "display": undefined,
+    }
+  }
+>
+  <span>
+    Menu
+  </span>
+</div>
+`;

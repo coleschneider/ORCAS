@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer matches the snapshot 1`] = `
+<footer
+  className="s-footer footer"
+  id="contact"
+>
+  <div
+    className="row section-header align-center"
+  >
+    <div
+      className="col-full"
+    >
+      <h1
+        className="display-1"
+      >
+        Let's Stay In Touch.
+      </h1>
+      <p
+        className="lead"
+      >
+        Subscribe for updates, special offers, and other amazing stuff.
+      </p>
+    </div>
+  </div>
+  <div
+    className="row footer__top"
+  >
+    <div
+      className="col-full footer__subscribe end"
+    >
+      <div
+        className="subscribe-form"
+      >
+        <form
+          className="group"
+          id="mc-form"
+        >
+          <input
+            autoComplete="off"
+            className="email"
+            id="mc-email"
+            name="EMAIL"
+            placeholder="Email Address"
+            readOnly={true}
+            type="email"
+            value=""
+          />
+          <input
+            name="subscribe"
+            type="submit"
+            value="Sign Up"
+          />
+          <label
+            className="subscribe-message"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div
+    className="row footer__bottom"
+  >
+    <div
+      className="footer__about col-five tab-full left"
+    >
+      <h4>
+        About ORCAS.
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex consectetur adipisicing elit do eiusmod tempor.
+      </p>
+      <ul
+        className="footer__social"
+      >
+        <li>
+          <a
+            href="#0"
+          >
+            <i
+              aria-hidden="true"
+              className="fab fa-facebook-f"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#0"
+          >
+            <i
+              aria-hidden="true"
+              className="fab fa-twitter"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="#0"
+          >
+            <i
+              aria-hidden="true"
+              className="fab fa-instagram"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="col-five md-seven tab-full right end"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="footer__site-links col-five mob-full"
+        >
+          <h4>
+            Site links.
+          </h4>
+          <ul
+            className="footer__site-links"
+          >
+            <Nav />
+          </ul>
+        </div>
+        <div
+          className="footer__contact col-seven mob-full"
+        >
+          <h4>
+            Contact Us.
+          </h4>
+          <p>
+            Phone: (+1) 800 ORCAS 
+            <br />
+            Fax: (+1) 800 ORCAS
+          </p>
+          <p>
+            Need help or have a question? Contact us at: 
+            <br />
+            <a
+              className="footer__mail-link"
+              href="mailto:#0"
+            >
+              support@orcas.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="col-full ss-copyright"
+    >
+      <span>
+        © Copyright ORCAS 2019
+      </span>
+    </div>
+  </div>
+  <div
+    className="network-status"
+    id="message"
+  />
+  <div
+    className="go-top"
+  >
+    <a
+      className="smoothscroll"
+      href="#top"
+      title="Back to Top"
+    />
+  </div>
+</footer>
+`;

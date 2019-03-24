@@ -1,0 +1,111 @@
+
+/* ===================================================================
+ * # contact
+ *
+ * ------------------------------------------------------------------- */
+ .s-contact {
+  padding-top: 18.4rem;
+  background-color: #80d3d2;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  position: relative;
+}
+
+.s-contact .display-1,
+.s-contact h3 {
+  color: #ffffff;
+}
+
+.s-contact p.lead {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.s-contact .contact-badges {
+  list-style: none;
+  margin: 1.2rem 0 0 -6px;
+}
+
+.s-contact .contact-badges li {
+  display: inline-block;
+  margin: 0 6px;
+  padding-left: 0;
+}
+
+.s-contact .contact-badges li a {
+  display: block;
+  width: 232px;
+  height: 72px;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 232px 72px;
+}
+
+.s-contact .contact-badges li a.badge-appstore {
+//   background-image: url("../images/appstore.png");
+}
+
+.s-contact .contact-badges li a.badge-googleplay {
+//   background-image: url("../images/google-play.png");
+}
+
+.s-contact .contact-bottom-image {
+  margin-top: 11.2rem;
+}
+
+.s-contact .contact-bottom-image img {
+  vertical-align: bottom;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * contact
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width:1200px) {
+  .s-contact .contact-content__badges {
+    margin: 0;
+  }
+
+  .s-contact .contact-content__image {
+    position: static;
+    margin: 0 auto;
+    max-width: 480px;
+    width: auto;
+    height: 24rem;
+  }
+
+}
+
+@media only screen and (max-width:1000px) {
+  .s-contact {
+    padding-top: 17.2rem;
+  }
+
+}
+
+@media only screen and (max-width:800px) {
+  .s-contact {
+    padding-top: 16rem;
+  }
+
+  .s-contact .contact-content__badges li a {
+    width: 206px;
+    height: 64px;
+    background-size: 206px 64px;
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+  .s-contact {
+    padding-top: 14.8rem;
+  }
+
+  .s-contact .contact-bottom-image {
+    margin-top: 9.6rem;
+  }
+
+}
