@@ -134,8 +134,9 @@ exports[`Footer matches the snapshot 1`] = `
     id="message"
   />
   <defaultProps(withHandlers(FooterScrollHelper))
-    Text="Home"
+    Text="home"
     initial="Home"
+    selector="#home"
   />
 </footer>
 `;

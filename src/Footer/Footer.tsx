@@ -72,6 +72,6 @@ export default ({ showScroller }) => (
       </div>
     </div>
     <div id="message" className="network-status" />
-    <FooterViewScroll showScroller={showScroller} />
+    <FooterViewScroll Text="home" selector="#home" showScroller={showScroller} />
   </footer>
 );

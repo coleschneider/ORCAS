@@ -18,7 +18,7 @@ export const ScrollHelper = props => {
 export const FooterScrollHelper = props => {
   return (
     <div onClick={props.scrollIntoView} className={props.showScroller ? 'go-top link-is-visible' : 'go-top'}>
-      <a className="smoothscroll" title="Back to Top" href="#top" />
+      <a className="smoothscroll" title="Back to Top" />
     </div>
   );
 };
