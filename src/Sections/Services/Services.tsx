@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Fade from 'react-reveal/Fade';
 import PlaceholderAvatar from '../../images/avatar.png';
-
+import Carousel from '../../Carousel/Carousel'
 export default () => (
   <section id="services" className="s-services target-section">
     <Fade bottom={true} cascade={true}>
@@ -100,53 +100,23 @@ export default () => (
           </div>
         </div>
       </div>
-      <div className="meet-wrap">
-        <div className="row">
-          <div className="col-full meet-header">
-            <h2 className="display-2">Meet the team!</h2>
-          </div>
-        </div>
+      
 
-        <div className="meet__slide">
-          <img alt="Author image" src={PlaceholderAvatar} className="meet__avatar" />
-          <p>
-            Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum. Laudantium quia
-            consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium praesentium corpori.
-          </p>
-          <div className="meet__author">
-            <span className="meet__name">A User</span>
-            <a href="#0" className="meet__link">
-              @member1
-            </a>
-          </div>
-        </div>
-        <div className="meet__slide">
-          <img alt="Author image" src={PlaceholderAvatar} className="meet__avatar" />
-          <p>
-            Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-            Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-          </p>
-          <div className="meet__author">
-            <span className="meet__name">Team Member 2</span>
-            <a href="#0" className="meet__link">
-              @member2
-            </a>
-          </div>
-        </div>
-        <div className="meet__slide">
-          <img alt="Author image" src={PlaceholderAvatar} className="meet__avatar" />
-          <p>
-            Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut
-            sed ipsam. Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-          </p>
-          <div className="meet__author">
-            <span className="meet__name">Team Member 3</span>
-            <a href="#0" className="meet__link">
-              @member3
-            </a>
-          </div>
-        </div>
-      </div>
+        <Carousel>
+        <Carousel.Slide author={"auser1"} avatar={PlaceholderAvatar}>
+          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
+          Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      </Carousel.Slide>
+      <Carousel.Slide author={"auser2"} avatar={PlaceholderAvatar}>
+          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
+          Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      </Carousel.Slide>
+      <Carousel.Slide author={"auser3"} avatar={PlaceholderAvatar}>
+          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
+          Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      </Carousel.Slide>
+        </Carousel>
+        
     </Fade>
   </section>
 );
