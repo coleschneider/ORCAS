@@ -106,19 +106,11 @@ exports[`Landing matches the snapshot 1`] = `
         </li>
       </ul>
     </div>
-    <a
-      className="home-scroll smoothscroll"
-      href="#mission"
-    >
-      <span
-        className="home-scroll__text"
-      >
-        Scroll
-      </span>
-      <span
-        className="home-scroll__icon"
-      />
-    </a>
   </Reveal>
+  <defaultProps(withHandlers(ScrollHelper))
+    Text="mission"
+    initial="Home"
+    selector="#mission"
+  />
 </section>
 `;

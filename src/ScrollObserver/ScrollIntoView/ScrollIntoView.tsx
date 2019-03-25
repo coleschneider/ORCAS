@@ -7,5 +7,20 @@ const ScrollIntoView = props => {
     </li>
   );
 };
+export const ScrollHelper = props => {
+  return (
+    <div onClick={props.scrollIntoView} className="home-scroll smoothscroll">
+      <span className="home-scroll__text">Scroll</span>
+      <span className="home-scroll__icon" />
+    </div>
+  );
+};
+export const FooterScrollHelper = props => {
+  return (
+    <div onClick={props.scrollIntoView} className={props.showScroller ? 'go-top link-is-visible' : 'go-top'}>
+      <a className="smoothscroll" title="Back to Top" href="#top" />
+    </div>
+  );
+};
 
 export default ScrollIntoView;

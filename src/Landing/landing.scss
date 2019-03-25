@@ -183,7 +183,10 @@
  * ------------------------------------------------------------------- */
 .home-scroll {
   z-index: 4;
+  display: block;
   height: 5.6rem;
+  height: 3rem;
+  width: 100%;
   position: absolute;
   right: 40px;
   bottom: 4.8rem;

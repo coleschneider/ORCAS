@@ -2,6 +2,7 @@ import React from 'react';
 import LandingImage from '../images/beach.jpg';
 import Reveal from 'react-reveal/Reveal';
 import './landing.scss';
+import { ViewScrollHelper } from '../ScrollObserver/ScrollView';
 export default (props, ref) => (
   <section id="home" className="s-home target-section">
     <div className="shadow-overlay" />
@@ -40,10 +41,7 @@ export default (props, ref) => (
           </li>
         </ul>
       </div>
-      <a href="#mission" className="home-scroll smoothscroll">
-        <span className="home-scroll__text">Scroll</span>
-        <span className="home-scroll__icon" />
-      </a>
     </Reveal>
+    <ViewScrollHelper Text="mission" selector="#mission" />
   </section>
 );

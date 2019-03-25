@@ -29,7 +29,7 @@ exports[`Footer matches the snapshot 1`] = `
     <div
       className="col-full footer__subscribe end"
     >
-      <WithFormik(MyForm) />
+      <MyForm />
     </div>
   </div>
   <div
@@ -133,14 +133,9 @@ exports[`Footer matches the snapshot 1`] = `
     className="network-status"
     id="message"
   />
-  <div
-    className="go-top"
-  >
-    <a
-      className="smoothscroll"
-      href="#top"
-      title="Back to Top"
-    />
-  </div>
+  <defaultProps(withHandlers(FooterScrollHelper))
+    Text="Home"
+    initial="Home"
+  />
 </footer>
 `;

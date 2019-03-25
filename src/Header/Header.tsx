@@ -14,6 +14,7 @@ interface HeaderState {
 
 class Header extends React.Component<{}, HeaderState> {
   headerRef;
+  missionRef;
   scroller;
   constructor(props) {
     super(props);
@@ -28,7 +29,12 @@ class Header extends React.Component<{}, HeaderState> {
 
   componentDidMount() {
     this.scroller = new IntersectionObserver(this.handleIntersect, { threshold: 0.25 });
-    document.querySelectorAll('.target-section').forEach(el => this.scroller.observe(el));
+    document.querySelectorAll('.target-section').forEach(el => {
+      if (el.id === 'mission') {
+        this.missionRef = el;
+      }
+      return this.scroller.observe(el);
+    });
     window.addEventListener('resize', this.setDisplay);
     window.addEventListener('scroll', this.setSticky, { passive: true });
   }
@@ -55,6 +61,7 @@ class Header extends React.Component<{}, HeaderState> {
     isMobile: window.innerWidth <= 900,
   });
   setSticky = () => {
+    this.props.setHeaderScroll(this.missionRef.offsetTop < window.scrollY);
     if (window.scrollY > this.headerRef.offsetTop) {
       this.setState({
         isSticky: true,

@@ -1,56 +1,52 @@
 import * as React from 'react';
-import { withFormik, FormikActions } from 'formik';
+import { withFormik, FormikActions, Formik } from 'formik';
 
 import './subscribe.scss';
+import { validateSubscribe } from '../../utils/validate';
 
 interface FormFields {
   email?: string;
 }
 
 const MyForm = props => {
-  const { values, touched, errors, isSubmitting, handleChange, handleBlur, handleSubmit, handleReset, dirty } = props;
-
   return (
     <div className="subscribe-form">
-      <form onSubmit={handleSubmit} id="mc-form" className="group">
-        <input
-          autoComplete="off"
-          type="email"
-          name="email"
-          className="email"
-          id="mc-email"
-          placeholder="Email Address"
-          value={values.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          className={errors.email && touched.email ? 'email text-input error' : 'email'}
-        />
-        {errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
+      <Formik
+        initialValues={{ email: '' }}
+        onSubmit={() =>
+          window.alert(
+            `We're sorry, but subscribing to our newsletter is not currently supported. Please try again later.`,
+          )
+        }
+        validate={validateSubscribe}
+      >
+        {({ values, touched, handleSubmit, errors, isSubmitting, handleChange, handleBlur, handleReset, dirty }) => {
+          return (
+            <form onSubmit={handleSubmit} id="mc-form" className="group">
+              <input
+                type="email"
+                name="email"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.email}
+                autoComplete="off"
+                className="email"
+                id="mc-email"
+                placeholder="Email Address"
+                className={errors.email && touched.email ? 'email text-input error' : 'email'}
+              />
+              {errors.email && touched.email && <div className="input-feedback">{errors.email}</div>}
 
-        <button type="submit" name="subscribe" disabled={dirty || isSubmitting} value="Sign Up" />
-        <label className="subscribe-message" />
-      </form>
+              <button type="submit" disabled={isSubmitting}>
+                Submit
+              </button>
+              <label className="subscribe-message" />
+            </form>
+          );
+        }}
+      </Formik>
     </div>
   );
 };
 
-const MyEnhancedForm = withFormik({
-  mapPropsToValues: () => ({ email: '' }),
-  validate: values => {
-    const errors: FormFields = {};
-    if (!values.email) {
-      errors.email = 'Required';
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-      errors.email = 'Invalid email address';
-    }
-    return errors;
-  },
-
-  handleSubmit: (values, { setSubmitting }) => {
-    window.alert("We're currently working on getting our email service set up. Please try again later.");
-  },
-
-  displayName: 'SubscribeForm', // helps with React DevTools
-})(MyForm);
-
-export default MyEnhancedForm;
+export default MyForm;

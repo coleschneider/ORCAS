@@ -9,7 +9,9 @@ import './main.scss'; // stylesheets
 
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
-
+  state = {
+    showScroller: false,
+  };
   componentDidMount() {
     window.onbeforeunload = () => {
       window.scrollTo(0, 0);
@@ -28,12 +30,12 @@ class App extends React.Component<RouteComponentProps> {
     const isModal = !!(location.state && location.state.modal);
     return (
       <div>
-        <Header />
+        <Header setHeaderScroll={isGreater => this.setState({ showScroller: isGreater })} />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route path="/" component={Routes} />
         </Switch>
         <Route path="/path" component={MediaModal} />
-        <Footer />
+        <Footer showScroller={this.state.showScroller} />
       </div>
     );
   }

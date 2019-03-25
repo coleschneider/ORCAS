@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ScrollIntoView from './ScrollIntoView/ScrollIntoView';
+import ScrollIntoView, { ScrollHelper, FooterScrollHelper } from './ScrollIntoView/ScrollIntoView';
 import { compose, defaultProps, withHandlers } from 'recompose';
 
 interface DefaultProps {
@@ -29,5 +29,6 @@ export const withScrollView = compose(
     },
   }),
 );
-
+export const ViewScrollHelper = withScrollView(ScrollHelper);
+export const FooterViewScroll = withScrollView(FooterScrollHelper);
 export default withScrollView(ScrollIntoView);

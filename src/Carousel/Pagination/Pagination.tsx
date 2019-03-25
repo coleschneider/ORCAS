@@ -5,6 +5,7 @@ interface PaginationProps {
   index: number;
   total: number;
 }
+
 class Pagination extends React.Component<PaginationProps> {
   constructor(props) {
     super(props);

@@ -3,8 +3,9 @@ import * as React from 'react';
 import Nav from '../Header/Nav/Nav';
 import Subscribe from './Subscribe/Subscribe';
 import './footer.scss';
+import { FooterViewScroll } from '../ScrollObserver/ScrollView';
 
-export default () => (
+export default ({ showScroller }) => (
   <footer className="s-footer footer" id="contact">
     <div className="row section-header align-center">
       <div className="col-full">
@@ -71,8 +72,6 @@ export default () => (
       </div>
     </div>
     <div id="message" className="network-status" />
-    <div className="go-top">
-      <a className="smoothscroll" title="Back to Top" href="#top" />
-    </div>
+    <FooterViewScroll showScroller={showScroller} />
   </footer>
 );

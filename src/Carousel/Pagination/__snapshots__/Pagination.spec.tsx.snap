@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination matches the snapshot 1`] = `
+<ul
+  className="slick-dots"
+>
+  <li
+    className="slick-active"
+    id="slick-slide10"
+    key="0"
+    onClick={[Function]}
+  >
+    <button>
+      0
+    </button>
+  </li>
+  <li
+    id="slick-slide11"
+    key="1"
+    onClick={[Function]}
+  >
+    <button>
+      1
+    </button>
+  </li>
+  <li
+    id="slick-slide12"
+    key="2"
+    onClick={[Function]}
+  >
+    <button>
+      2
+    </button>
+  </li>
+</ul>
+`;

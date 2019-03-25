@@ -1,20 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Subscribe should match the snapshot 1`] = `
-<Formik
-  displayName="SubscribeForm"
-  enableReinitialize={false}
-  handleSubmit={[Function]}
-  initialValues={
-    Object {
-      "email": "",
+<div
+  className="subscribe-form"
+>
+  <Formik
+    enableReinitialize={false}
+    initialValues={
+      Object {
+        "email": "",
+      }
     }
-  }
-  isInitialValid={false}
-  onSubmit={[Function]}
-  render={[Function]}
-  validate={[Function]}
-  validateOnBlur={true}
-  validateOnChange={true}
-/>
+    isInitialValid={false}
+    onSubmit={[Function]}
+    validate={[Function]}
+    validateOnBlur={true}
+    validateOnChange={true}
+  >
+    <Component />
+  </Formik>
+</div>
 `;

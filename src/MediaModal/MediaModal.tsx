@@ -22,10 +22,10 @@ const customStyles = {
     justifyContent: 'center',
     top: '50%',
     left: '50%',
-
+    // width: '1000px',
     right: 'auto',
     bottom: 'auto',
-    marginRight: '-50%',
+    height: '80vh',
     transform: 'translate(-50%, -50%)',
   },
   overlay: {
@@ -53,6 +53,8 @@ const MediaModal = ({ history }) => {
       style={customStyles}
     >
       <ReactPlayer
+        width="100%"
+        height="100%"
         url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
         config={{
           vimeo: {

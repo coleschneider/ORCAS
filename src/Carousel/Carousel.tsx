@@ -1,6 +1,6 @@
 import * as React from 'react';
 import SwipeableViews from 'react-swipeable-views';
-import Pagination from './Pagination';
+import Pagination from './Pagination/Pagination';
 const styles = {
   slide: {
     padding: 15,

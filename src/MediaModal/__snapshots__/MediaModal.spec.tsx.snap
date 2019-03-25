@@ -23,9 +23,9 @@ exports[`MediaModal matches the snapshot 1`] = `
         "display": "flex",
         "flexDirection": "column",
         "flexShrink": 1,
+        "height": "80vh",
         "justifyContent": "center",
         "left": "50%",
-        "marginRight": "-50%",
         "overflowX": "hidden",
         "overflowY": "hidden",
         "position": "absolute",
@@ -58,7 +58,7 @@ exports[`MediaModal matches the snapshot 1`] = `
       }
     }
     controls={false}
-    height="360px"
+    height="100%"
     light={false}
     loop={false}
     muted={false}
@@ -82,7 +82,7 @@ exports[`MediaModal matches the snapshot 1`] = `
     style={Object {}}
     url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
     volume={null}
-    width="640px"
+    width="100%"
     wrapper="div"
   />
 </Modal>
