@@ -26,4 +26,17 @@ describe('Header', () => {
         .children(),
     ).toHaveLength(7);
   });
+  it('renders with the navigation closed on mobile', () => {
+    wrapper = mount(<Header />);
+
+    wrapper.setState({ isMobile: true });
+    wrapper.update();
+    expect(wrapper.find('.is-open').exists()).toBe(false);
+    wrapper
+      .find('Toggle')
+      .props()
+      .onClick();
+    wrapper.update();
+    expect(wrapper.find('.is-open')).toBeDefined();
+  });
 });

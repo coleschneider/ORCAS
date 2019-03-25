@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Fade from 'react-reveal/Fade';
 import PlaceholderAvatar from '../../images/avatar.png';
-import Carousel from '../../Carousel/Carousel'
+import Carousel from '../../Carousel/Carousel';
 export default () => (
   <section id="services" className="s-services target-section">
     <Fade bottom={true} cascade={true}>
@@ -100,23 +100,21 @@ export default () => (
           </div>
         </div>
       </div>
-      
 
-        <Carousel>
-        <Carousel.Slide author={"auser1"} avatar={PlaceholderAvatar}>
+      <Carousel>
+        <Carousel.Slide author={'auser1'} avatar={PlaceholderAvatar}>
           Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
           Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author={"auser2"} avatar={PlaceholderAvatar}>
+        </Carousel.Slide>
+        <Carousel.Slide author={'auser2'} avatar={PlaceholderAvatar}>
           Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
           Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author={"auser3"} avatar={PlaceholderAvatar}>
+        </Carousel.Slide>
+        <Carousel.Slide author={'auser3'} avatar={PlaceholderAvatar}>
           Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
           Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-        </Carousel>
-        
+        </Carousel.Slide>
+      </Carousel>
     </Fade>
   </section>
 );

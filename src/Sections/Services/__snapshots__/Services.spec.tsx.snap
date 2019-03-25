@@ -169,104 +169,26 @@ exports[`Services matches the snapshot 1`] = `
         </div>
       </div>
     </div>
-    <div
-      className="meet-wrap"
-    >
-      <div
-        className="row"
+    <Carousel>
+      <Component
+        author="auser1"
+        avatar="avatar.png"
       >
-        <div
-          className="col-full meet-header"
-        >
-          <h2
-            className="display-2"
-          >
-            Meet the team!
-          </h2>
-        </div>
-      </div>
-      <div
-        className="meet__slide"
+        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      </Component>
+      <Component
+        author="auser2"
+        avatar="avatar.png"
       >
-        <img
-          alt="Author image"
-          className="meet__avatar"
-          src="avatar.png"
-        />
-        <p>
-          Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum. Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium praesentium corpori.
-        </p>
-        <div
-          className="meet__author"
-        >
-          <span
-            className="meet__name"
-          >
-            A User
-          </span>
-          <a
-            className="meet__link"
-            href="#0"
-          >
-            @member1
-          </a>
-        </div>
-      </div>
-      <div
-        className="meet__slide"
+        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      </Component>
+      <Component
+        author="auser3"
+        avatar="avatar.png"
       >
-        <img
-          alt="Author image"
-          className="meet__avatar"
-          src="avatar.png"
-        />
-        <p>
-          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        </p>
-        <div
-          className="meet__author"
-        >
-          <span
-            className="meet__name"
-          >
-            Team Member 2
-          </span>
-          <a
-            className="meet__link"
-            href="#0"
-          >
-            @member2
-          </a>
-        </div>
-      </div>
-      <div
-        className="meet__slide"
-      >
-        <img
-          alt="Author image"
-          className="meet__avatar"
-          src="avatar.png"
-        />
-        <p>
-          Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-        </p>
-        <div
-          className="meet__author"
-        >
-          <span
-            className="meet__name"
-          >
-            Team Member 3
-          </span>
-          <a
-            className="meet__link"
-            href="#0"
-          >
-            @member3
-          </a>
-        </div>
-      </div>
-    </div>
+        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      </Component>
+    </Carousel>
   </Fade>
 </section>
 `;
