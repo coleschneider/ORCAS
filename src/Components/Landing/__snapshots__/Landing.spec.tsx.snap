@@ -61,16 +61,6 @@ exports[`Landing matches the snapshot 1`] = `
           <h3>
             Voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explica. Nemo enim ipsam voluptatem quia. Ut quis enim.
           </h3>
-          <div
-            className="home-content__btn-wrap"
-          >
-            <a
-              className="btn btn--primary home-content__btn smoothscroll"
-              href="#donate"
-            >
-              Donate
-            </a>
-          </div>
         </div>
         <div
           className="home-content__right"

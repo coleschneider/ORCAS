@@ -11,26 +11,29 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": false,
-    "noImplicitAny": false,
-    "baseUrl": "./",
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "alwaysStrict": false,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
     "paths": {
+      "utils/*": ["src/utils/*"],
       "Components/*": ["src/Components/*"],
       "Common/*": ["src/Common/*"],
       "Sections/*": ["src/Components/Sections/*"],
       "stylesheets/*": ["src/stylesheets/*"],
       "Images/*": ["src/Images/*"],
-      "utils/*": ["src/utils/*"],
     },
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
   },
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "src",
     "types"
   ]
+  
 }

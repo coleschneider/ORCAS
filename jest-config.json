@@ -57,6 +57,12 @@
   ],
   "moduleNameMapper": {
     "^react-native$": "react-native-web",
+    "^utils(.*)$": "<rootDir>/src/utils/$1",
+    "Components(.*)$": "<rootDir>/src/Components/$1",
+    "Common(.*)$": "<rootDir>/src/Common/$1",
+    "stylesheets(.*)$": "<rootDir>/src/stylesheets/$1",
+    "Images(.*)$": "<rootDir>/src/Images/$1",
+    "Sections(.*)$": "<rootDir>/src/Components/Sections/$1",
     "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
   },
   "moduleFileExtensions": [
