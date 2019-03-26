@@ -3,7 +3,7 @@ import * as React from 'react';
 import Nav from '../Header/Nav/Nav';
 import Subscribe from './Subscribe/Subscribe';
 import './footer.scss';
-import { FooterViewScroll } from '../ScrollObserver/ScrollView';
+import { FooterViewScroll } from 'Common/ScrollObserver/ScrollView';
 
 export default ({ showScroller }) => (
   <footer className="s-footer footer" id="contact">

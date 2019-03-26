@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { validateDonation } from '../../../utils/validate';
+import { validateDonation } from 'utils/validate';
 import { withFormik, FormikActions, FormikProps, FormikValues, FormikErrors, FormikConfig } from 'formik';
 
 interface FormValues {

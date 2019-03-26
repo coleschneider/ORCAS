@@ -1,4 +1,4 @@
-@import '../../scss/colors';
+@import '../../../stylesheets//assets/colors.scss';
 
 .input-feedback {
     color: $form-error;
@@ -19,7 +19,7 @@
   font-size: 1.8rem;
   line-height: 3.2rem;
   padding: 1.8rem 140px 1.8rem 64px;
-  background: url(../../icons/icon-mail.svg) 24px center no-repeat, rgba(255, 255, 255, 0.03);
+  background: url(../../../icons/icon-mail.svg) 24px center no-repeat, rgba(255, 255, 255, 0.03);
   background-size: 24px 16px, auto;
   color: white;
   margin-bottom: 2rem;

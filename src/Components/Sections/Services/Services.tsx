@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Fade from 'react-reveal/Fade';
-import PlaceholderAvatar from '../../images/avatar.png';
-import Carousel from '../../Carousel/Carousel';
+import PlaceholderAvatar from 'Images/avatar.png';
+import Carousel from 'Components/Carousel/Carousel';
 export default () => (
   <section id="services" className="s-services target-section">
     <Fade bottom={true} cascade={true}>

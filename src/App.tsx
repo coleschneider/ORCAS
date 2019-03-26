@@ -1,11 +1,11 @@
 import * as React from 'react'; // modules
 import { Route, RouteComponentProps, Switch } from 'react-router';
 
-import Footer from './Footer/Footer'; // relative imports
-import Header from './Header/Header';
-import MediaModal from './MediaModal/MediaModal';
+import Footer from 'Components/Footer/Footer'; // relative imports
+import Header from 'Components/Header/Header';
+import MediaModal from 'Components/MediaModal/MediaModal';
 import Routes from './Routes';
-import './main.scss'; // stylesheets
+import 'stylesheets/main.scss'; // stylesheets
 
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;

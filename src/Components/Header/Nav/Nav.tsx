@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import ScrollView from '../../ScrollObserver/ScrollView';
+import ScrollView from 'Common/ScrollObserver/ScrollView';
 
 interface NavConfig {
   title: activeElementType;

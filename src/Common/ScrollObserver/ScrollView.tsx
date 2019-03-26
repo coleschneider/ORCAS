@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ScrollIntoView, { ScrollHelper, FooterScrollHelper } from './ScrollIntoView/ScrollIntoView';
+import ScrollIntoView, { ScrollHelper, FooterScrollHelper } from 'Common/ScrollObserver/ScrollIntoView/ScrollIntoView';
 import { compose, defaultProps, withHandlers } from 'recompose';
 
 interface DefaultProps {

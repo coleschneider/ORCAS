@@ -2,7 +2,7 @@ import * as React from 'react';
 import { withFormik, FormikActions, Formik } from 'formik';
 
 import './subscribe.scss';
-import { validateSubscribe } from '../../utils/validate';
+import { validateSubscribe } from 'utils/validate';
 
 interface FormFields {
   email?: string;

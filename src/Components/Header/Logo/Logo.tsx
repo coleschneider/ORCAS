@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageLogo from '../../images/logo.svg';
+import ImageLogo from 'Images/logo.svg';
 
 const Logo = () => (
   <div className="header-logo">

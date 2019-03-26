@@ -1,8 +1,8 @@
 import React from 'react';
-import LandingImage from '../images/beach.jpg';
+import LandingImage from 'Images/beach.jpg';
 import Reveal from 'react-reveal/Reveal';
 import './landing.scss';
-import { ViewScrollHelper } from '../ScrollObserver/ScrollView';
+import { ViewScrollHelper } from 'Common/ScrollObserver/ScrollView';
 export default (props, ref) => (
   <section id="home" className="s-home target-section">
     <div className="shadow-overlay" />
@@ -18,11 +18,6 @@ export default (props, ref) => (
               Voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explica. Nemo
               enim ipsam voluptatem quia. Ut quis enim.
             </h3>
-            <div className="home-content__btn-wrap">
-              <a href="#donate" className="btn btn--primary home-content__btn smoothscroll">
-                Donate
-              </a>
-            </div>
           </div>
           <div className="home-content__right">
             <img src={LandingImage} />

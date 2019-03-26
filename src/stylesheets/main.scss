@@ -1,12 +1,12 @@
 
 
  @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,500,600,700|Chivo:300,400,700,700i,900");
- @import url("./font-awesome/css/fontawesome-all.css");
- @import url("./micons/micons.css");
-@import './scss/base.scss';
-@import './scss/vendor.scss';
-@import './scss/colors';
-@import './scss/components.scss';
+ @import url("../font-awesome/css/fontawesome-all.css");
+ @import url("../micons/micons.css");
+@import './assets/base.scss';
+@import './assets/vendor.scss';
+@import './assets/colors';
+@import './assets/components.scss';
 .autoprefixer-test {
   user-select: none;
 }
@@ -2738,7 +2738,7 @@ input::-moz-focus-inner {
   left: 0;
   position: absolute;
   top: 50%;
-  background-image: url(icons/left_arrow.svg);
+  background-image: url(../icons/left_arrow.svg);
   background-repeat: no-repeat;
   // background-position: 55% center;
   background-size: 24px 27px;
