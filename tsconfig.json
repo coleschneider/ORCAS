@@ -26,7 +26,7 @@
       "Common/*": ["src/Common/*"],
       "Sections/*": ["src/Components/Sections/*"],
       "stylesheets/*": ["src/stylesheets/*"],
-      "Images/*": ["src/Images/*"],
+      "Images/*": ["src/stylesheets/assets/Images/*"],
     },
   },
   "exclude": [

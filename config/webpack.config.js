@@ -263,7 +263,7 @@ module.exports = function(webpackEnv) {
         .filter(ext => useTypeScript || !ext.includes('ts')),
       alias: {
         Components: path.resolve(paths.appSrc, 'Components'),
-        Images: path.resolve(paths.appSrc, 'Images'),
+        Images: path.resolve(paths.appSrc, 'stylesheets/assets/Images'),
         Sections: path.resolve(paths.appSrc, 'Components/Sections'),
         Common: path.resolve(paths.appSrc, 'Common'),
         stylesheets: path.resolve(paths.appSrc, 'stylesheets'),
