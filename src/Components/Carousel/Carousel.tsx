@@ -55,7 +55,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
       <div className="meet-wrap">
         <div className="row">
           <div className="col-full meet-header">
-            <h2 className="display-2">Meet the team!</h2>
+            <h2 className="display-2">Meet the Seniors!</h2>
           </div>
         </div>
         <div className="row meet slick-slider">

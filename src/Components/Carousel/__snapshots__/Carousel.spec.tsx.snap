@@ -13,7 +13,7 @@ exports[`Carousel should match the snapshot 1`] = `
       <h2
         className="display-2"
       >
-        Meet the team!
+        Meet the Seniors!
       </h2>
     </div>
   </div>

@@ -6,6 +6,7 @@ import Donate from 'Sections/Donate/Donate';
 import Landing from 'Sections/Landing/Landing';
 import Mission from 'Sections/Mission/Mission';
 import Services from 'Sections/Services/Services';
+import Meet from 'Components/Sections/Meet/ Meet';
 
 const Routes = () => (
   <React.Fragment>
@@ -13,6 +14,7 @@ const Routes = () => (
     <Mission />
     <About />
     <Services />
+    <Meet />
     <Donate />
     <Contact />
   </React.Fragment>

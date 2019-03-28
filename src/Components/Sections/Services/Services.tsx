@@ -100,21 +100,6 @@ export default () => (
           </div>
         </div>
       </div>
-
-      <Carousel>
-        <Carousel.Slide author={'auser1'} avatar={PlaceholderAvatar}>
-          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-          Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        </Carousel.Slide>
-        <Carousel.Slide author={'auser2'} avatar={PlaceholderAvatar}>
-          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-          Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        </Carousel.Slide>
-        <Carousel.Slide author={'auser3'} avatar={PlaceholderAvatar}>
-          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-          Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        </Carousel.Slide>
-      </Carousel>
     </Fade>
   </section>
 );

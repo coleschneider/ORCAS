@@ -20,6 +20,9 @@ export const navlinks: NavConfig[] = [
     title: 'services',
   },
   {
+    title: 'seniors',
+  },
+  {
     title: 'donate',
   },
   {

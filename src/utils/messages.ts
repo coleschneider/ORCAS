@@ -12,15 +12,4 @@ export const NETWORK_MESSAGES = {
   },
 };
 
-export const NetworkNotification = (type, opts = {}) =>
-  toast(
-    NETWORK_MESSAGES[type],
-    _.defaults(
-      {
-        // className: 'network-msg container',
-        // bodyClassName: 'network-msg content',
-        // progressClassName: 'network-msg progress'
-      },
-      opts,
-    ),
-  );
+export const NetworkNotification = (type, opts = {}) => toast(NETWORK_MESSAGES[type], _.defaults({}, opts));

@@ -8,4 +8,4 @@ declare module NodeJS {
   
 declare const IntersectionObserver: IntersectionObserver;
 
-type activeElementType = 'home' | 'mission' | 'about' | 'services' | 'donate' | 'contact';
+type activeElementType = 'home' | 'mission' | 'about' | 'services' | 'donate' | 'contact' | 'seniors';

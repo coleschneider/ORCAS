@@ -8,6 +8,11 @@ export default class Notifications extends React.Component {
   idleToast = null;
   networkToast = null;
   idleTimer = null;
+  constructor(props) {
+    super(props);
+    this.onActive = this._onActive.bind(this);
+    this.onIdle = this._onIdle.bind(this);
+  }
   componentDidMount() {
     window.addEventListener('online', this.handleNetworkChange);
     window.addEventListener('offline', this.handleNetworkChange);
@@ -18,11 +23,7 @@ export default class Notifications extends React.Component {
       autoClose: 5000,
     });
   };
-  constructor(props) {
-    super(props);
-    this.onActive = this._onActive.bind(this);
-    this.onIdle = this._onIdle.bind(this);
-  }
+
   _onActive() {
     toast.update(this.idleToast, {
       autoClose: 3000,
