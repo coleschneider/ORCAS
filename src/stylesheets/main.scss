@@ -7,6 +7,7 @@
 @import './layout/vendor.scss';
 @import './layout/colors';
 @import './layout/components.scss';
+
 .autoprefixer-test {
   user-select: none;
 }
@@ -2775,5 +2776,77 @@ left: 0;
   
   @media only screen and (max-width:800px) {
     width: 100%;
+  }
+}
+
+.notification-container {
+position: relative;
+display: block;
+pointer-events: auto;
+border-radius: 3px;
+width: 300px;
+overflow: hidden;
+color: #fff;
+opacity: .8;
+background-position: 15px center;
+padding: 15px;
+margin: 0 0 6px;
+box-shadow: 0 0 12px #999;
+
+}
+.notification {
+display: flex;
+// left: 30px;
+// right: 30px;
+margin: 0 auto;
+position: fixed;
+z-index: 60000;
+top: unset;
+flex-direction: column;
+align-items: center;
+
+position: fixed;
+z-index: 1000;
+width: 0 auto;
+top: unset;
+// bottom: 30px;
+margin: 0 auto;
+// left: 30px;
+// right: 30px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+pointer-events: none;
+-webkit-align-items: flex-end;
+-webkit-box-align: flex-end;
+-ms-flex-align: flex-end;
+align-items: flex-end;
+}
+.notification-wrapper {
+  // opacity: 1;
+  height: 110px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  .container {
+    color: white;
+    background: #445159;
+    opacity: 0.9;
+    padding: 12px 22px;
+    font-size: 1em;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 10px;
+    overflow: hidden;
+    height: auto;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 0;
+
   }
 }

@@ -5,7 +5,9 @@ import Footer from 'Components/Footer/Footer'; // relative imports
 import Header from 'Components/Header/Header';
 import MediaModal from 'Components/MediaModal/MediaModal';
 import Routes from './Routes';
+
 import 'stylesheets/main.scss'; // stylesheets
+import Notifications from 'Common/Notifications/Notifications';
 
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
@@ -26,11 +28,12 @@ class App extends React.Component<RouteComponentProps> {
   }
   render() {
     const { location } = this.props;
-
+    const ref = React.createRef();
     const isModal = !!(location.state && location.state.modal);
     return (
       <div>
         <Header setHeaderScroll={isGreater => this.setState({ showScroller: isGreater })} />
+        <Notifications />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route path="/" component={Routes} />
         </Switch>
