@@ -17,7 +17,8 @@ exports[`MediaModal matches the snapshot 1`] = `
   style={
     Object {
       "content": Object {
-        "alignItems": "stretch",
+        "alignItems": "center",
+        "backgroundColor": "black",
         "borderRadius": "5px",
         "bottom": "auto",
         "display": "flex",
@@ -47,6 +48,9 @@ exports[`MediaModal matches the snapshot 1`] = `
     }
   }
 >
+  <Loader
+    isFetching={true}
+  />
   <ReactPlayer
     config={
       Object {
@@ -79,7 +83,11 @@ exports[`MediaModal matches the snapshot 1`] = `
     playing={false}
     playsinline={false}
     progressInterval={1000}
-    style={Object {}}
+    style={
+      Object {
+        "display": "none",
+      }
+    }
     url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
     volume={null}
     width="100%"

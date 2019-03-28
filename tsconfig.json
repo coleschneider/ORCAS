@@ -16,10 +16,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "alwaysStrict": false,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
     "jsx": "preserve",
     "baseUrl": "./",
+    "plugins": [
+      {"name": "typescript-tslint-plugin"}
+    ],
     "paths": {
       "utils/*": ["src/utils/*"],
       "Components/*": ["src/Components/*"],

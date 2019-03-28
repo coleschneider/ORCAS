@@ -1,5 +1,8 @@
 import * as React from 'react';
 import ReactModal from 'react-modal';
+// import ReactPlayer from 'react-player';
+import { RouteComponentProps } from 'react-router';
+import Loader from 'Common/Loader/Loader';
 import ReactPlayer from 'react-player';
 
 (() => {
@@ -11,61 +14,78 @@ import ReactPlayer from 'react-player';
 
 const customStyles = {
   content: {
+    // width: '1000px',
+    alignItems: 'center',
+    backgroundColor: 'black',
     borderRadius: '5px',
-    flexShrink: 1,
-    overflowY: 'hidden',
-    overflowX: 'hidden',
-    position: 'absolute',
+    bottom: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    top: '50%',
-    left: '50%',
-    // width: '1000px',
-    right: 'auto',
-    bottom: 'auto',
+    flexShrink: 1,
     height: '80vh',
+    justifyContent: 'center',
+    left: '50%',
+    overflowX: 'hidden',
+    overflowY: 'hidden',
+    position: 'absolute',
+    right: 'auto',
+    top: '50%',
     transform: 'translate(-50%, -50%)',
   },
   overlay: {
-    zIndex: 7,
-    left: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
     bottom: 0,
+    display: 'flex',
+    justifyContent: 'center',
+    left: 0,
+    position: 'fixed',
     right: 0,
     top: 0,
-    justifyContent: 'center',
-    position: 'fixed',
-    display: 'flex',
-    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    zIndex: 7,
   },
 };
 
-const MediaModal = ({ history }) => {
-  return (
-    <ReactModal
-      isOpen={true}
-      onRequestClose={e => {
-        // e.preventDefault();
-        // e.stopPropagation();
-        history.goBack();
-      }}
-      style={customStyles}
-    >
-      <ReactPlayer
-        width="100%"
-        height="100%"
-        url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
-        config={{
-          vimeo: {
-            playerOptions: {
-              height: 200,
-            },
-          },
+interface MediaModalState {
+  isFetching: boolean;
+}
+class MediaModal extends React.Component<RouteComponentProps, MediaModalState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFetching: true,
+    };
+  }
+
+  render() {
+    const { isFetching } = this.state;
+    const { history } = this.props;
+    return (
+      <ReactModal
+        isOpen={true}
+        onRequestClose={e => {
+          history.goBack();
         }}
-      />
-    </ReactModal>
-  );
-};
+        style={customStyles}
+      >
+        <Loader isFetching={isFetching} />
+        <ReactPlayer
+          width="100%"
+          onReady={() => this.setState({ isFetching: false })}
+          onError={() => this.setState({ isFetching: false })}
+          style={{ display: isFetching ? 'none' : undefined }}
+          height="100%"
+          url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
+          config={{
+            vimeo: {
+              playerOptions: {
+                height: 200,
+              },
+            },
+          }}
+        />
+      </ReactModal>
+    );
+  }
+}
 
 export default MediaModal;

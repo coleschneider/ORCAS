@@ -59,7 +59,7 @@ exports[`Landing matches the snapshot 1`] = `
             is Bright.
           </h1>
           <h3>
-            Voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explica. Nemo enim ipsam voluptatem quia. Ut quis enim.
+            Oxnard Recreation Center for Adults & Seniors
           </h3>
         </div>
         <div
@@ -97,10 +97,23 @@ exports[`Landing matches the snapshot 1`] = `
       </ul>
     </div>
   </Reveal>
-  <defaultProps(withHandlers(ScrollHelper))
-    Text="mission"
-    initial="Home"
-    selector="#mission"
-  />
+  <Link
+    className="home-scroll smoothscroll"
+    duration={500}
+    offset={-70}
+    smooth={true}
+    spy={true}
+    title="Back to Top"
+    to="mission"
+  >
+    <span
+      className="home-scroll__text"
+    >
+      Scroll
+    </span>
+    <span
+      className="home-scroll__icon"
+    />
+  </Link>
 </section>
 `;

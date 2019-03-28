@@ -1,0 +1,193 @@
+
+
+/* ===================================================================
+ * # donate
+ *
+ * ------------------------------------------------------------------- */
+ .s-donate {
+  text-align: center;
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+  background-color: #eaeaea;
+  position: relative;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## donate plan blocks
+ * ------------------------------------------------------------------- */
+.plans {
+  margin-top: 6.4rem;
+  max-width: 840px;
+}
+
+.item-plan {
+  padding: 0 30px;
+}
+
+.item-plan__block {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 4rem;
+}
+
+.item-plan__title {
+  font-weight: 700;
+  font-size: 2.1rem;
+  line-height: 1.333;
+  color: #000000;
+  margin: 0 0 1.6rem 0;
+}
+
+.item-plan__price,
+.item-plan__per {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.item-plan__price {
+  font-family: "Chivo", sans-serif;
+  font-size: 7.4rem;
+  line-height: 1.081;
+  font-weight: 600;
+  color: #000000;
+}
+
+.item-plan__per {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.4);
+  margin: 0 4px;
+}
+
+.item-plan__bottom-part {
+  margin-top: 4.4rem;
+}
+
+.item-plan__services {
+  font-size: 1.7rem;
+  line-height: 1.882;
+  margin-left: 0;
+}
+ul  li {
+  list-style: none;
+}
+.item-plan__services li {
+  display: inline-block;
+  list-style: none;
+  padding: .2rem 0 .2rem .8rem;
+  position: relative;
+}
+
+.item-plan__mission.give-five li::before {  
+    content: "\F00C";
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.2rem;
+    font-weight: 900;
+    display: inline-block;
+    color: #80d3d2;
+    margin-right: 18px;
+  
+}
+.item-plan__mission li::before {
+  content: "\F00C";
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1.2rem;
+  font-weight: 900;
+  display: inline-block;
+  color: white;
+  text-align: left;
+  margin-right: 18px;
+}
+
+
+
+.item-plan--popular {
+  color: white;
+}
+
+.item-plan--popular .item-plan__services li::before {
+  color: #ffffff;
+}
+
+.item-plan--popular .item-plan__block {
+  background-color: #80d3d2;
+  border: none;
+}
+
+.item-plan--popular .item-plan__title,
+.item-plan--popular .item-plan__price {
+  color: #ffffff;
+}
+
+.item-plan--popular .item-plan__per {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.item-plan--popular .btn {
+  background-color: #ffffff;
+  border: 0.2rem solid #ffffff;
+  color: #000000;
+}
+
+.item-plan--popular .btn:hover,
+.item-plan--popular .btn:focus {
+  background-color: #433a6e;
+  border: 0.2rem solid #433a6e;
+  color: #ffffff;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * donate
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width:1200px) {
+  
+  .plans {
+    max-width: 800px;
+  }
+
+}
+
+@media only screen and (max-width:1000px) {
+  .s-donate {
+    
+    padding-bottom: 17.2rem;
+  }
+
+}
+
+@media only screen and (max-width:800px) {
+
+  .plans {
+    max-width: 500px;
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+  .s-donate {
+        padding-bottom: 12rem;
+  }
+
+}
+
+@media only screen and (max-width:450px) {
+  .item-plan {
+    padding: 0 20px;
+  }
+
+}
+
+@media only screen and (max-width:350px) {
+  .item-plan__price {
+    font-size: 5.6rem;
+  }
+
+  .item-plan__block {
+    padding: 16px;
+  }
+
+}

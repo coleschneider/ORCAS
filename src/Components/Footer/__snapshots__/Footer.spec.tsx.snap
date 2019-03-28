@@ -94,7 +94,34 @@ exports[`Footer matches the snapshot 1`] = `
           <ul
             className="footer__site-links"
           >
-            <Nav />
+            <NavLink
+              key="0"
+              to="home"
+            />
+            <NavLink
+              key="1"
+              to="mission"
+            />
+            <NavLink
+              key="2"
+              to="about"
+            />
+            <NavLink
+              key="3"
+              to="services"
+            />
+            <NavLink
+              key="4"
+              to="seniors"
+            />
+            <NavLink
+              key="5"
+              to="donate"
+            />
+            <NavLink
+              key="6"
+              to="contact"
+            />
           </ul>
         </div>
         <div
@@ -109,13 +136,18 @@ exports[`Footer matches the snapshot 1`] = `
             Fax: (+1) 800 ORCAS
           </p>
           <p>
+            Location 
+            <br />
+            5540 W. 5th St. #142 Oxnard, CA 93035
+          </p>
+          <p>
             Need help or have a question? Contact us at: 
             <br />
             <a
               className="footer__mail-link"
               href="mailto:#0"
             >
-              support@orcas.com
+              kittypatrol@roadrunner.com
             </a>
           </p>
         </div>
@@ -133,10 +165,18 @@ exports[`Footer matches the snapshot 1`] = `
     className="network-status"
     id="message"
   />
-  <defaultProps(withHandlers(FooterScrollHelper))
-    Text="home"
-    initial="Home"
-    selector="#home"
-  />
+  <div
+    className="go-top"
+  >
+    <Link
+      className="smoothscroll"
+      duration={500}
+      offset={-70}
+      smooth={true}
+      spy={true}
+      title="Back to Top"
+      to="home"
+    />
+  </div>
 </footer>
 `;

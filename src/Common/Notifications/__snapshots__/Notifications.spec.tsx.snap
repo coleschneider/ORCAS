@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notifications should match the snapshot 1`] = `
+<div>
+  <Idle
+    defaultIdle={false}
+    events={
+      Array [
+        "mousemove",
+        "mousedown",
+        "keydown",
+        "touchstart",
+        "scroll",
+      ]
+    }
+    onChange={[Function]}
+    render={[Function]}
+    timeout={300000}
+  />
+  <ToastContainer
+    autoClose={5000}
+    bodyClassName={null}
+    className={null}
+    closeButton={
+      <CloseButton
+        ariaLabel="close"
+      />
+    }
+    closeOnClick={true}
+    draggable={true}
+    draggablePercent={80}
+    hideProgressBar={false}
+    newestOnTop={false}
+    pauseOnFocusLoss={true}
+    pauseOnHover={true}
+    position="top-right"
+    progressClassName={null}
+    progressStyle={null}
+    rtl={false}
+    style={null}
+    toastClassName={null}
+    transition={[Function]}
+  />
+</div>
+`;

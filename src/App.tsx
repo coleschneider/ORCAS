@@ -1,13 +1,14 @@
 import * as React from 'react'; // modules
 import { Route, RouteComponentProps, Switch } from 'react-router';
 
+import ErrorBoundary from 'Components/ErrorBoundary/ErrorBoundary';
 import Footer from 'Components/Footer/Footer'; // relative imports
 import Header from 'Components/Header/Header';
-import MediaModal from 'Components/MediaModal/MediaModal';
-import Routes from './Routes';
-
-import 'stylesheets/main.scss'; // stylesheets
+const MediaModal = React.lazy(() => import('./Components/MediaModal/MediaModal'));
 import Notifications from 'Common/Notifications/Notifications';
+import Routes from './Routes';
+import 'stylesheets/main.scss'; // stylesheets
+import LazyRoute from 'Common/LazyRoute/LazyRoute';
 
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
@@ -28,18 +29,18 @@ class App extends React.Component<RouteComponentProps> {
   }
   render() {
     const { location } = this.props;
-    const ref = React.createRef();
+    const { showScroller } = this.state;
     const isModal = !!(location.state && location.state.modal);
     return (
-      <div>
-        <Header setHeaderScroll={isGreater => this.setState({ showScroller: isGreater })} />
+      <ErrorBoundary>
+        <Header setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} />
         <Notifications />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route path="/" component={Routes} />
         </Switch>
-        <Route path="/path" component={MediaModal} />
-        <Footer showScroller={this.state.showScroller} />
-      </div>
+        <LazyRoute path="/path" component={MediaModal} />
+        <Footer showScroller={showScroller} />
+      </ErrorBoundary>
     );
   }
 }

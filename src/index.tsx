@@ -1,12 +1,10 @@
-import * as smoothscroll from 'smoothscroll-polyfill';
-smoothscroll.polyfill(); // This polyfill must come first
-import 'intersection-observer';
+import 'babel-polyfill';
+import 'raf/polyfill';
 import { BrowserRouter, Route } from 'react-router-dom';
-import React from 'react';
-import ReactDOM from 'react-dom';
-
 import * as serviceWorker from './serviceWorker';
 import App from './App';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 ReactDOM.render(
   <BrowserRouter>

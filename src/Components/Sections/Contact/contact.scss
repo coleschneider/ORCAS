@@ -4,7 +4,7 @@
  *
  * ------------------------------------------------------------------- */
  .s-contact {
-  padding-top: 18.4rem;
+  padding-top: 15rem;
   background-color: #80d3d2;
   color: rgba(255, 255, 255, 0.8);
   overflow: hidden;
@@ -79,17 +79,7 @@
 
 }
 
-@media only screen and (max-width:1000px) {
-  .s-contact {
-    padding-top: 17.2rem;
-  }
-
-}
-
 @media only screen and (max-width:800px) {
-  .s-contact {
-    padding-top: 16rem;
-  }
 
   .s-contact .contact-content__badges li a {
     width: 206px;
@@ -100,10 +90,7 @@
 }
 
 @media only screen and (max-width:600px) {
-  .s-contact {
-    padding-top: 14.8rem;
-  }
-
+  
   .s-contact .contact-bottom-image {
     margin-top: 9.6rem;
   }

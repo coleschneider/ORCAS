@@ -1,8 +1,9 @@
 import React from 'react';
 import LandingImage from 'Images/beach.jpg';
 import Reveal from 'react-reveal/Reveal';
+import { Link } from 'react-scroll';
 import './landing.scss';
-import { ViewScrollHelper } from 'Common/ScrollObserver/ScrollView';
+
 export default (props, ref) => (
   <section id="home" className="s-home target-section">
     <div className="shadow-overlay" />
@@ -14,10 +15,7 @@ export default (props, ref) => (
               The Future of Oxnard's Senior Center <br />
               is Bright.
             </h1>
-            <h3>
-              Voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explica. Nemo
-              enim ipsam voluptatem quia. Ut quis enim.
-            </h3>
+            <h3>Oxnard Recreation Center for Adults & Seniors</h3>
           </div>
           <div className="home-content__right">
             <img src={LandingImage} />
@@ -37,6 +35,17 @@ export default (props, ref) => (
         </ul>
       </div>
     </Reveal>
-    <ViewScrollHelper Text="mission" selector="#mission" />
+    <Link
+      className="home-scroll smoothscroll"
+      to="mission"
+      title="Back to Top"
+      spy={true}
+      smooth={true}
+      offset={-70}
+      duration={500}
+    >
+      <span className="home-scroll__text">Scroll</span>
+      <span className="home-scroll__icon" />
+    </Link>
   </section>
 );

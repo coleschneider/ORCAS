@@ -1,86 +1,126 @@
 import * as React from 'react';
+import { animated, Spring, Transition } from 'react-spring/renderprops.cjs';
 
-import { animated, Spring } from 'react-spring/renderprops.cjs';
 import Logo from './Logo/Logo';
-import Nav from './Nav/Nav';
+import { Link } from 'react-scroll';
 import Toggle from './Toggle/Toggle';
+import './header.scss';
+import DonateButton from 'Common/DonateButton/DonateButton';
+import NavLinks from 'Common/NavLinks/NavLinks';
 
 interface HeaderState {
   activeElement: activeElementType;
   isMobile: boolean;
   isOpen: boolean;
   isSticky: boolean;
+  isDropdown: boolean;
 }
 
-class Header extends React.Component<{}, HeaderState> {
-  headerRef;
-  missionRef;
+interface HeaderProps {
+  setHeaderScroll: (isGreater: boolean) => void;
+}
+
+const Dropdown = ({ isOpen, isDropdown, isMobile, linkNodes }) => (
+  <Transition
+    unique={true}
+    reset={true}
+    items={isMobile ? isDropdown && isOpen : isDropdown}
+    from={{
+      height: 0,
+    }}
+    enter={{
+      height: 'auto',
+    }}
+    leave={{ height: 0 }}
+  >
+    {item =>
+      item &&
+      (props => (
+        <animated.div style={props} className="dropdown-content">
+          {linkNodes &&
+            linkNodes.map(menuItem => (
+              <Link to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
+                {menuItem.to}
+              </Link>
+            ))}
+        </animated.div>
+      ))
+    }
+  </Transition>
+);
+class Header extends React.Component<HeaderProps, HeaderState> {
+  headerRef: Element;
+  missionRef: Element;
   scroller;
   constructor(props) {
     super(props);
     this.state = {
-      activeElement: 'home',
+      isMobile: window.innerWidth <= 800,
       isOpen: false,
-      isMobile: window.innerWidth < 600,
-      isSticky: false,
     };
-    this.handleIntersect = this.handleIntersect.bind(this);
   }
 
   componentDidMount() {
-    this.scroller = new IntersectionObserver(this.handleIntersect, { threshold: 0.25 });
-    document.querySelectorAll('.target-section').forEach(el => {
-      if (el.id === 'mission') {
-        this.missionRef = el;
-      }
-      return this.scroller.observe(el);
-    });
     window.addEventListener('resize', this.setDisplay);
-    window.addEventListener('scroll', this.setSticky, { passive: true });
   }
-
-  setActiveElement = activeElement => {
-    this.setState({
-      activeElement: activeElement.id,
-    });
-  };
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.setDisplay);
+  }
 
   toggle = () =>
     this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
     }));
 
-  handleIntersect = entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.intersectionRatio > 0) {
-        this.setActiveElement(entry.target);
-      }
-    });
-  };
-  setDisplay = () => ({
-    isMobile: window.innerWidth <= 900,
-  });
-  setSticky = () => {
-    this.props.setHeaderScroll(this.missionRef.offsetTop < window.scrollY);
-    if (window.scrollY > this.headerRef.offsetTop) {
-      this.setState({
-        isSticky: true,
-      });
+  handleSetActive = (id: string, el: Element) => {
+    const { setHeaderScroll } = this.props;
+    if (id === 'home') {
+      setHeaderScroll(false);
     } else {
-      this.setState({
-        isSticky: false,
-      });
+      setHeaderScroll(true);
     }
   };
-
-  render() {
-    const { isOpen, activeElement, isSticky, isMobile } = this.state;
+  toggleDropdown = () =>
+    this.setState(({ isDropdown }) => ({
+      isDropdown: !isDropdown,
+    }));
+  setDisplay = () =>
+    this.setState({
+      isMobile: window.innerWidth <= 800,
+    });
+  renderDropdown = ({ linkNodes, to }) => {
     return (
-      <header
-        ref={el => (this.headerRef = el)}
-        className={isSticky ? `s-header ${'sticky'}` : 's-header'}
-        id="header-it"
+      <div
+        tabIndex={1}
+        key={to}
+        onBlur={this.toggleDropdown}
+        onClick={this.toggleDropdown}
+        className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
       >
+        <li>
+          <a className="dropdown-text">{to}</a>
+        </li>
+        <Dropdown {...this.state} linkNodes={linkNodes} />
+      </div>
+    );
+  };
+  renderHeaderLinks = link => {
+    return link.linkNodes ? (
+      this.renderDropdown(link)
+    ) : (
+      <li key={link.to}>
+        <Link {...link} onSetActive={(id, el) => this.handleSetActive(id, el)}>
+          {link.to}
+          <div className="underlined" />
+        </Link>
+      </li>
+    );
+  };
+  render() {
+    const { isMobile, isOpen, isDropdown } = this.state;
+
+    return (
+      <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
           <Logo />
           <Spring
@@ -93,17 +133,13 @@ class Header extends React.Component<{}, HeaderState> {
             {props => (
               <animated.nav className={`header-nav-wrap ${isOpen && 'is-open'}`} style={isMobile ? props : undefined}>
                 <animated.ul className={`header-main-nav ${isOpen && 'is-open'}`} style={props}>
-                  <Nav cb={this.toggle} activeElement={activeElement} />
-                  <div className="mobile-nav-content__btn-wrap">
-                    <a href="#contact" className="btn btn--primary home-content__btn smoothscroll">
-                      Donate
-                    </a>
-                  </div>
+                  {NavLinks.map(link => this.renderHeaderLinks(link))}
+                  <DonateButton />
                 </animated.ul>
               </animated.nav>
             )}
           </Spring>
-          <Toggle onClick={this.toggle} isOpen={isOpen} isMobile={isMobile} />
+          {isMobile ? <Toggle onClick={this.toggle} isOpen={isOpen} /> : null}
         </div>
       </header>
     );

@@ -4,6 +4,7 @@ import About from 'Sections/About/About';
 import Contact from 'Sections/Contact/Contact';
 import Donate from 'Sections/Donate/Donate';
 import Landing from 'Sections/Landing/Landing';
+import { MeetTheSeniors, MeetTheTeam } from 'Components/Sections/Meet/ Meet';
 import Mission from 'Sections/Mission/Mission';
 import Services from 'Sections/Services/Services';
 
@@ -13,6 +14,8 @@ const Routes = () => (
     <Mission />
     <About />
     <Services />
+    <MeetTheTeam />
+    <MeetTheSeniors />
     <Donate />
     <Contact />
   </React.Fragment>

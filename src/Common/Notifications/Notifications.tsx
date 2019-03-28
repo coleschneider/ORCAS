@@ -1,13 +1,16 @@
 import * as React from 'react';
-import IdleTimer from 'react-idle-timer';
-import { NETWORK_MESSAGES, NetworkNotification } from 'utils/messages';
-import { ToastContainer, toast, ToastType } from 'react-toastify';
+import Idle from 'react-idle';
+import { NETWORK_MESSAGES } from 'utils/messages';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default class Notifications extends React.Component {
   idleToast = null;
   networkToast = null;
-  idleTimer = null;
+  idleTimer;
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
     window.addEventListener('online', this.handleNetworkChange);
     window.addEventListener('offline', this.handleNetworkChange);
@@ -18,47 +21,34 @@ export default class Notifications extends React.Component {
       autoClose: 5000,
     });
   };
-  constructor(props) {
-    super(props);
-    this.onActive = this._onActive.bind(this);
-    this.onIdle = this._onIdle.bind(this);
-  }
-  _onActive() {
-    toast.update(this.idleToast, {
-      autoClose: 3000,
-      onClose: () => {
-        this.idleToast = null;
-        this.idleTimer.reset();
-      },
-    });
-  }
 
-  _onIdle() {
-    if (this.idleToast === null) {
-      const lastActive = this.idleTimer.getLastActiveTime();
+  onIdle = ({ idle }) => {
+    if (this.idleToast === null && idle) {
       this.idleToast = toast.warn(
         `Looks like you've been inactive for a while. We make sure to clear personal information after an hour of inactivity.`,
         {
           autoClose: false,
+          className: 'notification-inactive',
           position: 'bottom-right',
         },
       );
+    } else {
+      this.onActive();
     }
-  }
+  };
+  onActive = () => {
+    toast.update(this.idleToast, {
+      autoClose: 3000,
+      onClose: () => {
+        this.idleToast = null;
+      },
+    });
+  };
   render() {
     return (
       <div>
-        <IdleTimer
-          ref={ref => {
-            this.idleTimer = ref;
-          }}
-          element={document}
-          onActive={this.onActive}
-          onIdle={this.onIdle}
-          debounce={250}
-          timeout={1000 * 60}
-        />
-        <ToastContainer style={{}} />
+        <Idle onChange={this.onIdle} timeout={1000 * 60 * 5} /* 5 minutes */ />
+        <ToastContainer />
       </div>
     );
   }

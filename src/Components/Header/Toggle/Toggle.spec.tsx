@@ -3,8 +3,8 @@ import Toggle from './Toggle';
 
 describe('Toggle', () => {
   const props = {
-    isOpen: false,
     isMobile: false,
+    isOpen: false,
     onClick: jest.fn(),
   };
   let wrapper;

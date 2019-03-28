@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Mission matches the snapshot 1`] = `
-<section
-  className="s-about target-section"
-  id="mission"
->
+<Component>
   <Reveal
-    cascade={true}
+    bottom={true}
     count={1}
     countOut={1}
     delay={0}
@@ -39,34 +36,15 @@ exports[`Mission matches the snapshot 1`] = `
         },
       }
     }
-    top={true}
   >
     <div
-      className="row section-header has-bottom-sep"
+      className="row wide mission-desc"
     >
       <div
-        className="col-full"
-      >
-        <h1
-          className="display-1"
-        >
-          Our Mission
-        </h1>
-        <p
-          className="lead"
-        >
-          Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia assumenda repudiandae non cumque qui. Amet repellat omnis ea.
-        </p>
-      </div>
-    </div>
-    <div
-      className="row wide about-desc"
-    >
-      <div
-        className="col-full slick-slider about-desc__slider"
+        className="col-full slick-slider mission-desc__slider"
       >
         <div
-          className="about-desc__slide"
+          className="mission-desc__slide"
         >
           <h3
             className="item-title"
@@ -78,7 +56,7 @@ exports[`Mission matches the snapshot 1`] = `
           </p>
         </div>
         <div
-          className="about-desc__slide"
+          className="mission-desc__slide"
         >
           <h3
             className="item-title"
@@ -90,7 +68,7 @@ exports[`Mission matches the snapshot 1`] = `
           </p>
         </div>
         <div
-          className="about-desc__slide"
+          className="mission-desc__slide"
         >
           <h3
             className="item-title"
@@ -102,7 +80,7 @@ exports[`Mission matches the snapshot 1`] = `
           </p>
         </div>
         <div
-          className="about-desc__slide"
+          className="mission-desc__slide"
         >
           <h3
             className="item-title"
@@ -116,5 +94,5 @@ exports[`Mission matches the snapshot 1`] = `
       </div>
     </div>
   </Reveal>
-</section>
+</Component>
 `;
