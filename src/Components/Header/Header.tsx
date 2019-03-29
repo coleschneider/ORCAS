@@ -59,7 +59,7 @@ class Header extends React.Component<{}, HeaderState> {
     });
   };
   setDisplay = () => ({
-    isMobile: window.innerWidth <= 600,
+    isMobile: window.innerWidth <= 800,
   });
   setSticky = () => {
     this.props.setHeaderScroll(this.missionRef.offsetTop < window.scrollY);

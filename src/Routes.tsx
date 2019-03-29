@@ -10,7 +10,7 @@ import Meet from 'Components/Sections/Meet/ Meet';
 import { Link } from 'react-router-dom';
 const Video = () => (
   
-  <div className="col-full video-bg">
+  <div className="row video-bg">
     <div className="shadow-overlay" />
     <Link
       to={{
