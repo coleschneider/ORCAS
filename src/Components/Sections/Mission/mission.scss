@@ -1,9 +1,9 @@
 
 /* ===================================================================
- * # about
+ * # mission
  *
  * ------------------------------------------------------------------- */
- .s-about {
+ .s-mission {
   padding-top: 23.2rem;
   text-align: center;
   padding-bottom: calc((62.4rem/2) + 6.4rem);
@@ -13,16 +13,16 @@
   position: relative;
 }
 
-.s-about .section-header.has-bottom-sep::before {
+.s-mission .section-header.has-bottom-sep::before {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.s-about .display-1,
-.s-about h3 {
+.s-mission .display-1,
+.s-mission h3 {
   color: #ffffff;
 }
 
-.s-about p.lead {
+.s-mission p.lead {
   color: rgba(255, 255, 255, 0.6);
 }
 .underlined {
@@ -38,72 +38,72 @@
 }
 
 /* ------------------------------------------------------------------- 
- * ## about-desc slider
+ * ## mission-desc slider
  * ------------------------------------------------------------------- */
-.about-desc {
+.mission-desc {
   margin-top: 6rem;
 }
 
-.about-desc__slider .slick-dots {
+.mission-desc__slider .slick-dots {
   margin: .8rem 0 0 0;
 }
 
-.about-desc__slider .slick-dots li button {
+.mission-desc__slider .slick-dots li button {
   background: #433a6e;
 }
 
-.about-desc__slider .slick-dots li.slick-active button,
-.about-desc__slider .slick-dots li:hover button {
+.mission-desc__slider .slick-dots li.slick-active button,
+.mission-desc__slider .slick-dots li:hover button {
   background: #ffffff;
 }
 
-.about-desc__slide {
+.mission-desc__slide {
   padding: 0 24px;
 }
 
 
 /* ------------------------------------------------------------------- 
  * responsive:
- * about
+ * mission
  * ------------------------------------------------------------------- */
 @media only screen and (max-width:1400px) {
-  .s-about {
+  .s-mission {
     padding-bottom: calc((62.4rem/2) + 9.6rem);
   }
 
 }
 
 @media only screen and (max-width:1200px) {
-  .s-about {
+  .s-mission {
     padding-top: 18.4rem;
   }
 
 }
 
 @media only screen and (max-width:1000px) {
-  .s-about {
+  .s-mission {
     padding-top: 17.2rem;
   }
 
-  .about-desc__slide {
+  .mission-desc__slide {
     padding: 0 20px;
   }
 
 }
 
 @media only screen and (max-width:800px) {
-  .s-about {
+  .s-mission {
     padding-top: 16rem;
   }
 
 }
 
 @media only screen and (max-width:700px) {
-  .about-desc {
+  .mission-desc {
     max-width: 550px;
   }
 
-  .about-desc__slide {
+  .mission-desc__slide {
     padding: 0 10px;
     text-align: center;
   }
@@ -111,30 +111,30 @@
 }
 
 @media only screen and (max-width:600px) {
-  .s-about {
+  .s-mission {
     padding-top: 14.8rem;
     padding-bottom: calc((60rem/2) + 9.6rem);
   }
 
-  .about-desc {
+  .mission-desc {
     max-width: 500px;
   }
 
-  .about-desc__slide {
+  .mission-desc__slide {
     padding: 0;
   }
 
 }
 
 @media only screen and (max-width:500px) {
-  .s-about {
+  .s-mission {
     padding-bottom: calc((52rem/2) + 9.6rem);
   }
 
 }
 
 @media only screen and (max-width:400px) {
-  .s-about {
+  .s-mission {
     padding-top: 14rem;
     padding-bottom: calc((48rem/2) + 9.6rem);
   }
@@ -145,10 +145,10 @@
 
 
 /* ===================================================================
- * # s-about-how
+ * # s-mission-how
  *
  * ------------------------------------------------------------------- */
- .s-about-how {
+ .s-mission-how {
   background-color: #ffffff;
   padding-bottom: 16rem;
 }

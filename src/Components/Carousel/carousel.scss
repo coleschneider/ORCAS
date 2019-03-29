@@ -1,0 +1,206 @@
+@import '../../stylesheets/layout/colors';
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  display: flex;
+  // padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 2em;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  
+  color: darken($color: #888, $amount: 80%)
+}
+
+/* ------------------------------------------------------------------- 
+ * ## slick slider
+ * ------------------------------------------------------------------- */
+ .slick-slider {
+  position: relative;
+}
+
+.slick-slider .slick-slide {
+  outline: none;
+}
+
+.slick-slider .slick-dots {
+  display: block;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 4.2rem 0 0 0;
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.slick-slider .slick-dots li {
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  margin: 0;
+  padding: 9px;
+  cursor: pointer;
+}
+
+.slick-slider .slick-dots li button {
+  display: block;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+.slick-slider .slick-dots li button:hover,
+.slick-slider .slick-dots li button:focus {
+  outline: none;
+}
+
+.slick-slider .slick-dots li.slick-active button,
+.slick-slider .slick-dots li:hover button {
+  background: #80d3d2;
+}
+
+
+
+
+
+
+/* ===================================================================
+ * # meet
+ *
+ * ------------------------------------------------------------------- */
+
+ .meet-header {
+  text-align: center;
+  padding-top: 6.4rem;
+  position: relative;
+}
+
+.meet-header::before {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 60%;
+  background-color: $grey;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+}
+
+.meet {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: normal;
+  font-size: 1.7rem;
+  line-height: 1.882;
+  margin-top: 4rem;
+  padding-bottom: 7.2rem;
+  position: relative;
+}
+
+.meet__slide {
+  position: relative;
+  padding: 16px;
+  z-index: 500;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 0px auto;
+  width: 50%;
+}
+.senior-card {
+  
+}
+.meet__avatar {
+  width: 7.2rem;
+  height: 7.2rem;
+  border-radius: 100%;
+  margin-right: 8px;
+  outline: none;
+  position: relative;
+  float: left;
+  top: 0;
+  left: 0;
+}
+
+.meet__author {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1.6rem;
+  line-height: 2.4rem;
+}
+
+.meet__name,
+.meet__link {
+  display: inline-block;
+}
+
+.meet__name {
+  font-weight: 700;
+  color: #000000;
+  margin-right: 4px;
+}
+
+.meet__link {
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * meet
+ * ------------------------------------------------------------------- */
+
+
+@media only screen and (max-width:600px) {
+  .meet {
+    margin-top: 3.2rem;
+  }
+
+  .meet-header {
+    padding-top: 6.4rem !important;
+  }
+  .prev, .next {
+    display: none;
+  }
+  
+  .meet__slide {
+    width: 80%;
+    
+  }
+
+}
+.quote {
+    font-size: 80px;
+    line-height: 0.6em;
+    opacity: 0.2;
+    display: flex;
+}

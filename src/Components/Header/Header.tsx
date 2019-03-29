@@ -4,6 +4,7 @@ import { animated, Spring } from 'react-spring/renderprops.cjs';
 import Logo from './Logo/Logo';
 import Nav from './Nav/Nav';
 import Toggle from './Toggle/Toggle';
+import './header.scss'
 
 interface HeaderState {
   activeElement: activeElementType;
@@ -21,7 +22,7 @@ class Header extends React.Component<{}, HeaderState> {
     this.state = {
       activeElement: 'home',
       isOpen: false,
-      isMobile: window.innerWidth < 600,
+      isMobile: window.innerWidth <= 800,
       isSticky: false,
     };
     this.handleIntersect = this.handleIntersect.bind(this);
@@ -58,11 +59,11 @@ class Header extends React.Component<{}, HeaderState> {
     });
   };
   setDisplay = () => ({
-    isMobile: window.innerWidth <= 900,
+    isMobile: window.innerWidth <= 600,
   });
   setSticky = () => {
     this.props.setHeaderScroll(this.missionRef.offsetTop < window.scrollY);
-    if (window.scrollY > this.headerRef.offsetTop) {
+    if (window.scrollY > this.headerRef.getBoundingClientRect().top) {
       this.setState({
         isSticky: true,
       });
@@ -103,7 +104,7 @@ class Header extends React.Component<{}, HeaderState> {
               </animated.nav>
             )}
           </Spring>
-          <Toggle onClick={this.toggle} isOpen={isOpen} isMobile={isMobile} />
+          {isMobile && <Toggle onClick={this.toggle} isOpen={isOpen} />}
         </div>
       </header>
     );

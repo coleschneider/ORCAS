@@ -43,3 +43,9 @@ class Pagination extends React.Component<PaginationProps> {
   }
 }
 export default Pagination;
+export const PrevPage = ({onClick}) => (
+  <a className="prev" onClick={onClick}>❮</a>
+)
+export const NextPage = ({onClick}) => (
+  <a className="next" onClick={onClick}>❯</a>
+)

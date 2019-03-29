@@ -21,13 +21,9 @@ export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>
     touched,
     bindSubmitForm,
     errors,
-    isSubmitting,
     submitForm,
     handleChange,
     handleBlur,
-    handleSubmit,
-    handleReset,
-    dirty,
   } = props;
   bindSubmitForm(submitForm);
   return (

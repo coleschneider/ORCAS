@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SwipeableViews from 'react-swipeable-views';
-import Pagination from './Pagination/Pagination';
+import Pagination, { NextPage, PrevPage } from './Pagination/Pagination';
+import './carousel.scss'
 const styles = {
   slide: {
     padding: 15,
@@ -28,6 +29,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   static Slide = ({ children, author, avatar }) => (
     <div className="meet__slide">
       <img alt="Author image" src={avatar} className="meet__avatar" />
+      <span className="quote">❝</span>
       <p>{children}</p>
       <div className="meet__author">
         <span className="meet__name">{author}</span>
@@ -44,31 +46,35 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     this.handleChangeIndex = this.handleChangeIndex.bind(this);
   }
 
-  handleChangeIndex(index) {
-    this.setState({ index });
+  handleChangeIndex(nextIndex) {
+    const {children} = this.props
+    const total = React.Children.count(children);
+    this.setState({
+      index: nextIndex > total - 1 ? 0 : nextIndex < 0 ? total - 1 : nextIndex
+    })
   }
 
   render() {
     const { children } = this.props;
     const total = React.Children.count(children);
+    const {index} = this.state
     return (
-      <div className="meet-wrap">
-        <div className="row">
-          <div className="col-full meet-header">
-            <h2 className="display-2">Meet the Seniors!</h2>
-          </div>
-        </div>
         <div className="row meet slick-slider">
           <SwipeableViews
-            index={this.state.index}
+            // style={{overflow: 'unset'}}
+            // slideStyle={{overflow: 'visible'}}
+            index={index}
+            slideClassName="senior-card"
             onChangeIndex={this.handleChangeIndex}
             enableMouseEvents={true}
             resistance={true}
           >
             {this.props.children}
           </SwipeableViews>
-          <Pagination total={total} index={this.state.index} onChangeIndex={this.handleChangeIndex} />
-        </div>
+            <PrevPage onClick={ () =>this.handleChangeIndex(index-1)} />
+             <NextPage onClick={ () =>this.handleChangeIndex(index + 1)}/>
+          <Pagination total={total} index={index} onChangeIndex={this.handleChangeIndex} />
+        
       </div>
     );
   }
