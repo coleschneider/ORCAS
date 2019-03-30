@@ -1,18 +1,23 @@
 {
-    "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
-    "rules": {
-        "no-implicit-dependencies": false,
-        "ordered-imports": false,
-        "curly": false,
-        "jsx-no-lambda": false,
-        "object-literal-sort-keys": false,
-        "interface-name" : false,
-        "no-submodule-imports": false,
-        "no-console": true,
-        "no-shadowed-variable": false,
-        "member-access": [true, "no-public"],
-        "no-string-literal": false,
-        "no-namespace":false,
-        "no-internal-module": false
-    }
-    }
+	"extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+	"rules": {
+		"exclude": [
+			"config/**/*.js",
+			"node_modules/**/*.ts",
+			"coverage/lcov-report/*.js"
+		],
+		"no-implicit-dependencies": false,
+		"ordered-imports": false,
+		"curly": false,
+		"jsx-no-lambda": false,
+		"object-literal-sort-keys": true,
+		"interface-name": false,
+		"no-submodule-imports": false,
+		"no-console": true,
+		"no-shadowed-variable": false,
+		"member-access": [true, "no-public"],
+		"no-string-literal": false,
+		"no-namespace": false,
+		"no-internal-module": false
+	}
+}

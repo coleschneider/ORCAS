@@ -16,15 +16,7 @@ interface DonationFormProps {
 }
 
 export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>) => {
-  const {
-    values,
-    touched,
-    bindSubmitForm,
-    errors,
-    submitForm,
-    handleChange,
-    handleBlur,
-  } = props;
+  const { values, touched, bindSubmitForm, errors, submitForm, handleChange, handleBlur } = props;
   bindSubmitForm(submitForm);
   return (
     <div className="item-plan__top-part">
@@ -51,6 +43,7 @@ export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>
 };
 
 const EnhancedDonationForm = withFormik<DonationFormProps, FormValues>({
+  displayName: 'ShortDonationForm',
   mapPropsToValues: props => {
     return { amount: props.initialAmount || '' };
   },
@@ -59,7 +52,6 @@ const EnhancedDonationForm = withFormik<DonationFormProps, FormValues>({
   handleSubmit: (props, values) => {
     window.alert("We're currently not accepting donation right now.");
   },
-  displayName: 'ShortDonationForm',
 })(ShortDonationForm);
 
 export default EnhancedDonationForm;

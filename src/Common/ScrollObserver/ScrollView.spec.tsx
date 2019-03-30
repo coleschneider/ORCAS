@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ScrollView, { withScrollView } from './ScrollView';
 import { shallow, mount } from 'enzyme';
-import ScrollIntoView from './ScrollIntoView/ScrollIntoView';
 
 describe('ScrollView', () => {
   describe('withScrollView', () => {
@@ -25,10 +24,10 @@ describe('ScrollView', () => {
       props.activeElement = 'NEXT LINK';
     });
     const props = {
-      setActiveElement: elSpy,
+      Text: 'test',
       activeElement: 'test',
-      Tex: 'test',
       selector: '#test',
+      setActiveElement: elSpy,
     };
 
     it('matches the snapshot', () => {

@@ -5,34 +5,28 @@ import Slide from 'react-reveal/Slide';
 import { createSection } from 'utils/sectionUtils';
 const processes = [
   {
+    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam`,
     header: 'An Emphasis on Community',
-    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-    explicabo.`,
-    left: true
+    left: true,
   },
   {
+    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam`,
     header: 'An Emphasis on Community',
-    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-    explicabo.`,
-    right: true
+    right: true,
   },
   {
+    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam`,
     header: 'As a group',
-    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-    explicabo.`,
-    left: true
+    left: true,
   },
   {
-    header: 'With our Mission',
     body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
     rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
     explicabo.`,
-    right: true
-  }
-]
+    header: 'With our Mission',
+    right: true,
+  },
+];
 const Step = ({ header, body, ...rest }) => (
   <Slide {...rest}>
     <div className="col-block step">
@@ -43,24 +37,23 @@ const Step = ({ header, body, ...rest }) => (
 );
 
 const AboutWrapper = createSection({
+  className: 'about-how',
   displayTitle: 'How will we achieve?',
   sectionName: 'about',
-  className: 'about-how'
-})
+});
 function About() {
   return (
     <AboutWrapper>
       <div className="row process-wrap">
         <div className="process">
           <div className="process__steps block-1-2 block-tab-full group">
-              {processes.map((process, index) => {
-                return (
-                <Step key={index} {...process} />
-              )})}
+            {processes.map((process, index) => {
+              return <Step key={index} {...process} />;
+            })}
           </div>
         </div>
       </div>
-      </AboutWrapper>
+    </AboutWrapper>
   );
 }
 

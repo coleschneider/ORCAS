@@ -4,11 +4,11 @@ import Pagination from './Pagination';
 describe('Pagination', () => {
   let wrapper;
   const pageProps = {
-    total: 3,
     index: 0,
     onChangeIndex: jest.fn(index => {
       return index + 1;
     }),
+    total: 3,
   };
   const setupPage = (props = {}) => {
     wrapper = shallow(<Pagination {...pageProps} {...props} />);

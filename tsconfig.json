@@ -20,6 +20,9 @@
     "noEmit": true,
     "jsx": "preserve",
     "baseUrl": "./",
+    "plugins": [
+      {"name": "typescript-tslint-plugin"}
+    ],
     "paths": {
       "utils/*": ["src/utils/*"],
       "Components/*": ["src/Components/*"],

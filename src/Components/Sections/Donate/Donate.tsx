@@ -1,18 +1,17 @@
 import * as React from 'react';
 import ShortDonation from './ShortDonation/ShortDonation';
-import './donate.scss'
+import './donate.scss';
 import { createSection } from 'utils/sectionUtils';
 interface DonateState {
   tryFormSubmission: boolean;
 }
 
-
 const DonateWrapper = createSection({
-  displayTitle: 'You Can Help with your Donation.'  ,
-  sectionName: 'donate',
   description: `Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia
-  assumenda repudiandae non cumque qui. Amet repellat omnis ea.`
-})
+  assumenda repudiandae non cumque qui. Amet repellat omnis ea.`,
+  displayTitle: 'You Can Help with your Donation.',
+  sectionName: 'donate',
+});
 
 class Donate extends React.Component<{}, DonateState> {
   submitDonation = null;
@@ -70,7 +69,7 @@ class Donate extends React.Component<{}, DonateState> {
             </div>
           </div>
         </div>
-        </DonateWrapper>
+      </DonateWrapper>
     );
   }
 }

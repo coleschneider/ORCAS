@@ -1,15 +1,15 @@
 import * as React from 'react';
-import {createSection} from 'utils/sectionUtils'
+import { createSection } from 'utils/sectionUtils';
 import Reveal from 'react-reveal';
 
-import './mission.scss'
+import './mission.scss';
 
 const MissionWrap = createSection({
-  sectionName: 'mission',
-  displayTitle: 'Our Mission',
   description: `Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia
   assumenda repudiandae non cumque qui. Amet repellat omnis ea.`,
-})
+  displayTitle: 'Our Mission',
+  sectionName: 'mission',
+});
 
 export default () => (
   <MissionWrap>
@@ -47,6 +47,6 @@ export default () => (
           </div>
         </div>
       </div>
-      </Reveal>
-      </MissionWrap>
+    </Reveal>
+  </MissionWrap>
 );

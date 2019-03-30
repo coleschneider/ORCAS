@@ -4,7 +4,7 @@ import { animated, Spring } from 'react-spring/renderprops.cjs';
 import Logo from './Logo/Logo';
 import Nav from './Nav/Nav';
 import Toggle from './Toggle/Toggle';
-import './header.scss'
+import './header.scss';
 
 interface HeaderState {
   activeElement: activeElementType;
@@ -21,8 +21,8 @@ class Header extends React.Component<{}, HeaderState> {
     super(props);
     this.state = {
       activeElement: 'home',
-      isOpen: false,
       isMobile: window.innerWidth <= 800,
+      isOpen: false,
       isSticky: false,
     };
     this.handleIntersect = this.handleIntersect.bind(this);
