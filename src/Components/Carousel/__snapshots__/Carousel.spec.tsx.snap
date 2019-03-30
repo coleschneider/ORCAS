@@ -2,52 +2,27 @@
 
 exports[`Carousel should match the snapshot 1`] = `
 <div
-  className="meet-wrap"
+  className="row meet slick-slider"
 >
-  <div
-    className="row"
+  <BindKeyboard
+    enableMouseEvents={true}
+    index={0}
+    onChangeIndex={[Function]}
+    resistance={true}
+    slideClassName="senior-card"
   >
-    <div
-      className="col-full meet-header"
-    >
-      <h2
-        className="display-2"
-      >
-        Meet the Seniors!
-      </h2>
-    </div>
-  </div>
-  <div
-    className="row meet slick-slider"
-  >
-    <ReactSwipableView
-      animateHeight={false}
-      animateTransitions={true}
-      axis="x"
-      disableLazyLoading={false}
-      disabled={false}
-      enableMouseEvents={true}
-      hysteresis={0.6}
-      ignoreNativeScroll={false}
-      index={0}
-      onChangeIndex={[Function]}
-      resistance={true}
-      springConfig={
-        Object {
-          "delay": "0s",
-          "duration": "0.35s",
-          "easeFunction": "cubic-bezier(0.15, 0.3, 0.25, 1)",
-        }
-      }
-      threshold={5}
-    >
-      child
-    </ReactSwipableView>
-    <Pagination
-      index={0}
-      onChangeIndex={[Function]}
-      total={1}
-    />
-  </div>
+    child
+  </BindKeyboard>
+  <PrevPage
+    onClick={[Function]}
+  />
+  <NextPage
+    onClick={[Function]}
+  />
+  <Pagination
+    index={0}
+    onChangeIndex={[Function]}
+    total={1}
+  />
 </div>
 `;

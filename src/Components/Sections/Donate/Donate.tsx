@@ -35,7 +35,7 @@ class Donate extends React.Component<{}, DonateState> {
                 <p className="item-plan__per">To ORCAS</p>
               </div>
               <div className="item-plan__bottom-part">
-                <ul className="item-plan__mission">
+                <ul className="item-plan__mission give-five">
                   <li>
                     <span>Email</span> Updates
                   </li>

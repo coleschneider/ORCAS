@@ -101,6 +101,7 @@
     "react-router-dom": "^5.0.0",
     "react-spring": "^8.0.18",
     "react-swipeable-views": "^0.13.1",
+    "react-swipeable-views-utils": "^0.13.1",
     "react-toastify": "^5.0.0-rc.3",
     "recompose": "^0.30.0",
     "smoothscroll-polyfill": "^0.4.3",

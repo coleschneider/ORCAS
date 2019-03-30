@@ -6,7 +6,7 @@
  * ------------------------------------------------------------------- */
  .s-donate {
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 15rem;
   padding-bottom: 5rem;
   background-color: #eaeaea;
   position: relative;
@@ -28,7 +28,7 @@
 .item-plan__block {
   background: #ffffff;
   border-radius: 4px;
-  padding: 5.6rem 4.2rem 5.4rem;
+  padding: 16px;
   margin-bottom: 4rem;
 }
 
@@ -70,23 +70,38 @@
   line-height: 1.882;
   margin-left: 0;
 }
-
+ul  li {
+  list-style: none;
+}
 .item-plan__services li {
-  display: list-item;
+  display: inline-block;
   list-style: none;
   padding: .2rem 0 .2rem .8rem;
   position: relative;
 }
 
-.item-plan__services li::before {
-  content: "\f00c";
+.item-plan__mission.give-five li::before {  
+    content: "\F00C";
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.2rem;
+    font-weight: 900;
+    display: inline-block;
+    color: #80d3d2;
+    margin-right: 18px;
+  
+}
+.item-plan__mission li::before {
+  content: "\F00C";
   font-family: 'Font Awesome 5 Free';
   font-size: 1.2rem;
   font-weight: 900;
   display: inline-block;
-  color: #80d3d2;
+  color: white;
+  text-align: left;
   margin-right: 18px;
 }
+
+
 
 .item-plan--popular {
   color: white;
@@ -129,10 +144,7 @@
  * donate
  * ------------------------------------------------------------------- */
 @media only screen and (max-width:1200px) {
-  .s-donate {
-    padding-top: 18.4rem;
-  }
-
+  
   .plans {
     max-width: 800px;
   }
@@ -141,17 +153,13 @@
 
 @media only screen and (max-width:1000px) {
   .s-donate {
-    padding-top: 17.2rem;
+    
     padding-bottom: 17.2rem;
   }
 
 }
 
 @media only screen and (max-width:800px) {
-  .s-donate {
-    padding-top: 16rem;
-    padding-bottom: 14.8rem;
-  }
 
   .plans {
     max-width: 500px;
@@ -161,8 +169,7 @@
 
 @media only screen and (max-width:600px) {
   .s-donate {
-    padding-top: 14.8rem;
-    padding-bottom: 12rem;
+        padding-bottom: 12rem;
   }
 
 }
@@ -180,7 +187,7 @@
   }
 
   .item-plan__block {
-    padding: 5.4rem 3.2rem 4.8rem;
+    padding: 16px;
   }
 
 }

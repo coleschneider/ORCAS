@@ -2,8 +2,7 @@
 
 exports[`ScrollView ScrollIntoView matches the snapshot 1`] = `
 <withHandlers(ScrollIntoView)
-  Tex="test"
-  Text="Home"
+  Text="test"
   activeElement="test"
   initial="Home"
   selector="#test"

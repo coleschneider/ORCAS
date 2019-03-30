@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default class Notifications extends React.Component {
   idleToast = null;
   networkToast = null;
-  idleTimer = null;
+  idleTimer;
   constructor(props) {
     super(props);
     this.onActive = this._onActive.bind(this);
@@ -57,9 +57,9 @@ export default class Notifications extends React.Component {
           onActive={this.onActive}
           onIdle={this.onIdle}
           debounce={250}
-          timeout={1000 * 60}
+          timeout={1000 * 60 * 5} /* minutes */
         />
-        <ToastContainer style={{}} />
+        <ToastContainer />
       </div>
     );
   }

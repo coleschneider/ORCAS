@@ -6,11 +6,6 @@ exports[`Toggle matches the snapshot 1`] = `
   data-testid="toggle"
   id="header-menu-toggle-it"
   onClick={[MockFunction]}
-  style={
-    Object {
-      "display": undefined,
-    }
-  }
 >
   <span>
     Menu

@@ -1,76 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`About matches the snapshot 1`] = `
-<section
-  className="s-about-how target-section"
-  id="about"
->
-  <div
-    className="row"
-  >
-    <div
-      className="col-full video-bg"
-    >
-      <div
-        className="shadow-overlay"
-      />
-      <Link
-        className="btn-video"
-        to={
-          Object {
-            "pathname": "/path",
-            "state": Object {
-              "modal": true,
-            },
-          }
-        }
-      >
-        <span
-          className="video-icon"
-        />
-      </Link>
-      <div
-        className="stats"
-      >
-        <div
-          className="item-stats"
-        >
-          <span
-            className="item-stats__num"
-          >
-            Oxnard
-          </span>
-          <span
-            className="item-stats__title"
-          >
-            A brief description of oxnard video
-          </span>
-        </div>
-        <div
-          className="item-stats"
-        >
-          <span
-            className="item-stats__num"
-          >
-            24K
-          </span>
-          <span
-            className="item-stats__title"
-          >
-            Views
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+<Component>
   <div
     className="row process-wrap"
   >
-    <h2
-      className="display-2 text-center"
-    >
-      How will we achieve?
-    </h2>
     <div
       className="process"
     >
@@ -78,31 +12,33 @@ exports[`About matches the snapshot 1`] = `
         className="process__steps block-1-2 block-tab-full group"
       >
         <Step
+          body="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam"
           header="An Emphasis on Community"
+          key="0"
           left={true}
-        >
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </Step>
+        />
         <Step
+          body="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam"
           header="An Emphasis on Community"
+          key="1"
           right={true}
-        >
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </Step>
+        />
         <Step
-          header="As a Group"
+          body="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam"
+          header="As a group"
+          key="2"
           left={true}
-        >
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </Step>
+        />
         <Step
+          body="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+    explicabo."
           header="With our Mission"
+          key="3"
           right={true}
-        >
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </Step>
+        />
       </div>
     </div>
   </div>
-</section>
+</Component>
 `;

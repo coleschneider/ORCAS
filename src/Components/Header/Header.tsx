@@ -13,9 +13,11 @@ interface HeaderState {
   isOpen: boolean;
   isSticky: boolean;
 }
+
 interface HeaderProps {
   setHeaderScroll: (isGreater: boolean) => void;
 }
+
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
   missionRef: Element;

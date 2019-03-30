@@ -1,7 +1,10 @@
 import * as React from 'react';
 import SwipeableViews from 'react-swipeable-views';
+import { bindKeyboard } from 'react-swipeable-views-utils';
 import Pagination, { NextPage, PrevPage } from './Pagination/Pagination';
 import './carousel.scss';
+
+const Swipable = bindKeyboard(SwipeableViews);
 const styles = {
   slide: {
     color: '#fff',
@@ -60,9 +63,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
     const { index } = this.state;
     return (
       <div className="row meet slick-slider">
-        <SwipeableViews
-          // style={{overflow: 'unset'}}
-          // slideStyle={{overflow: 'visible'}}
+        <Swipable
           index={index}
           slideClassName="senior-card"
           onChangeIndex={this.handleChangeIndex}
@@ -70,7 +71,7 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
           resistance={true}
         >
           {this.props.children}
-        </SwipeableViews>
+        </Swipable>
         <PrevPage onClick={() => this.handleChangeIndex(index - 1)} />
         <NextPage onClick={() => this.handleChangeIndex(index + 1)} />
         <Pagination total={total} index={index} onChangeIndex={this.handleChangeIndex} />

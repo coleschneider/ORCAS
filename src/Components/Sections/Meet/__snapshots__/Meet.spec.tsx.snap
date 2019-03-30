@@ -1,10 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Meet should match the screenshot 1`] = `
-<section
-  className="s-about-how target-section"
-  id="seniors"
->
+<Component>
   <Carousel>
     <Component
       author="auser1"
@@ -67,5 +64,5 @@ exports[`Meet should match the screenshot 1`] = `
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
     </Component>
   </Carousel>
-</section>
+</Component>
 `;

@@ -21,17 +21,17 @@ export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>
   return (
     <div className="item-plan__top-part">
       <h3 className="item-plan__title">Another amount?</h3>
-      <p className="item-plan__price">
-        <input
-          type="text"
-          name="amount"
-          placeholder="Enter an amount to give"
-          value={values.amount}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          className={errors.amount && touched.amount ? 'email text-input error' : 'email'}
-        />
-      </p>
+
+      <input
+        type="text"
+        name="amount"
+        placeholder="Enter an amount to give"
+        value={values.amount}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        className={errors.amount && touched.amount ? 'email text-input error' : 'email'}
+      />
+
       <p className="item-plan__per">Or give monthly</p>
       {errors.amount && touched.amount && (
         <div className="input-feedback" test-id="donationForm">
