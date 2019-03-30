@@ -1,6 +1,7 @@
 import * as React from 'react';
-
 import { animated, Spring } from 'react-spring/renderprops.cjs';
+
+import { createScroller } from 'utils/scrollUtils';
 import Logo from './Logo/Logo';
 import Nav from './Nav/Nav';
 import Toggle from './Toggle/Toggle';
@@ -12,10 +13,12 @@ interface HeaderState {
   isOpen: boolean;
   isSticky: boolean;
 }
-
-class Header extends React.Component<{}, HeaderState> {
-  headerRef;
-  missionRef;
+interface HeaderProps {
+  setHeaderScroll: (isGreater: boolean) => void;
+}
+class Header extends React.Component<HeaderProps, HeaderState> {
+  headerRef: Element;
+  missionRef: Element;
   scroller;
   constructor(props) {
     super(props);
@@ -25,24 +28,21 @@ class Header extends React.Component<{}, HeaderState> {
       isOpen: false,
       isSticky: false,
     };
-    this.handleIntersect = this.handleIntersect.bind(this);
   }
 
   componentDidMount() {
-    this.scroller = new IntersectionObserver(this.handleIntersect, { threshold: 0.25 });
-    document.querySelectorAll('.target-section').forEach(el => {
-      if (el.id === 'mission') {
-        this.missionRef = el;
-      }
-      return this.scroller.observe(el);
-    });
-    window.addEventListener('resize', this.setDisplay);
     window.addEventListener('scroll', this.setSticky, { passive: true });
+    window.addEventListener('resize', this.setDisplay);
+    this.scroller = createScroller(this.handleIntersect, { threshold: 0.25 });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.setSticky);
+    window.removeEventListener('resize', this.setDisplay);
   }
 
-  setActiveElement = activeElement => {
+  setActiveElement = ({ id }) => {
     this.setState({
-      activeElement: activeElement.id,
+      activeElement: id,
     });
   };
 
@@ -51,27 +51,24 @@ class Header extends React.Component<{}, HeaderState> {
       isOpen: !isOpen,
     }));
 
-  handleIntersect = entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && entry.intersectionRatio > 0) {
-        this.setActiveElement(entry.target);
-      }
-    });
+  handleIntersect = el => {
+    if (el.id === 'mission') this.missionRef = el;
+    return entries => {
+      entries.forEach(({ isIntersecting, intersectionRatio, target }) => {
+        if (isIntersecting && intersectionRatio > 0) this.setActiveElement(target);
+      });
+    };
   };
-  setDisplay = () => ({
-    isMobile: window.innerWidth <= 800,
-  });
+  setDisplay = () =>
+    this.setState({
+      isMobile: window.innerWidth <= 767,
+    });
   setSticky = () => {
-    this.props.setHeaderScroll(this.missionRef.offsetTop < window.scrollY);
-    if (window.scrollY > this.headerRef.getBoundingClientRect().top) {
-      this.setState({
-        isSticky: true,
-      });
-    } else {
-      this.setState({
-        isSticky: false,
-      });
-    }
+    const { setHeaderScroll } = this.props;
+    const { offsetTop } = this.missionRef;
+    const { top } = this.headerRef.getBoundingClientRect();
+    setHeaderScroll(offsetTop < window.scrollY);
+    this.setState({ isSticky: window.scrollY > top });
   };
 
   render() {
@@ -104,7 +101,7 @@ class Header extends React.Component<{}, HeaderState> {
               </animated.nav>
             )}
           </Spring>
-          {isMobile && <Toggle onClick={this.toggle} isOpen={isOpen} />}
+          {isMobile ? <Toggle onClick={this.toggle} isOpen={isOpen} /> : null}
         </div>
       </header>
     );

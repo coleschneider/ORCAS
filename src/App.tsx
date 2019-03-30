@@ -28,17 +28,17 @@ class App extends React.Component<RouteComponentProps> {
   }
   render() {
     const { location } = this.props;
-    const ref = React.createRef();
+    const { showScroller } = this.state;
     const isModal = !!(location.state && location.state.modal);
     return (
       <div>
-        <Header setHeaderScroll={isGreater => this.setState({ showScroller: isGreater })} />
+        <Header setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} />
         <Notifications />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route path="/" component={Routes} />
         </Switch>
         <Route path="/path" component={MediaModal} />
-        <Footer showScroller={this.state.showScroller} />
+        <Footer showScroller={showScroller} />
       </div>
     );
   }

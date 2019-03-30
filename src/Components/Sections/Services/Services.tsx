@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Reveal from 'react-reveal/Reveal';
-import './services.scss';
+
 import { createSection, ServiceItem } from 'utils/sectionUtils';
+import './services.scss';
 
 const ServicesWrapper = createSection({
   description: `Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia
-  assumenda repudiandae molestiae cumque qui. Amet repellat omnis ea.`,
+                assumenda repudiandae molestiae cumque qui. Amet repellat omnis ea.`,
   displayTitle: 'Our Values and Services',
   sectionName: 'services',
 });
