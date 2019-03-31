@@ -4,8 +4,6 @@ import { NETWORK_MESSAGES } from 'utils/messages';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
-
 export default class Notifications extends React.Component {
   idleToast = null;
   networkToast = null;
@@ -34,9 +32,9 @@ export default class Notifications extends React.Component {
         },
       );
     } else {
-      this.onActive()
+      this.onActive();
     }
-  }
+  };
   onActive = () => {
     toast.update(this.idleToast, {
       autoClose: 3000,
@@ -44,14 +42,11 @@ export default class Notifications extends React.Component {
         this.idleToast = null;
       },
     });
-  }
+  };
   render() {
     return (
       <div>
-        <Idle 
-          onChange={this.onIdle}
-          timeout={1000 * 60 * 5} /* 5 minutes */
-          />
+        <Idle onChange={this.onIdle} timeout={1000 * 60 * 5} /* 5 minutes */ />
         <ToastContainer />
       </div>
     );
