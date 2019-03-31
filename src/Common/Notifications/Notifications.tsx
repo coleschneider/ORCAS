@@ -28,6 +28,7 @@ export default class Notifications extends React.Component {
         `Looks like you've been inactive for a while. We make sure to clear personal information after an hour of inactivity.`,
         {
           autoClose: false,
+          className: 'notification-inactive',
           position: 'bottom-right',
         },
       );
@@ -46,7 +47,10 @@ export default class Notifications extends React.Component {
   render() {
     return (
       <div>
-        <Idle onChange={this.onIdle} timeout={1000 * 60 * 5} /* 5 minutes */ />
+        <Idle
+          onChange={this.onIdle} 
+          timeout={1000 * 60 * 5} /* 5 minutes */ 
+        />
         <ToastContainer />
       </div>
     );
