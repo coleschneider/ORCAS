@@ -22,3 +22,4 @@ window.localStorage = window.sessionStorage = {
 document.body.innerHTML = '<div id="scroll-test"></div>'
 global.IS_TEST = true;
 global.WEBPACK_BUILD_TYPE = 'development';
+

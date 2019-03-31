@@ -28,12 +28,8 @@ class ErrorBoundary extends React.Component<ErrorProps, ErrorState> {
     const { children } = this.props;
     if (error) {
       return (
-        <div>
+        <div className="section-error">
           <h2>Oh-no! Something went wrong</h2>
-          <p test-id="text-error">{error && error.toString()}</p>
-          <div>
-            <p>{errorInfo.componentStack}</p>
-          </div>
         </div>
       );
     }

@@ -11,5 +11,3 @@ export const NETWORK_MESSAGES = {
     text: "You're back online",
   },
 };
-
-export const NetworkNotification = (type, opts = {}) => toast(NETWORK_MESSAGES[type], _.defaults({}, opts));
