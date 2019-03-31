@@ -29,7 +29,7 @@ class ErrorBoundary extends React.Component<ErrorProps, ErrorState> {
     if (error) {
       return (
         <div className="section-error">
-          <h2>Oh-no! Something went wrong</h2>
+          <h2 test-id="text-error">Oh-no! Something went wrong</h2>
         </div>
       );
     }

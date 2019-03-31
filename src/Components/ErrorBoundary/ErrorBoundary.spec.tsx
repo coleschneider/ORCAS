@@ -17,8 +17,7 @@ describe('ErrorBoundary', () => {
   });
   it('should display an error if the child component throws', () => {
     mountErrorBoundary();
-    const error = new Error('test error');
-    wrapper.find(BuggyComponent).simulateError(error);
-    expect(wrapper.find('[test-id="text-error"]').text()).toBe(error.toString());
+    wrapper.find(BuggyComponent).simulateError(new Error('test error'));
+    expect(wrapper.find('[test-id="text-error"]').text()).toBe('Oh-no! Something went wrong');
   });
 });
