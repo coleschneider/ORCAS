@@ -405,11 +405,13 @@ li a.current .underlined {
   text-decoration: none;
   font-size: 17px;
 }
-
-.active {
-  background-color: #4CAF50;
+.active-submenu {
+  background-color: $blue-primary;
   color: white;
 }
+// .active {
+  
+// }
 
 .topnav .icon {
   display: none;
@@ -418,14 +420,21 @@ li a.current .underlined {
 .dropdown {
   overflow: hidden;
 }
-@media screen and (min-width: 800px) {
-  .dropdown {
-    float: right;
-    overflow: hidden;
-  }
-  .dropdown-content {
-    position: absolute;
-  }
+// @media screen and (min-width: 800px) {
+//   .dropdown {
+//     float: right;
+//     overflow: hidden;
+//   }
+//   .dropdown-content {
+//     position: absolute;
+//   }
+// }
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+.dropdown-content {
+  position: absolute;
 }
 .dropdown .dropbtn {
   font-size: 17px;    

@@ -176,7 +176,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                   (props =>
                     <div style={props} className="dropdown-content">
                       {submenuLinks && submenuLinks.map(menuItem => (
-                        <Link to={menuItem.to} activeClass="active" smooth duration={500} spy >
+                        <Link to={menuItem.to} activeClass="active-submenu" smooth duration={500} spy >
                           {menuItem.to}
                         </Link>
                       ))}
