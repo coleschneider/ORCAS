@@ -24,7 +24,7 @@ describe('Header', () => {
       Spring.find('ul')
         .children()
         .children(),
-    ).toHaveLength(8);
+    ).toHaveLength(9);
   });
   it('renders with the navigation closed on mobile', () => {
     wrapper = mount(<Header />);

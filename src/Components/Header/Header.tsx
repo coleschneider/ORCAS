@@ -3,7 +3,7 @@ import { animated, Spring, Transition } from 'react-spring/renderprops.cjs';
 
 import Logo from './Logo/Logo';
 import NavLink, { navlinks } from './Nav/Nav';
-import {Link} from 'react-scroll'
+import { Link } from 'react-scroll';
 import Toggle from './Toggle/Toggle';
 import './header.scss';
 import DonateButton from 'Common/DonateButton/DonateButton';
@@ -21,12 +21,12 @@ interface HeaderProps {
 }
 const submenuLinks = [
   {
-    to: 'seniors'
+    to: 'seniors',
   },
   {
-    to: 'team'
-  }
-]
+    to: 'team',
+  },
+];
 
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
@@ -60,10 +60,10 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       setHeaderScroll(true);
     }
   };
-  toggleDropdown = () => 
+  toggleDropdown = () =>
     this.setState(({ isDropdown }) => ({
-      isDropdown: !isDropdown
-    }))
+      isDropdown: !isDropdown,
+    }));
   setDisplay = () =>
     this.setState({
       isMobile: window.innerWidth <= 767,
@@ -95,7 +95,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       offset={-70}
                       duration={500}
                     >
-                     home
+                      home
                       <div className="underlined" />
                     </Link>
                   </li>
@@ -109,7 +109,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       offset={-70}
                       duration={500}
                     >
-                     mission
+                      mission
                       <div className="underlined" />
                     </Link>
                   </li>
@@ -123,7 +123,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       offset={-70}
                       duration={500}
                     >
-                     about
+                      about
                       <div className="underlined" />
                     </Link>
                   </li>
@@ -137,54 +137,60 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       offset={-70}
                       duration={500}
                     >
-                     services
+                      services
                       <div className="underlined" />
                     </Link>
                   </li>
                   <div className="dropdown">
-                  <li>
-                    <a
-                     onClick={this.toggleDropdown}
-                      // activeClass="current"
-                      // to="meet"
-                      // spy={false}
-                      // smooth={true}
-                      // onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                      // offset={-70}
-                      // duration={500}
-                    >
-                     meet
-                      <div className="underlined" />
-                    </a>
-                    
-                  </li>
-                <div className="dropdown-content">
-              <Transition
-                unique
-                reset
-                items={isMobile ? isDropdown && isOpen : isDropdown}
-                from={{
-                  height: 0,
-                }}
-                enter={{
-                  height: 'auto',
-                }}
-                leave={{ height: 0, }}
-              >
-                {item =>
-                  item &&
-                  (props =>
-                    <div style={props} className="dropdown-content">
-                      {submenuLinks && submenuLinks.map(menuItem => (
-                        <Link to={menuItem.to} activeClass="active-submenu" smooth duration={500} spy >
-                          {menuItem.to}
-                        </Link>
-                      ))}
+                    <li>
+                      <a
+                        onClick={this.toggleDropdown}
+                        // activeClass="current"
+                        // to="meet"
+                        // spy={false}
+                        // smooth={true}
+                        // onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
+                        // offset={-70}
+                        // duration={500}
+                      >
+                        meet
+                        <div className="underlined" />
+                      </a>
+                    </li>
+                    <div className="dropdown-content">
+                      <Transition
+                        unique={true}
+                        reset={true}
+                        items={isMobile ? isDropdown && isOpen : isDropdown}
+                        from={{
+                          height: 0,
+                        }}
+                        enter={{
+                          height: 'auto',
+                        }}
+                        leave={{ height: 0 }}
+                      >
+                        {item =>
+                          item &&
+                          (props => (
+                            <div style={props} className="dropdown-content">
+                              {submenuLinks &&
+                                submenuLinks.map(menuItem => (
+                                  <Link
+                                    to={menuItem.to}
+                                    activeClass="active-submenu"
+                                    smooth={true}
+                                    duration={500}
+                                    spy={true}
+                                  >
+                                    {menuItem.to}
+                                  </Link>
+                                ))}
+                            </div>
+                          ))
+                        }
+                      </Transition>
                     </div>
-                  )
-                }
-              </Transition>
-            </div>
                   </div>
                   <li>
                     <Link
@@ -196,7 +202,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       offset={-70}
                       duration={500}
                     >
-                     donate
+                      donate
                       <div className="underlined" />
                     </Link>
                   </li>
@@ -210,7 +216,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       offset={-70}
                       duration={500}
                     >
-                     contact
+                      contact
                       <div className="underlined" />
                     </Link>
                   </li>
