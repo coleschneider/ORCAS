@@ -1,38 +1,50 @@
 import * as React from 'react';
 
-import ScrollView from 'Common/ScrollObserver/ScrollView';
+import { Link } from 'react-scroll';
 
 interface NavConfig {
-  title: activeElementType;
+  to: activeElementType;
 }
 
 export const navlinks: NavConfig[] = [
   {
-    title: 'home',
+    to: 'home',
   },
   {
-    title: 'mission',
+    to: 'mission',
   },
   {
-    title: 'about',
+    to: 'about',
   },
   {
-    title: 'services',
+    to: 'services',
   },
   {
-    title: 'seniors',
+    to: 'seniors',
   },
   {
-    title: 'donate',
+    to: 'donate',
   },
   {
-    title: 'contact',
+    to: 'contact',
   },
 ];
 
-const Nav = ({ activeElement, cb }) =>
-  navlinks.map((link, index) => (
-    <ScrollView key={index} Text={link.title} cb={cb} activeElement={activeElement} selector={`#${link.title}`} />
-  ));
+const NavLink = ({ to, handleSetActive }) => (
+  <li>
+    <Link
+      activeClass="current"
+      to={to}
+      spy={true}
+      smooth={true}
+      onSetActive={(id, el) => handleSetActive && handleSetActive(id, el)}
+      offset={-70}
+      duration={500}
+    >
+      {to}
+      <div className="underlined" />
+    </Link>
+  </li>
+);
 
-export default Nav;
+export default NavLink;

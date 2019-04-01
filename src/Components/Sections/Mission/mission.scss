@@ -25,17 +25,6 @@
 .s-mission p.lead {
   color: rgba(255, 255, 255, 0.6);
 }
-.underlined {
-  height: 1px;
-  width: 100%;
-  background-color: #80d3d2;
-  top: -10px;
-  position: relative;
-  @media only screen and (max-width: 800px){
-    top: 0px;
-  }
-  
-}
 
 /* ------------------------------------------------------------------- 
  * ## mission-desc slider

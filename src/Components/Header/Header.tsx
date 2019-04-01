@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { animated, Spring } from 'react-spring/renderprops.cjs';
 
-import { createScroller } from 'utils/scrollUtils';
 import Logo from './Logo/Logo';
-import Nav from './Nav/Nav';
+import NavLink, { navlinks } from './Nav/Nav';
 import Toggle from './Toggle/Toggle';
 import './header.scss';
 
@@ -25,62 +24,40 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   constructor(props) {
     super(props);
     this.state = {
-      activeElement: 'home',
       isMobile: window.innerWidth <= 800,
       isOpen: false,
-      isSticky: false,
     };
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.setSticky, { passive: true });
     window.addEventListener('resize', this.setDisplay);
-    this.scroller = createScroller(this.handleIntersect, { threshold: 0.25 });
   }
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.setSticky);
     window.removeEventListener('resize', this.setDisplay);
   }
-
-  setActiveElement = ({ id }) => {
-    this.setState({
-      activeElement: id,
-    });
-  };
 
   toggle = () =>
     this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
     }));
 
-  handleIntersect = el => {
-    if (el.id === 'mission') this.missionRef = el;
-    return entries => {
-      entries.forEach(({ isIntersecting, intersectionRatio, target }) => {
-        if (isIntersecting && intersectionRatio > 0) this.setActiveElement(target);
-      });
-    };
+  handleSetActive = (id: string, el: Element) => {
+    const { setHeaderScroll } = this.props;
+    if (id === 'home') {
+      setHeaderScroll(false);
+    } else {
+      setHeaderScroll(true);
+    }
   };
   setDisplay = () =>
     this.setState({
       isMobile: window.innerWidth <= 767,
     });
-  setSticky = () => {
-    const { setHeaderScroll } = this.props;
-    const { offsetTop } = this.missionRef;
-    const { top } = this.headerRef.getBoundingClientRect();
-    setHeaderScroll(offsetTop < window.scrollY);
-    this.setState({ isSticky: window.scrollY > top });
-  };
 
   render() {
-    const { isOpen, activeElement, isSticky, isMobile } = this.state;
+    const { isMobile, isOpen } = this.state;
     return (
-      <header
-        ref={el => (this.headerRef = el)}
-        className={isSticky ? `s-header ${'sticky'}` : 's-header'}
-        id="header-it"
-      >
+      <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
           <Logo />
           <Spring
@@ -93,7 +70,9 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             {props => (
               <animated.nav className={`header-nav-wrap ${isOpen && 'is-open'}`} style={isMobile ? props : undefined}>
                 <animated.ul className={`header-main-nav ${isOpen && 'is-open'}`} style={props}>
-                  <Nav cb={this.toggle} activeElement={activeElement} />
+                  {navlinks.map((link, i) => (
+                    <NavLink {...link} key={i} handleSetActive={this.handleSetActive} />
+                  ))}
                   <div className="mobile-nav-content__btn-wrap">
                     <a href="#contact" className="btn btn--primary home-content__btn smoothscroll">
                       Donate

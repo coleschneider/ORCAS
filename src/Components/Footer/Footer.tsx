@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import Nav from '../Header/Nav/Nav';
+import NavLink, { navlinks } from '../Header/Nav/Nav';
+import { Link } from 'react-scroll';
 import Subscribe from './Subscribe/Subscribe';
 import './footer.scss';
-import { FooterViewScroll } from 'Common/ScrollObserver/ScrollView';
 
 export default ({ showScroller }) => (
   <footer className="s-footer footer" id="contact">
@@ -49,7 +49,9 @@ export default ({ showScroller }) => (
           <div className="footer__site-links col-five mob-full">
             <h4>Site links.</h4>
             <ul className="footer__site-links">
-              <Nav />
+              {navlinks.map((link, i) => (
+                <NavLink {...link} key={i} />
+              ))}
             </ul>
           </div>
           <div className="footer__contact col-seven mob-full">
@@ -72,6 +74,16 @@ export default ({ showScroller }) => (
       </div>
     </div>
     <div id="message" className="network-status" />
-    <FooterViewScroll Text="home" selector="#home" showScroller={showScroller} />
+    <div className={showScroller ? 'go-top link-is-visible' : 'go-top'}>
+      <Link
+        to="home"
+        className="smoothscroll"
+        title="Back to Top"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+      />
+    </div>
   </footer>
 );

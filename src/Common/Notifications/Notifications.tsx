@@ -47,10 +47,7 @@ export default class Notifications extends React.Component {
   render() {
     return (
       <div>
-        <Idle
-          onChange={this.onIdle} 
-          timeout={1000 * 60 * 5} /* 5 minutes */ 
-        />
+        <Idle onChange={this.onIdle} timeout={1000 * 60 * 5} /* 5 minutes */ />
         <ToastContainer />
       </div>
     );
