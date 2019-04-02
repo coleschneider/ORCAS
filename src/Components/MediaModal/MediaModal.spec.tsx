@@ -1,5 +1,7 @@
 import * as React from 'react';
 import MediaModal from './MediaModal';
+import ReactPlayer from 'react-player'
+
 
 describe('MediaModal', () => {
   it('matches the snapshot', () => {
@@ -14,11 +16,11 @@ describe('MediaModal', () => {
     const wrapper = shallow(<MediaModal history={{ goBack: jest.fn() }} />);
     expect(wrapper.find('Modal').props().isOpen).toBe(true);
   });
-  // it('closes when the outside is clicked', () => {
+  it('renders with fetching state', () => {
 
-  //   const historyMock = { goBack: jest.fn(), preventDefault: () => {} };
-  //   const wrapper = shallow(<MediaModal history={historyMock} />);
-  //   wrapper.props().onRequestClose();
-  //   expect(historyMock.goBack.mock.calls.length).toBe(1);
-  // });
+    const historyMock = { goBack: jest.fn()};
+    const wrapper = shallow(<MediaModal history={historyMock} />);
+    
+    expect(wrapper.state().isFetching).toBe(true);
+  });
 });
