@@ -15,11 +15,11 @@ import ReactPlayer from 'react-player';
 const customStyles = {
   content: {
     // width: '1000px',
-    // alignItems: 'stretch',
+    alignItems: 'center',
+    backgroundColor: 'black',
     borderRadius: '5px',
     bottom: 'auto',
     display: 'flex',
-    alignItems: 'center',
     flexDirection: 'column',
     flexShrink: 1,
     height: '80vh',
@@ -28,7 +28,6 @@ const customStyles = {
     overflowX: 'hidden',
     overflowY: 'hidden',
     position: 'absolute',
-    backgroundColor: 'black',
     right: 'auto',
     top: '50%',
     transform: 'translate(-50%, -50%)',

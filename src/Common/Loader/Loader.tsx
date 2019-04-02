@@ -1,7 +1,7 @@
 import React from 'react';
 import { Keyframes, animated } from 'react-spring/renderprops.cjs';
-//import { TimingAnimation, Easing } from '../../../src/addons'
-const items = ['item1', 'item2', 'item3'] 
+
+const items = ['item1', 'item2', 'item3'];
 export const Container = Keyframes.Spring(async next => {
   while (true) {
     await next({
@@ -11,49 +11,47 @@ export const Container = Keyframes.Spring(async next => {
   }
 });
 export const Content = ({ radians, color }) =>
-      items.map((_, i) => (
-        <animated.svg
-          key={i}
-          style={{
-            width: 60,
-            height: 60,
-            willChange: 'transform',
-            transform: radians.interpolate(r => `translate3d(0, ${20 * Math.sin(r + (i * 2 * Math.PI) / 5)}px, 0)`),
-          }}
-          viewBox="0 0 175 175"
-        >
-          <animated.g fill={color} fillRule="evenodd">
-            <circle cx="50" cy="50" r="50" />
-          </animated.g>
-        </animated.svg>
-      ));
-export const Loader = ({isFetching}) => {
-  
-    return isFetching ? (
-      <div>
-        <Container reset native keys={items} config={{ duration: 2000 }}>
-          {
-            ({ radians, color }) =>
-            items.map((_, i) => (
-              <animated.svg
-                key={i}
-                style={{
-                  width: 60,
-                  height: 60,
-                  willChange: 'transform',
-                  transform: radians.interpolate(r => `translate3d(0, ${20 * Math.sin(r + (i * 2 * Math.PI) / 5)}px, 0)`),
-                }}
-                viewBox="0 0 175 175"
-              >
-                <animated.g fill={color} fillRule="evenodd">
-                  <circle cx="50" cy="50" r="50" />
-                </animated.g>
-              </animated.svg>
-            ))
-          }
-        </Container>
-      </div>
-    ) : null
-  }
+  items.map((_, i) => (
+    <animated.svg
+      key={i}
+      style={{
+        height: 60,
+        transform: radians.interpolate(r => `translate3d(0, ${20 * Math.sin(r + (i * 2 * Math.PI) / 5)}px, 0)`),
+        width: 60,
+        willChange: 'transform',
+      }}
+      viewBox="0 0 175 175"
+    >
+      <animated.g fill={color} fillRule="evenodd">
+        <circle cx="50" cy="50" r="50" />
+      </animated.g>
+    </animated.svg>
+  ));
+export const Loader = ({ isFetching }) => {
+  return isFetching ? (
+    <div>
+      <Container reset={true} native={true} keys={items} config={{ duration: 2000 }}>
+        {({ radians, color }) =>
+          items.map((_, i) => (
+            <animated.svg
+              key={i}
+              style={{
+                height: 60,
+                transform: radians.interpolate(r => `translate3d(0, ${20 * Math.sin(r + (i * 2 * Math.PI) / 5)}px, 0)`),
+                width: 60,
+                willChange: 'transform',
+              }}
+              viewBox="0 0 175 175"
+            >
+              <animated.g fill={color} fillRule="evenodd">
+                <circle cx="50" cy="50" r="50" />
+              </animated.g>
+            </animated.svg>
+          ))
+        }
+      </Container>
+    </div>
+  ) : null;
+};
 
-export default Loader
+export default Loader;

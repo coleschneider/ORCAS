@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Notifications from './Notifications';
-import {toast} from 'react-toastify'
-
+import { toast } from 'react-toastify';
 
 jest.useFakeTimers();
 
@@ -16,21 +15,19 @@ describe('Notifications', () => {
   });
   it('should create a toast when onIdle is called', () => {
     const wrapper = mount(<Notifications />);
-    wrapper.instance().onIdle({idle: true})
-    wrapper.update()
-    expect(wrapper.instance().idleToast).toBeDefined()
+    wrapper.instance().onIdle({ idle: true });
+    wrapper.update();
+    expect(wrapper.instance().idleToast).toBeDefined();
   });
   it('should update the toast when the toast is defined and its not in idle', () => {
     const wrapper = mount(<Notifications />);
-    const toastSpy = jest.spyOn(toast, 'update')
+    const toastSpy = jest.spyOn(toast, 'update');
 
-    
-    const idleToastId = 'asdad'
-    wrapper.instance().idleToast = idleToastId
-    
-    wrapper.instance().onIdle({idle: false})
-    
-    expect(toastSpy).toHaveBeenCalledWith(idleToastId, {autoClose: 3000, onClose: expect.any(Function)})
+    const idleToastId = 'asdad';
+    wrapper.instance().idleToast = idleToastId;
+
+    wrapper.instance().onIdle({ idle: false });
+
+    expect(toastSpy).toHaveBeenCalledWith(idleToastId, { autoClose: 3000, onClose: expect.any(Function) });
   });
-
 });
