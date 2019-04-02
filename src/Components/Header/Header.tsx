@@ -91,6 +91,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   renderDropdown = ({ linkNodes, to }) => {
     return (
       <div
+      tabIndex={1}
       key={to}
         onBlur={this.toggleDropdown}
         onClick={this.toggleDropdown}
