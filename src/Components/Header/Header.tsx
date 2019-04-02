@@ -2,7 +2,6 @@ import * as React from 'react';
 import { animated, Spring, Transition } from 'react-spring/renderprops.cjs';
 
 import Logo from './Logo/Logo';
-import NavLink, { navlinks } from './Nav/Nav';
 import { Link } from 'react-scroll';
 import Toggle from './Toggle/Toggle';
 import './header.scss';
@@ -78,6 +77,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           <Spring
             native={true}
             force={true}
+
             config={{ tension: 1500, friction: 100, precision: 1 }}
             from={{ height: isOpen ? 0 : 'auto' }}
             to={{ height: isOpen ? 'auto' : 0 }}
@@ -141,20 +141,13 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       <div className="underlined" />
                     </Link>
                   </li>
-                  <div className="dropdown">
+                  <div className={isDropdown ? "dropdown show-items" : 'dropdown'}>
                     <li>
                       <a
                         onClick={this.toggleDropdown}
-                        // activeClass="current"
-                        // to="meet"
-                        // spy={false}
-                        // smooth={true}
-                        // onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                        // offset={-70}
-                        // duration={500}
+                        className="dropdown-text"
                       >
                         meet
-                        <div className="underlined" />
                       </a>
                     </li>
                     <div className="dropdown-content">
@@ -173,7 +166,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                         {item =>
                           item &&
                           (props => (
-                            <div style={props} className="dropdown-content">
+                            <animated.div style={props}>
                               {submenuLinks &&
                                 submenuLinks.map(menuItem => (
                                   <Link
@@ -186,7 +179,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                                     {menuItem.to}
                                   </Link>
                                 ))}
-                            </div>
+                            </animated.div>
                           ))
                         }
                       </Transition>
