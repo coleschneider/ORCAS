@@ -1,22 +1,53 @@
 import * as React from 'react';
-import { animated, Spring } from 'react-spring/renderprops.cjs';
+import { animated, Spring, Transition } from 'react-spring/renderprops.cjs';
 
 import Logo from './Logo/Logo';
-import NavLink, { navlinks } from './Nav/Nav';
+import { Link } from 'react-scroll';
 import Toggle from './Toggle/Toggle';
 import './header.scss';
+import DonateButton from 'Common/DonateButton/DonateButton';
+import NavLinks from 'Common/NavLinks/NavLinks';
 
 interface HeaderState {
   activeElement: activeElementType;
   isMobile: boolean;
   isOpen: boolean;
   isSticky: boolean;
+  isDropdown: boolean;
 }
 
 interface HeaderProps {
   setHeaderScroll: (isGreater: boolean) => void;
 }
 
+const Dropdown = ({ isOpen, isDropdown, isMobile, linkNodes }) => (
+  <Transition
+    unique={true}
+    reset={true}
+    items={isMobile ? isDropdown && isOpen : isDropdown}
+    from={{
+      height: 0,
+    }}
+    enter={{
+      height: 'auto',
+    }}
+    leave={{ height: 0 }}
+  >
+    {item =>
+      item &&
+      (props => (
+        <animated.div style={props} className="dropdown-content">
+          {linkNodes &&
+            linkNodes.map(menuItem => (
+              <Link to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
+                {menuItem.to}
+              </Link>
+            ))}
+        </animated.div>
+      ))
+    }
+  </Transition>
+);
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
   missionRef: Element;
@@ -49,13 +80,44 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       setHeaderScroll(true);
     }
   };
+  toggleDropdown = () =>
+    this.setState(({ isDropdown }) => ({
+      isDropdown: !isDropdown,
+    }));
   setDisplay = () =>
     this.setState({
-      isMobile: window.innerWidth <= 767,
+      isMobile: window.innerWidth <= 800,
     });
-
+  renderDropdown = ({ linkNodes, to }) => {
+    return (
+      <div
+      key={to}
+        onBlur={this.toggleDropdown}
+        onClick={this.toggleDropdown}
+        className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
+      >
+        <li>
+          <a className="dropdown-text">{to}</a>
+        </li>
+        <Dropdown {...this.state} linkNodes={linkNodes} />
+      </div>
+    );
+  };
+  renderHeaderLinks = link => {
+    return link.linkNodes ? (
+      this.renderDropdown(link)
+    ) : (
+      <li key={link.to}>
+        <Link {...link} onSetActive={(id, el) => this.handleSetActive(id, el)}>
+          {link.to}
+          <div className="underlined" />
+        </Link>
+      </li>
+    );
+  };
   render() {
-    const { isMobile, isOpen } = this.state;
+    const { isMobile, isOpen, isDropdown } = this.state;
+
     return (
       <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
@@ -70,14 +132,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             {props => (
               <animated.nav className={`header-nav-wrap ${isOpen && 'is-open'}`} style={isMobile ? props : undefined}>
                 <animated.ul className={`header-main-nav ${isOpen && 'is-open'}`} style={props}>
-                  {navlinks.map((link, i) => (
-                    <NavLink {...link} key={i} handleSetActive={this.handleSetActive} />
-                  ))}
-                  <div className="mobile-nav-content__btn-wrap">
-                    <a href="#contact" className="btn btn--primary home-content__btn smoothscroll">
-                      Donate
-                    </a>
-                  </div>
+                  {NavLinks.map(link => this.renderHeaderLinks(link))}
+                  <DonateButton />
                 </animated.ul>
               </animated.nav>
             )}

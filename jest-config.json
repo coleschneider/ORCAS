@@ -12,7 +12,8 @@
     "/src/App.tsx",
     "/src/Routes.tsx",
     "/src/index.tsx",
-    "/src/serviceWorker.ts"
+    "/src/serviceWorker.ts",
+    "src/Common/LazyRoute/LazyRoute.tsx"
   ],
   "coverageThreshold": {
     "global": {

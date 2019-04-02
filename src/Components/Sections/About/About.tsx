@@ -3,6 +3,7 @@ import './about.scss';
 import Slide from 'react-reveal/Slide';
 
 import { createSection } from 'utils/sectionUtils';
+import Video from 'Components/Video/Video';
 const processes = [
   {
     body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam`,
@@ -44,6 +45,7 @@ const AboutWrapper = createSection({
 function About() {
   return (
     <AboutWrapper>
+      <Video />
       <div className="row process-wrap">
         <div className="process">
           <div className="process__steps block-1-2 block-tab-full group">

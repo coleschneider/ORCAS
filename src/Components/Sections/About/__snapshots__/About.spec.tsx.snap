@@ -2,6 +2,7 @@
 
 exports[`About matches the snapshot 1`] = `
 <Component>
+  <Video />
   <div
     className="row process-wrap"
   >

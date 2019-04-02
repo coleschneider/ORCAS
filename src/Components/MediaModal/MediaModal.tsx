@@ -1,5 +1,8 @@
 import * as React from 'react';
 import ReactModal from 'react-modal';
+// import ReactPlayer from 'react-player';
+import { RouteComponentProps } from 'react-router';
+import Loader from 'Common/Loader/Loader';
 import ReactPlayer from 'react-player';
 
 (() => {
@@ -12,10 +15,11 @@ import ReactPlayer from 'react-player';
 const customStyles = {
   content: {
     // width: '1000px',
-    alignItems: 'stretch',
+    // alignItems: 'stretch',
     borderRadius: '5px',
     bottom: 'auto',
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'column',
     flexShrink: 1,
     height: '80vh',
@@ -24,6 +28,7 @@ const customStyles = {
     overflowX: 'hidden',
     overflowY: 'hidden',
     position: 'absolute',
+    backgroundColor: 'black',
     right: 'auto',
     top: '50%',
     transform: 'translate(-50%, -50%)',
@@ -41,31 +46,47 @@ const customStyles = {
   },
 };
 
-const MediaModal = ({ history }) => {
-  return (
-    <ReactModal
-      isOpen={true}
-      onRequestClose={e => {
-        // e.preventDefault();
-        // e.stopPropagation();
-        history.goBack();
-      }}
-      style={customStyles}
-    >
-      <ReactPlayer
-        width="100%"
-        height="100%"
-        url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
-        config={{
-          vimeo: {
-            playerOptions: {
-              height: 200,
-            },
-          },
+interface MediaModalState {
+  isFetching: boolean;
+}
+class MediaModal extends React.Component<RouteComponentProps, MediaModalState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFetching: true,
+    };
+  }
+
+  render() {
+    const { isFetching } = this.state;
+    const { history } = this.props;
+    return (
+      <ReactModal
+        isOpen={true}
+        onRequestClose={e => {
+          history.goBack();
         }}
-      />
-    </ReactModal>
-  );
-};
+        style={customStyles}
+      >
+        <Loader isFetching={isFetching} />
+        <ReactPlayer
+          width="100%"
+          onReady={() => this.setState({ isFetching: false })}
+          onError={() => this.setState({ isFetching: false })}
+          style={{ display: isFetching ? 'none' : undefined }}
+          height="100%"
+          url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
+          config={{
+            vimeo: {
+              playerOptions: {
+                height: 200,
+              },
+            },
+          }}
+        />
+      </ReactModal>
+    );
+  }
+}
 
 export default MediaModal;
