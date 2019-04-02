@@ -389,7 +389,7 @@ li a.current .underlined {
 @media only screen and (min-width: 801px) and (max-width: 900px){
   .dropdown-content {
      position: absolute;
-     right: 0px;
+     
   }
 }
 /* Header dropdown*/
@@ -430,21 +430,28 @@ li a.current .underlined {
 }
 
 .dropdown {
-  overflow: hidden;
+overflow: hidden;
+display: inline-flex;
+}
+.dropdown:focus {
+  outline: none;
+}
+@media screen and (max-width: 800px) {
+  .dropdown {
+    position: relative;
+    display: block;
+    }
+    .dropdown-content {
+      background-color: $blue-primary;
+    }
 }
 @media screen and (min-width: 800px) {
-  .dropdown {
-    float: right;
-    overflow: hidden;
-  }
+
   .dropdown-content {
     position: absolute;
   }
 }
-.dropdown {
-  // float: right;
-  overflow: hidden;
-}
+
 
 .dropdown .dropbtn {
   font-size: 17px;    
@@ -463,6 +470,8 @@ li a.current .underlined {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   overflow: hidden;
+  top: 50px;
+  
 }
 
 .dropdown-content a {
@@ -526,262 +535,3 @@ li a.current .underlined {
 
 
 
-
-
-$transition: 0.3s;
-$width: 100px;
-$height: 100px;
-$icon-margin: 20px;
-$per-row: 4;
-$per-col: 3;
-$total-width: ($width + 2 * $icon-margin)* 4;
-$total-height: 10+ ($height * $per-col) + ($icon-margin * $per-col * 2);
-$color: #fff;
-$border: 1px solid $color;
-
-
-
-@function pi() {
-  @return 3.14159265359;
-}
-
-@function pow($base, $exp) {
-  $value: $base;
-  @if $exp > 1 {
-    @for $i from 2 through $exp {
-      $value: $value * $base;
-    }
-  }
-  @if $exp < 1{
-    @for $i from 0 through -$exp {
-      $value: $value / $base;
-    }
-  }
-  @return $value;
-}
-
-
-@function fact($num) {
-  $fact: 1;
-  @if $num > 0{
-    @for $i from 1 through $num {
-      $fact: $fact * $i;
-    }
-  }
-  @return $fact;
-}
-
-@function rad($angle) {
-  $unit: unit($angle);
-  $unitless: $angle / ($angle * 0 + 1);
-  // If the angle has 'deg' as unit, convert to radians.
-  @if $unit == deg {
-    $unitless: $unitless / 180 * pi();
-  }
-  @return $unitless;
-}
-
-@function cos($angle) {
-  $cos: 0;
-  $angle: rad($angle);
-  // Iterate a bunch of times.
-  @for $i from 0 through 10 {
-    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
-  }
-  @return $cos;
-}
-
-
-html {
-  box-sizing: border-box;
-  font-size: 0; // for perfect fitting with spacing in my html
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-  outline: none;
-
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  background: #1F8A70;
-
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-}
-
-.content-inner {
-  width: $total-width;
-  height: $total-height;
-  position: relative;
-  left: -$total-width/2;
-  top: -$total-height/2;
-}
-
-.icon {
-  margin: $icon-margin;
-  display: inline-block;
-  width: $width;
-  height: $height;
-  border: $border;
-  cursor: pointer;
-}
-
-
-  $dd-height: $height/7;
-  $dd-width: $width/2;
-
-.dropdown-icon {
-
-
-  position: relative;
-  margin: $height/2.2 $width/4;
-
-  transition: $transition; 
-
-  &:before,
-  &:after {
-    transition: $transition; 
-    content: ' ';
-    position: absolute;
-    width: $dd-width;
-    height: $dd-height;
-    background: $color;
-    border-radius: $dd-width;
-
-  }
-
-  &:before {
-    left: -$dd-width/2 * cos(45deg) + ($dd-height/3);
-    transform: rotate(45deg);
-  }
-  &:after {
-    left: $dd-width/2*cos(45deg) - ($dd-height/3);
-    transform: rotate(-45deg);
-  }
-}
-
-
-#dropdown-3 {
-  &.close {
-    &:before{
-      transform: rotate(-45deg);
-    }
-    &:after{
-      transform: rotate(45deg);
-    }
-  }
-}
-
-
-$mn-width: $width*6/8;
-$mn-height: $height/7;
-
-.menu {
-  position: relative;
-  background: $color;
-  width: $mn-width;
-  height: $mn-height;
-  margin-top: $height*3/7;
-  margin-left:$width*1/8;
-  border-radius: $mn-width;
-  transition: $transition; 
-
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    width: $mn-width;
-    height: $mn-height;
-    background: $color;
-    border-radius: $mn-width;
-    transition: $transition; 
-
-
-  }
-
-  &:before {
-    top: -$height*2/7;
-  }
-  &:after {
-    top: $height*2/7;
-  }  
-}
-
-#menu-1 {
-  &.close {
-    background: transparent;
-
-    &:before,
-    &:after {
-      top:0;
-    }
-    &:before{
-      transform: rotate(-45deg);
-    }
-    &:after{
-      transform: rotate(45deg);
-    }
-  }
-}
-
-
-#menu-2 {
-  &.close {
-    background: transparent;
-
-    &:before,
-    &:after {
-      top:0;
-    }
-    &:before{
-      transform: rotate(45deg);
-    }
-    &:after{
-      transform: rotate(-45deg);
-    }
-  }
-}
-
-
-#menu-3 {
-  &.close {
-    &:before,
-    &:after {
-      top:0;
-    }
-  }
-}
-
-#menu-4 {
-  &.close {
-
-    // transform: scaleY(0.2);
-    //     transform: scaleX(0.2);
-    border-radius: 50%;
-    transform: rotate(90deg) scaleX(0.2);
-    &:before {
-      border-radius: 50%;
-
-    }
-
-    &:after {
-      border-radius: 50%;
-
-
-    }
-  }
-}
-
-#icon-4, #icon-8, #icon-12 {
-  border-color: white;
-}

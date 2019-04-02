@@ -4,10 +4,11 @@ import { Route, RouteComponentProps, Switch } from 'react-router';
 import ErrorBoundary from 'Components/ErrorBoundary/ErrorBoundary';
 import Footer from 'Components/Footer/Footer'; // relative imports
 import Header from 'Components/Header/Header';
-import MediaModal from 'Components/MediaModal/MediaModal';
+const MediaModal = React.lazy(() => import('./Components/MediaModal/MediaModal'));
 import Notifications from 'Common/Notifications/Notifications';
 import Routes from './Routes';
 import 'stylesheets/main.scss'; // stylesheets
+import LazyRoute from 'Common/LazyRoute/LazyRoute';
 
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
@@ -37,7 +38,7 @@ class App extends React.Component<RouteComponentProps> {
         <Switch location={isModal ? this.previousLocation : location}>
           <Route path="/" component={Routes} />
         </Switch>
-        <Route path="/path" component={MediaModal} />
+        <LazyRoute path="/path" component={MediaModal} />
         <Footer showScroller={showScroller} />
       </ErrorBoundary>
     );

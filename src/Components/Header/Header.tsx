@@ -6,6 +6,7 @@ import { Link } from 'react-scroll';
 import Toggle from './Toggle/Toggle';
 import './header.scss';
 import DonateButton from 'Common/DonateButton/DonateButton';
+import NavLinks from 'Common/NavLinks/NavLinks';
 
 interface HeaderState {
   activeElement: activeElementType;
@@ -18,15 +19,35 @@ interface HeaderState {
 interface HeaderProps {
   setHeaderScroll: (isGreater: boolean) => void;
 }
-const submenuLinks = [
-  {
-    to: 'seniors',
-  },
-  {
-    to: 'team',
-  },
-];
 
+const Dropdown = ({ isOpen, isDropdown, isMobile, linkNodes }) => (
+  <Transition
+    unique={true}
+    reset={true}
+    items={isMobile ? isDropdown && isOpen : isDropdown}
+    from={{
+      height: 0,
+    }}
+    enter={{
+      height: 'auto',
+    }}
+    leave={{ height: 0 }}
+  >
+    {item =>
+      item &&
+      (props => (
+        <animated.div style={props} className="dropdown-content">
+          {linkNodes &&
+            linkNodes.map(menuItem => (
+              <Link to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
+                {menuItem.to}
+              </Link>
+            ))}
+        </animated.div>
+      ))
+    }
+  </Transition>
+);
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
   missionRef: Element;
@@ -65,11 +86,38 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     }));
   setDisplay = () =>
     this.setState({
-      isMobile: window.innerWidth <= 767,
+      isMobile: window.innerWidth <= 800,
     });
-
+  renderDropdown = ({ linkNodes, to }) => {
+    return (
+      <div
+      key={to}
+        onBlur={this.toggleDropdown}
+        onClick={this.toggleDropdown}
+        className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
+      >
+        <li>
+          <a className="dropdown-text">{to}</a>
+        </li>
+        <Dropdown {...this.state} linkNodes={linkNodes} />
+      </div>
+    );
+  };
+  renderHeaderLinks = link => {
+    return link.linkNodes ? (
+      this.renderDropdown(link)
+    ) : (
+      <li key={link.to}>
+        <Link {...link} onSetActive={(id, el) => this.handleSetActive(id, el)}>
+          {link.to}
+          <div className="underlined" />
+        </Link>
+      </li>
+    );
+  };
   render() {
     const { isMobile, isOpen, isDropdown } = this.state;
+
     return (
       <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
@@ -77,7 +125,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           <Spring
             native={true}
             force={true}
-
             config={{ tension: 1500, friction: 100, precision: 1 }}
             from={{ height: isOpen ? 0 : 'auto' }}
             to={{ height: isOpen ? 'auto' : 0 }}
@@ -85,134 +132,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             {props => (
               <animated.nav className={`header-nav-wrap ${isOpen && 'is-open'}`} style={isMobile ? props : undefined}>
                 <animated.ul className={`header-main-nav ${isOpen && 'is-open'}`} style={props}>
-                  <li>
-                    <Link
-                      activeClass="current"
-                      to="home"
-                      spy={true}
-                      smooth={true}
-                      onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                      offset={-70}
-                      duration={500}
-                    >
-                      home
-                      <div className="underlined" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      activeClass="current"
-                      to="mission"
-                      spy={true}
-                      smooth={true}
-                      onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                      offset={-70}
-                      duration={500}
-                    >
-                      mission
-                      <div className="underlined" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      activeClass="current"
-                      to="about"
-                      spy={true}
-                      smooth={true}
-                      onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                      offset={-70}
-                      duration={500}
-                    >
-                      about
-                      <div className="underlined" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      activeClass="current"
-                      to="services"
-                      spy={true}
-                      smooth={true}
-                      onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                      offset={-70}
-                      duration={500}
-                    >
-                      services
-                      <div className="underlined" />
-                    </Link>
-                  </li>
-                  <div className={isDropdown ? "dropdown show-items" : 'dropdown'}>
-                    <li>
-                      <a
-                        onClick={this.toggleDropdown}
-                        className="dropdown-text"
-                      >
-                        meet
-                      </a>
-                    </li>
-                    <div className="dropdown-content">
-                      <Transition
-                        unique={true}
-                        reset={true}
-                        items={isMobile ? isDropdown && isOpen : isDropdown}
-                        from={{
-                          height: 0,
-                        }}
-                        enter={{
-                          height: 'auto',
-                        }}
-                        leave={{ height: 0 }}
-                      >
-                        {item =>
-                          item &&
-                          (props => (
-                            <animated.div style={props}>
-                              {submenuLinks &&
-                                submenuLinks.map(menuItem => (
-                                  <Link
-                                    to={menuItem.to}
-                                    activeClass="active-submenu"
-                                    smooth={true}
-                                    duration={500}
-                                    spy={true}
-                                  >
-                                    {menuItem.to}
-                                  </Link>
-                                ))}
-                            </animated.div>
-                          ))
-                        }
-                      </Transition>
-                    </div>
-                  </div>
-                  <li>
-                    <Link
-                      activeClass="current"
-                      to="donate"
-                      spy={true}
-                      smooth={true}
-                      onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                      offset={-70}
-                      duration={500}
-                    >
-                      donate
-                      <div className="underlined" />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      activeClass="current"
-                      to="contact"
-                      spy={true}
-                      smooth={true}
-                      onSetActive={(id, el) => this.handleSetActive && this.handleSetActive(id, el)}
-                      offset={-70}
-                      duration={500}
-                    >
-                      contact
-                      <div className="underlined" />
-                    </Link>
-                  </li>
+                  {NavLinks.map(link => this.renderHeaderLinks(link))}
                   <DonateButton />
                 </animated.ul>
               </animated.nav>
