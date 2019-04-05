@@ -8,7 +8,7 @@ const MediaComponent = () => (
   </div>
 );
 describe('MediaModal', () => {
-  let historySpy = jest.fn();
+  const historySpy = jest.fn();
   let wrapper;
   const setupModal = (props = { history: historySpy }) => {
     wrapper = shallow(
