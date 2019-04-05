@@ -5,8 +5,7 @@ import Reveal from 'react-reveal';
 import './mission.scss';
 
 const MissionWrap = createSection({
-  description: `Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia
-  assumenda repudiandae non cumque qui. Amet repellat omnis ea.`,
+  description: `ORCAS’ mission is to generate interest and raise funds to build a state-of-the-art senior community and recreational center in Oxnard, CA.`,
   displayTitle: 'Our Mission',
   sectionName: 'mission',
 });

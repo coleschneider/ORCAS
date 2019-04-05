@@ -41,10 +41,10 @@ const NavLinks: INavLink[] = [
     duration: 500,
     linkNodes: [
       {
-        to: 'seniors',
+        to: 'team',
       },
       {
-        to: 'team',
+        to: 'seniors',
       },
     ],
     smooth: true,

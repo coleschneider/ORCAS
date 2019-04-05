@@ -29,15 +29,14 @@ interface CarouselState {
   index: number;
 }
 class Carousel extends React.Component<CarouselProps, CarouselState> {
-  static Slide = ({ children, author, avatar }) => (
+  static Slide = ({ children, author, avatar, role }) => (
     <div className="meet__slide">
       <img alt="Author image" src={avatar} className="meet__avatar" />
-      <span className="quote">❝</span>
       <p>{children}</p>
       <div className="meet__author">
         <span className="meet__name">{author}</span>
         <a href="#0" className="meet__link">
-          @{author}
+          - {role}
         </a>
       </div>
     </div>

@@ -1,0 +1,36 @@
+@import '.../../../../../stylesheets/layout/colors.scss';
+
+.testimonials {
+  display: flex;
+ padding: 16px;
+  @media only screen and (max-width:800px) {
+    flex-direction: column;
+  }
+}
+
+.testimonial-container {
+  padding: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: $bg-grey;
+  @media only screen and (max-width:800px) {
+    margin-bottom: 5px;
+  }
+}
+
+.s-senior-testimonials {
+  padding-bottom: 16rem;
+  padding-top: 5rem;
+  background: $blue-primary
+  
+}
+
+.s-senior-testimonials .display-1,
+.s-senior-testimonials h3 {
+  color: black;
+}
+.s-senior-testimonials p.lead
+{
+  color: #ffffff;
+}

@@ -61,9 +61,15 @@ export default ({ showScroller }) => (
               Fax: (+1) 800 ORCAS
             </p>
             <p>
+              Location <br />
+            5540 W. 5th St. #142
+            Oxnard, CA 93035
+
+            </p>
+            <p>
               Need help or have a question? Contact us at: <br />
               <a href="mailto:#0" className="footer__mail-link">
-                support@orcas.com
+              kittypatrol@roadrunner.com
               </a>
             </p>
           </div>

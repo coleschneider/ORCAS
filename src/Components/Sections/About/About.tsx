@@ -6,25 +6,23 @@ import { createSection } from 'utils/sectionUtils';
 import Video from 'Components/Video/Video';
 const processes = [
   {
-    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam`,
-    header: 'An Emphasis on Community',
+    body: `ORCAS is a newly established nonprofit organization based in Oxnard, California`,
+    header: 'Background',
     left: true,
   },
   {
-    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam`,
-    header: 'An Emphasis on Community',
+    body: `ORCAS was formed to address the aging individuals within the community who are seeking access to a newer and safer community senior center.`,
+    header: 'Purpose',
     right: true,
   },
   {
-    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam`,
-    header: 'As a group',
+    body: `After establishing a relationship with the senior members of the surrounding communities and understanding the concerns associated with the existing facilities, ORCAS gathered experienced members of the community from a variety of occupational backgrounds to address the growing concern.`,
+    header: 'Relationships',
     left: true,
   },
   {
-    body: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-    rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-    explicabo.`,
-    header: 'With our Mission',
+    body: `ORCAS’ goal is to create a new senior facility that can meet the standard of the deserving seniors of the surrounding areas.`,
+    header: 'Goal and Community',
     right: true,
   },
 ];
@@ -39,7 +37,7 @@ const Step = ({ header, body, ...rest }) => (
 
 const AboutWrapper = createSection({
   className: 'about-how',
-  displayTitle: 'How will we achieve?',
+  displayTitle: 'Goal and Purpose',
   sectionName: 'about',
 });
 function About() {
