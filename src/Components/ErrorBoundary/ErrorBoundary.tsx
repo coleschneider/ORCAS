@@ -6,7 +6,7 @@ interface ErrorState {
 }
 
 interface ErrorProps {
-  children: React.ReactElement | React.ReactElement[];
+  children: React.ReactElement[] | React.ReactFragment[];
 }
 
 class ErrorBoundary extends React.Component<ErrorProps, ErrorState> {

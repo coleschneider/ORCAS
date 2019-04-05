@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MeetTheSeniors, MeetTheTeam } from 'Sections/Meet/ Meet';
+import { MeetTheSeniors, MeetTheTeam } from 'Sections/Meet/Meet';
 
 describe('Meet', () => {
   describe('MeetTheTeam', () => {
