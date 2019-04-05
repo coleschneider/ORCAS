@@ -20,28 +20,26 @@ export const MeetTheSeniors = () => (
     <div className="testimonials">
       <div className="testimonial-container">
         <span className="quote">❝</span>
-        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
-        eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+        Excepturi nam cupiditate culpa doloremque deleniti repellat.
         <span className="quote-2">❞</span>
+         <br />
+        -A User
       </div>
       <div className="testimonial-container">
         <span className="quote">❝</span>
-        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
-        eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+        Excepturi nam cupiditate culpa doloremque deleniti repellat.
         <span className="quote-2">❞</span>
+         <br />
+        -A User
       </div>
       <div className="testimonial-container">
         <span className="quote">❝</span>
-        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
-        eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+        Excepturi nam cupiditate culpa doloremque deleniti repellat.
         <span className="quote-2">❞</span>
+         <br />
+        -A User
       </div>
-      <div className="testimonial-container">
-        <span className="quote">❝</span>
-        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
-        eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        <span className="quote-2">❞</span>
-      </div>
+      
     </div>
   </TestimonialWrapper>
 );
