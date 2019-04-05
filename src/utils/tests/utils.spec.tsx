@@ -19,7 +19,6 @@ describe('utils', () => {
       window.addEventListener = jest.fn((event, cb) => {
         map[event] = cb;
       });
-      // map({ key: 'Enter' });
     });
   });
 });

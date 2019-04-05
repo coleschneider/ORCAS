@@ -34,6 +34,12 @@ exports[`Services matches the snapshot 1`] = `
     >
       Here are the building plans, and schematics. Probably go into a bit more detail here once its more clear
     </ServiceItem>
+    <ServiceItem
+      icon="icon-group"
+      title="Senior Activities"
+    >
+      Painting, gaming, Computer Lessons, and other activities!
+    </ServiceItem>
   </div>
 </Component>
 `;

@@ -1,9 +1,10 @@
 import * as React from 'react';
 import './about.scss';
 import Slide from 'react-reveal/Slide';
-
+import * as CaseStatement from 'Images/case_statement.png';
 import { createSection } from 'utils/sectionUtils';
-import Video from 'Components/Video/Video';
+import Video from './Video/Video';
+import ModalButton from 'Common/ModalButton/ModalButton';
 const processes = [
   {
     body: `ORCAS is a newly established nonprofit organization based in Oxnard, California`,
@@ -34,10 +35,10 @@ const Step = ({ header, body, ...rest }) => (
     </div>
   </Slide>
 );
-
+const images = [{ id: 0, title: 'Case Statement' }, { id: 1, title: 'Brochure' }];
 const AboutWrapper = createSection({
   className: 'about-how',
-  displayTitle: 'Goal and Purpose',
+  displayTitle: 'About',
   sectionName: 'about',
 });
 function About() {
@@ -51,6 +52,15 @@ function About() {
               return <Step key={index} {...process} />;
             })}
           </div>
+        </div>
+      </div>
+      <div className="media-btn-container">
+        <div className="btn-wrap">
+          <ModalButton text="Case Statement" imageId="case_statement" />
+        </div>
+        <div className="spacer" />
+        <div className="btn-wrap">
+          <ModalButton text="Brochure" style={{ background: '#80d3d2' }} imageId="brochure" />
         </div>
       </div>
     </AboutWrapper>

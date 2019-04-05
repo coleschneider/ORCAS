@@ -92,6 +92,7 @@
     "@types/recompose": "^0.30.5",
     "@types/styled-components": "^4.1.12",
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.16.0",
     "coveralls": "^3.0.3",
     "enzyme-to-json": "^3.3.5",
     "formik": "^1.5.1",

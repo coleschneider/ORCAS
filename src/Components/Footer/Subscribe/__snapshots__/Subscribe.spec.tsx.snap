@@ -8,7 +8,7 @@ exports[`Subscribe should match the snapshot 1`] = `
     enableReinitialize={false}
     initialValues={
       Object {
-        "email": "",
+        "email_address": "",
       }
     }
     isInitialValid={false}

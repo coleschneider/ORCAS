@@ -6,7 +6,7 @@ const Video = () => (
     <div className="shadow-overlay" />
     <Link
       to={{
-        pathname: '/path',
+        pathname: '/video',
         state: {
           modal: true,
         },

@@ -9,7 +9,12 @@ import Notifications from 'Common/Notifications/Notifications';
 import Routes from './Routes';
 import 'stylesheets/main.scss'; // stylesheets
 import LazyRoute from 'Common/LazyRoute/LazyRoute';
-
+import withRouterModal, { VideoPlayer } from 'Components/MediaModal/MediaModal';
+import * as CaseStatement from 'Images/case_statement.png';
+const images = {
+  brochure: CaseStatement,
+  case_statement: CaseStatement,
+};
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
   state = {
@@ -38,7 +43,8 @@ class App extends React.Component<RouteComponentProps> {
         <Switch location={isModal ? this.previousLocation : location}>
           <Route path="/" component={Routes} />
         </Switch>
-        <LazyRoute path="/path" component={MediaModal} />
+        <LazyRoute path="/video" component={VideoPlayer} />
+        <LazyRoute path="/img/:id" component={({ match }) => <img src={images[match.params.id]} />} />
         <Footer showScroller={showScroller} />
       </ErrorBoundary>
     );

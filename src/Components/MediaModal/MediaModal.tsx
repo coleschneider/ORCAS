@@ -1,9 +1,5 @@
 import * as React from 'react';
 import ReactModal from 'react-modal';
-// import ReactPlayer from 'react-player';
-import { RouteComponentProps } from 'react-router';
-import Loader from 'Common/Loader/Loader';
-import ReactPlayer from 'react-player';
 
 (() => {
   if (process.env.NODE_ENV === 'test') {
@@ -45,47 +41,16 @@ const customStyles = {
   },
 };
 
-interface MediaModalState {
-  isFetching: boolean;
-}
-class MediaModal extends React.Component<RouteComponentProps, MediaModalState> {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isFetching: true,
-    };
-  }
-
-  render() {
-    const { isFetching } = this.state;
-    const { history } = this.props;
-    return (
-      <ReactModal
-        isOpen={true}
-        onRequestClose={e => {
-          history.goBack();
-        }}
-        style={customStyles}
-      >
-        <Loader isFetching={isFetching} />
-        <ReactPlayer
-          width="100%"
-          onReady={() => this.setState({ isFetching: false })}
-          onError={() => this.setState({ isFetching: false })}
-          style={{ display: isFetching ? 'none' : undefined }}
-          height="100%"
-          url="https://player.vimeo.com/video/223376401?color=00a650&title=0&byline=0&portrait=0"
-          config={{
-            vimeo: {
-              playerOptions: {
-                height: 200,
-              },
-            },
-          }}
-        />
-      </ReactModal>
-    );
-  }
-}
+const MediaModal = ({ children, history }) => (
+  <ReactModal
+    isOpen={true}
+    onRequestClose={e => {
+      history.goBack();
+    }}
+    style={customStyles}
+  >
+    {children}
+  </ReactModal>
+);
 
 export default MediaModal;

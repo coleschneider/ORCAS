@@ -29,7 +29,7 @@ exports[`Footer matches the snapshot 1`] = `
     <div
       className="col-full footer__subscribe end"
     >
-      <MyForm />
+      <NewsletterForm />
     </div>
   </div>
   <div

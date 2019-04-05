@@ -29,11 +29,11 @@ describe('validateDonation', () => {
   });
 
   describe('validateSubscribe', () => {
-    it('should return error if email is invalid', () => {
+    it('should return error if email_address is invalid', () => {
       const errors = validation.validateSubscribe({
-        email: 'sadsd',
+        email_address: 'sadsd',
       });
-      expect(errors.email).toBe('Invalid email address');
+      expect(errors.email_address).toBe('Invalid email address');
     });
   });
 });

@@ -2,7 +2,8 @@
 
 .testimonials {
   display: flex;
- padding: 16px;
+   padding: 16px;
+
   @media only screen and (max-width:800px) {
     flex-direction: column;
   }
@@ -10,12 +11,12 @@
 
 .testimonial-container {
   padding: 16px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
   border-radius: 5px;
   background-color: $bg-grey;
   @media only screen and (max-width:800px) {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 }
 

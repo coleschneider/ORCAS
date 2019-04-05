@@ -39,5 +39,33 @@ exports[`About matches the snapshot 1`] = `
       </div>
     </div>
   </div>
+  <div
+    className="media-btn-container"
+  >
+    <div
+      className="btn-wrap"
+    >
+      <ModalButton
+        imageId="case_statement"
+        text="Case Statement"
+      />
+    </div>
+    <div
+      className="spacer"
+    />
+    <div
+      className="btn-wrap"
+    >
+      <ModalButton
+        imageId="brochure"
+        style={
+          Object {
+            "background": "#80d3d2",
+          }
+        }
+        text="Brochure"
+      />
+    </div>
+  </div>
 </Component>
 `;

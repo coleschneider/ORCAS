@@ -7,7 +7,7 @@ import { Link } from 'react-scroll';
 const ServicesWrapper = createSection({
   description: `Et nihil atque ex. Reiciendis et rerum ut voluptate. Omnis molestiae nemo est. Ut quis enim rerum quia
                 assumenda repudiandae molestiae cumque qui. Amet repellat omnis ea.`,
-  displayTitle: 'Our Values and Services',
+  displayTitle: 'New Services',
   sectionName: 'services',
 });
 
@@ -26,6 +26,9 @@ export default () => (
       </ServiceItem>
       <ServiceItem icon="icon-building" title="Building Plans">
         Here are the building plans, and schematics. Probably go into a bit more detail here once its more clear
+      </ServiceItem>
+      <ServiceItem icon="icon-group" title="Senior Activities">
+        Painting, gaming, Computer Lessons, and other activities!
       </ServiceItem>
     </div>
   </ServicesWrapper>

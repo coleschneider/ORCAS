@@ -22,24 +22,23 @@ export const MeetTheSeniors = () => (
         <span className="quote">❝</span>
         Excepturi nam cupiditate culpa doloremque deleniti repellat.
         <span className="quote-2">❞</span>
-         <br />
+        <br />
         -A User
       </div>
       <div className="testimonial-container">
         <span className="quote">❝</span>
         Excepturi nam cupiditate culpa doloremque deleniti repellat.
         <span className="quote-2">❞</span>
-         <br />
+        <br />
         -A User
       </div>
       <div className="testimonial-container">
         <span className="quote">❝</span>
         Excepturi nam cupiditate culpa doloremque deleniti repellat.
         <span className="quote-2">❞</span>
-         <br />
+        <br />
         -A User
       </div>
-      
     </div>
   </TestimonialWrapper>
 );

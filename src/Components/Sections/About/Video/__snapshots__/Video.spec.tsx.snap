@@ -11,7 +11,7 @@ exports[`Video should match the screenshot 1`] = `
     className="btn-video"
     to={
       Object {
-        "pathname": "/path",
+        "pathname": "/video",
         "state": Object {
           "modal": true,
         },
