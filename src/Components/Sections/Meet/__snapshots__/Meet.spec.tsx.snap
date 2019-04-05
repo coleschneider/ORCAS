@@ -1,10 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Meet should match the screenshot 1`] = `
+exports[`Meet MeetTheSeniors should match the screenshot 1`] = `
+<Component>
+  <div
+    className="testimonials"
+  >
+    <div
+      className="testimonial-container"
+    >
+      <span
+        className="quote"
+      >
+        ❝
+      </span>
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      <span
+        className="quote-2"
+      >
+        ❞
+      </span>
+    </div>
+    <div
+      className="testimonial-container"
+    >
+      <span
+        className="quote"
+      >
+        ❝
+      </span>
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      <span
+        className="quote-2"
+      >
+        ❞
+      </span>
+    </div>
+    <div
+      className="testimonial-container"
+    >
+      <span
+        className="quote"
+      >
+        ❝
+      </span>
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      <span
+        className="quote-2"
+      >
+        ❞
+      </span>
+    </div>
+    <div
+      className="testimonial-container"
+    >
+      <span
+        className="quote"
+      >
+        ❝
+      </span>
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+      <span
+        className="quote-2"
+      >
+        ❞
+      </span>
+    </div>
+  </div>
+</Component>
+`;
+
+exports[`Meet MeetTheTeam should match the screenshot 1`] = `
 <Component>
   <Carousel>
     <Component
-      author="auser1"
+      author="Kay Brainard"
       avatar={
         Object {
           "0": "a",
@@ -20,11 +89,12 @@ exports[`Meet should match the screenshot 1`] = `
           "default": "avatar.png",
         }
       }
+      role="President"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
     </Component>
     <Component
-      author="auser2"
+      author="Alison O’Neill"
       avatar={
         Object {
           "0": "a",
@@ -40,11 +110,12 @@ exports[`Meet should match the screenshot 1`] = `
           "default": "avatar.png",
         }
       }
+      role="Vice-President"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
     </Component>
     <Component
-      author="auser3"
+      author="Lori Nasatir"
       avatar={
         Object {
           "0": "a",
@@ -60,6 +131,91 @@ exports[`Meet should match the screenshot 1`] = `
           "default": "avatar.png",
         }
       }
+      role="Second-In-Command"
+    >
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+    </Component>
+    <Component
+      author="Barbara Page"
+      avatar={
+        Object {
+          "0": "a",
+          "1": "v",
+          "2": "a",
+          "3": "t",
+          "4": "a",
+          "5": "r",
+          "6": ".",
+          "7": "p",
+          "8": "n",
+          "9": "g",
+          "default": "avatar.png",
+        }
+      }
+      role="Publicity Contact"
+    >
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+    </Component>
+    <Component
+      author="Kathie Lanker"
+      avatar={
+        Object {
+          "0": "a",
+          "1": "v",
+          "2": "a",
+          "3": "t",
+          "4": "a",
+          "5": "r",
+          "6": ".",
+          "7": "p",
+          "8": "n",
+          "9": "g",
+          "default": "avatar.png",
+        }
+      }
+      role="Member"
+    >
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+    </Component>
+    <Component
+      author="Michael Williams"
+      avatar={
+        Object {
+          "0": "a",
+          "1": "v",
+          "2": "a",
+          "3": "t",
+          "4": "a",
+          "5": "r",
+          "6": ".",
+          "7": "p",
+          "8": "n",
+          "9": "g",
+          "default": "avatar.png",
+        }
+      }
+      role="Member"
+    >
+      Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
+    </Component>
+    <Component
+      author="Clark Owens"
+      avatar={
+        Object {
+          "0": "a",
+          "1": "v",
+          "2": "a",
+          "3": "t",
+          "4": "a",
+          "5": "r",
+          "6": ".",
+          "7": "p",
+          "8": "n",
+          "9": "g",
+          "default": "avatar.png",
+        }
+      }
+      role="Member"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
     </Component>

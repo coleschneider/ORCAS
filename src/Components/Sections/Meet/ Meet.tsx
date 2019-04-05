@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Carousel from 'Components/Carousel/Carousel';
 import * as PlaceholderAvatar from 'Images/avatar.png';
-import './meet.scss'
+import './meet.scss';
 import { createSection } from 'utils/sectionUtils';
 const TeamWrapper = createSection({
   className: 'about-how',
@@ -15,45 +15,40 @@ const TestimonialWrapper = createSection({
   sectionName: 'seniors',
 });
 
-
- export const MeetTheSeniors = () => (
+export const MeetTheSeniors = () => (
   <TestimonialWrapper>
-           
-           <div className="testimonials">
-           
-            <div className="testimonial-container">
-            <span className="quote">❝</span> 
-                Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
+    <div className="testimonials">
+      <div className="testimonial-container">
+        <span className="quote">❝</span>
+        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        <span className="quote-2">❞</span>    
-            </div>
-            <div className="testimonial-container">
-            <span className="quote">❝</span> 
-                Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
+        <span className="quote-2">❞</span>
+      </div>
+      <div className="testimonial-container">
+        <span className="quote">❝</span>
+        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        <span className="quote-2">❞</span>    
-            </div>
-            <div className="testimonial-container">
-            <span className="quote">❝</span> 
-                Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
+        <span className="quote-2">❞</span>
+      </div>
+      <div className="testimonial-container">
+        <span className="quote">❝</span>
+        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        <span className="quote-2">❞</span>    
-            </div>
-            <div className="testimonial-container">
-            <span className="quote">❝</span> 
-                Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
+        <span className="quote-2">❞</span>
+      </div>
+      <div className="testimonial-container">
+        <span className="quote">❝</span>
+        Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-        <span className="quote-2">❞</span>    
-            </div>
-            
-        </div>
-        
+        <span className="quote-2">❞</span>
+      </div>
+    </div>
   </TestimonialWrapper>
-)
+);
 export const MeetTheTeam = () => (
   <TeamWrapper>
     <Carousel>
-      <Carousel.Slide author="Kay Brainard" role="President"avatar={PlaceholderAvatar}>
+      <Carousel.Slide author="Kay Brainard" role="President" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
       </Carousel.Slide>
@@ -65,7 +60,7 @@ export const MeetTheTeam = () => (
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
       </Carousel.Slide>
-      <Carousel.Slide author="Barbara Page"role="Publicity Contact" avatar={PlaceholderAvatar}>
+      <Carousel.Slide author="Barbara Page" role="Publicity Contact" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
       </Carousel.Slide>
@@ -73,7 +68,7 @@ export const MeetTheTeam = () => (
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
       </Carousel.Slide>
-      <Carousel.Slide author="Michael Williams" role="Member"avatar={PlaceholderAvatar}>
+      <Carousel.Slide author="Michael Williams" role="Member" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
       </Carousel.Slide>
@@ -83,4 +78,4 @@ export const MeetTheTeam = () => (
       </Carousel.Slide>
     </Carousel>
   </TeamWrapper>
-)
+);

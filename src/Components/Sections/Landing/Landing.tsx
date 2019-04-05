@@ -15,10 +15,7 @@ export default (props, ref) => (
               The Future of Oxnard's Senior Center <br />
               is Bright.
             </h1>
-            <h3>
-              Voluptatem ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explica. Nemo
-              enim ipsam voluptatem quia. Ut quis enim.
-            </h3>
+            <h3>Oxnard Recreation Center for Adults & Seniors</h3>
           </div>
           <div className="home-content__right">
             <img src={LandingImage} />

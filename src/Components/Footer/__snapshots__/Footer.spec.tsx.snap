@@ -136,13 +136,18 @@ exports[`Footer matches the snapshot 1`] = `
             Fax: (+1) 800 ORCAS
           </p>
           <p>
+            Location 
+            <br />
+            5540 W. 5th St. #142 Oxnard, CA 93035
+          </p>
+          <p>
             Need help or have a question? Contact us at: 
             <br />
             <a
               className="footer__mail-link"
               href="mailto:#0"
             >
-              support@orcas.com
+              kittypatrol@roadrunner.com
             </a>
           </p>
         </div>

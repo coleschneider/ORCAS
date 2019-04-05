@@ -62,14 +62,12 @@ export default ({ showScroller }) => (
             </p>
             <p>
               Location <br />
-            5540 W. 5th St. #142
-            Oxnard, CA 93035
-
+              5540 W. 5th St. #142 Oxnard, CA 93035
             </p>
             <p>
               Need help or have a question? Contact us at: <br />
               <a href="mailto:#0" className="footer__mail-link">
-              kittypatrol@roadrunner.com
+                kittypatrol@roadrunner.com
               </a>
             </p>
           </div>
