@@ -7,6 +7,8 @@ import Toggle from './Toggle/Toggle';
 import './header.scss';
 import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
+import { RouteComponentProps } from 'react-router';
+
 
 interface HeaderState {
   isMobile: boolean;
@@ -14,7 +16,7 @@ interface HeaderState {
   isDropdown: boolean;
 }
 
-interface HeaderProps {
+interface HeaderProps extends RouteComponentProps {
   setHeaderScroll: (isGreater: boolean) => void;
 }
 
@@ -105,11 +107,17 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     );
   };
   renderHeaderLinks = link => {
+    const { history, match } = this.props
     return link.linkNodes ? (
       this.renderDropdown(link)
     ) : (
       <li key={link.to}>
-        <Link {...link} onSetActive={(id, el) => this.handleSetActive(id, el)}>
+        <Link {...link} onSetActive={(id, el) => this.handleSetActive(id, el)} 
+        onClick={() => {
+              if(!match.isExact){
+                history.push('/')
+              }
+        }}>
           {link.to}
           <div className="underlined" />
         </Link>
@@ -118,7 +126,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   };
   render() {
     const { isMobile, isOpen } = this.state;
-
     return (
       <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
@@ -145,4 +152,4 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     );
   }
 }
-export default Header;
+export default Header

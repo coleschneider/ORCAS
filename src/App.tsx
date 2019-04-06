@@ -8,6 +8,7 @@ const MediaModal = React.lazy(() => import('./Components/MediaModal/MediaModal')
 import Notifications from 'Common/Notifications/Notifications';
 import { Routes, ModalRoutes } from './Routes';
 import 'stylesheets/main.scss'; // stylesheets
+import NotFound from 'Components/NotFound/NotFound';
 
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
@@ -32,15 +33,14 @@ class App extends React.Component<RouteComponentProps> {
     const isModal = !!(location.state && location.state.modal);
     return (
       <ErrorBoundary>
-        <Header setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} />
+        <Header 
+          {...this.props}
+          setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} 
+        />
         <Notifications />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route exact path="/" component={Routes} />
-          <Route render={() => (
-            <h1>
-              Not found
-            </h1>
-          )}/>
+          <Route component={NotFound}/>
         </Switch>
         {ModalRoutes}
         <Footer showScroller={showScroller} />
