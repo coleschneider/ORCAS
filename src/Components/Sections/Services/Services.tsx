@@ -17,9 +17,8 @@ export default () => (
       <ServiceItem icon="icon-chat" title="Donations and Fundraising">
         Reach out through social media, or sign up for the{' '}
         <Link smooth={true} duration={500} spy={true} to="contact">
-          Newsletter
+          Newsletter!
         </Link>
-        !
       </ServiceItem>
       <ServiceItem icon="icon-shield" title="More Secure">
         ORCAS' wants to provide the community of oxnard a safe and secure facility

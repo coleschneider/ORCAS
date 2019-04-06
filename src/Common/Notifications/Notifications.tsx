@@ -19,6 +19,7 @@ export default class Notifications extends React.Component {
     const { style, text } = NETWORK_MESSAGES[type];
     this.networkToast = toast[style](text, {
       autoClose: 5000,
+      className: `notification-${type}`,
     });
   };
 

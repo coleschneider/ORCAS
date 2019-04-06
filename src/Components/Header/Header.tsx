@@ -72,14 +72,17 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       isOpen: !isOpen,
     }));
 
-  handleSetActive = (id: string, el: Element) => {
-    const { setHeaderScroll } = this.props;
-    if (id === 'home') {
-      setHeaderScroll(false);
-    } else {
-      setHeaderScroll(true);
-    }
-  };
+  
+     handleSetActive = (id: activeElementType, el: Element) => {
+         const { isMobile } = this.state
+         const { setHeaderScroll } = this.props
+         if(isMobile){
+           this.setState({
+             isOpen: false,
+           })
+           }
+         setHeaderScroll(id !== 'home');
+  }
   toggleDropdown = () =>
     this.setState(({ isDropdown }) => ({
       isDropdown: !isDropdown,

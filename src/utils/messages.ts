@@ -7,6 +7,7 @@ export const NETWORK_MESSAGES = {
       "Experiencing connection problems? The app will still work offline, but you won't be viewing the most recent version",
   },
   online: {
+    className: 'notification-connect',
     style: 'success',
     text: "You're back online",
   },

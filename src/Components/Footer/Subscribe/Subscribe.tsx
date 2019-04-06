@@ -20,11 +20,11 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
       isFetching: false,
     };
   }
-  notifySuccess = () => toast.success(
-    `Successfully subscribed to newsletter`,
+  notifySuccess = ({message}) => toast.success(
+    message,
     {
       autoClose: 5000,
-      className: 'notification-inactive',
+      className: 'notification-formSuccess',
       position: 'bottom-right',
     },
   )
@@ -32,7 +32,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
     `There was an error attempting to subscribe to newsletter`,
     {
       autoClose: 5000,
-      className: 'notification-inactive',
+      className: 'notification-formError',
       position: 'bottom-right',
     },
   )
@@ -42,11 +42,11 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
     });
     return instance
       .post('/', values)
-      .then(() => {
+      .then((res) => {
         this.setState({
           isFetching: false,
         });
-        this.notifySuccess()
+        this.notifySuccess(res.data)
       })
       .catch(error => {
         this.notifyError()
@@ -79,7 +79,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
                   <div className="input-feedback">{errors.email_address}</div>
                 )}
 
-                <button type="submit" disabled={isSubmitting}>
+                <button className="btn" type="submit" disabled={isSubmitting}>
                   Submit
                 </button>
                 <label className="subscribe-message" />
