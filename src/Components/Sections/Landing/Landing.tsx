@@ -13,7 +13,7 @@ export default (props, ref) => (
           <div className="home-content__left">
             <h1>
               The Future of Oxnard's Senior Center <br />
-              is Bright.
+              is Bright
             </h1>
             <h3>Oxnard Recreation Center for Adults & Seniors</h3>
           </div>
