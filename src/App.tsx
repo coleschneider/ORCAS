@@ -33,14 +33,11 @@ class App extends React.Component<RouteComponentProps> {
     const isModal = !!(location.state && location.state.modal);
     return (
       <ErrorBoundary>
-        <Header 
-          {...this.props}
-          setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} 
-        />
+        <Header {...this.props} setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} />
         <Notifications />
         <Switch location={isModal ? this.previousLocation : location}>
-          <Route exact path="/" component={Routes} />
-          <Route component={NotFound}/>
+          <Route exact={true} path="/" component={Routes} />
+          <Route component={NotFound} />
         </Switch>
         {ModalRoutes}
         <Footer showScroller={showScroller} />

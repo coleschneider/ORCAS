@@ -9,7 +9,6 @@ import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
 import { RouteComponentProps } from 'react-router';
 
-
 interface HeaderState {
   isMobile: boolean;
   isOpen: boolean;
@@ -107,17 +106,20 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     );
   };
   renderHeaderLinks = link => {
-    const { history, match } = this.props
+    const { history, match } = this.props;
     return link.linkNodes ? (
       this.renderDropdown(link)
     ) : (
       <li key={link.to}>
-        <Link {...link} onSetActive={(id, el) => this.handleSetActive(id, el)} 
-        onClick={() => {
-              if(!match.isExact){
-                history.push('/')
-              }
-        }}>
+        <Link
+          {...link}
+          onSetActive={(id, el) => this.handleSetActive(id, el)}
+          onClick={() => {
+            if (!match.isExact) {
+              history.push('/');
+            }
+          }}
+        >
           {link.to}
           <div className="underlined" />
         </Link>
@@ -152,4 +154,4 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     );
   }
 }
-export default Header
+export default Header;
