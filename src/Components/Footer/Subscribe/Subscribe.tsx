@@ -20,36 +20,32 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
       isFetching: false,
     };
   }
-  notifySuccess = ({message}) => toast.success(
-    message,
-    {
+  notifySuccess = ({ message }) =>
+    toast.success(message, {
       autoClose: 5000,
       className: 'notification-formSuccess',
       position: 'bottom-right',
-    },
-  )
-  notifyError = () => toast.warn(
-    `There was an error attempting to subscribe to newsletter`,
-    {
+    });
+  notifyError = () =>
+    toast.warn(`There was an error attempting to subscribe to newsletter`, {
       autoClose: 5000,
       className: 'notification-formError',
       position: 'bottom-right',
-    },
-  )
+    });
   subscribeUser = async (values: FormFields) => {
     this.setState({
       isFetching: true,
     });
     return instance
       .post('/', values)
-      .then((res) => {
+      .then(res => {
         this.setState({
           isFetching: false,
         });
-        this.notifySuccess(res.data)
+        this.notifySuccess(res.data);
       })
       .catch(error => {
-        this.notifyError()
+        this.notifyError();
         this.setState({
           error,
           isFetching: false,

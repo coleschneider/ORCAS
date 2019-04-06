@@ -18,9 +18,8 @@ exports[`Services matches the snapshot 1`] = `
         spy={true}
         to="contact"
       >
-        Newsletter
+        Newsletter!
       </Link>
-      !
     </ServiceItem>
     <ServiceItem
       icon="icon-shield"

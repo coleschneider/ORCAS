@@ -53,9 +53,9 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   constructor(props) {
     super(props);
     this.state = {
+      isDropdown: false,
       isMobile: window.innerWidth <= 800,
       isOpen: false,
-      isDropdown: false,
     };
   }
 
@@ -70,16 +70,16 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
     }));
-     handleSetActive = (id: activeElementType, el: Element) => {
-         const { isMobile } = this.state
-         const { setHeaderScroll } = this.props
-         if(isMobile){
-           this.setState({
-             isOpen: false,
-           })
-           }
-         setHeaderScroll(id !== 'home');
-  }
+  handleSetActive = (id: activeElementType, el: Element) => {
+    const { isMobile } = this.state;
+    const { setHeaderScroll } = this.props;
+    if (isMobile) {
+      this.setState({
+        isOpen: false,
+      });
+    }
+    setHeaderScroll(id !== 'home');
+  };
   toggleDropdown = () =>
     this.setState(({ isDropdown }) => ({
       isDropdown: !isDropdown,
@@ -117,7 +117,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     );
   };
   render() {
-    const { isMobile, isOpen, isDropdown } = this.state;
+    const { isMobile, isOpen } = this.state;
 
     return (
       <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
