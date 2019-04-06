@@ -8,7 +8,7 @@ const paths = require('./paths');
 delete require.cache[require.resolve('./paths')];
 
 const NODE_ENV = process.env.NODE_ENV;
-const lambdaCdn = NODE_ENV === 'production' ? process.env.LAMBDA_CDN : 'localhost:3000'
+const lambdaCdn = NODE_ENV === 'production' ? process.env.LAMBDA_CDN : 'http://localhost:3000'
 if (!NODE_ENV) {
   throw new Error(
     'The NODE_ENV environment variable is required but was not specified.'

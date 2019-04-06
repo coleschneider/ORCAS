@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { withFormik, FormikActions, Formik } from 'formik';
-
+import { Formik } from 'formik';
+import { ToastContainer, toast } from 'react-toastify';
 import './subscribe.scss';
 import { validateSubscribe } from 'utils/validate';
 import instance from 'utils/apiService';
@@ -20,6 +20,22 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
       isFetching: false,
     };
   }
+  notifySuccess = () => toast.success(
+    `Successfully subscribed to newsletter`,
+    {
+      autoClose: 5000,
+      className: 'notification-inactive',
+      position: 'bottom-right',
+    },
+  )
+  notifyError = () => toast.warn(
+    `There was an error attempting to subscribe to newsletter`,
+    {
+      autoClose: 5000,
+      className: 'notification-inactive',
+      position: 'bottom-right',
+    },
+  )
   subscribeUser = async (values: FormFields) => {
     this.setState({
       isFetching: true,
@@ -30,6 +46,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
         this.setState({
           isFetching: false,
         });
+        this.notifySuccess()
       })
       .catch(error => {
         this.setState({
@@ -69,6 +86,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
             );
           }}
         </Formik>
+        <ToastContainer />
       </div>
     );
   }

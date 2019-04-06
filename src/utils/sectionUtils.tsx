@@ -8,7 +8,7 @@ interface CreateSection {
 type sectionChild = (props: CreateSection | any) => React.ReactElement;
 
 interface SectionProps {
-  children?: React.ReactChildren | sectionChild;
+  children?: React.ReactChildren | sectionChild | JSX.Element;
   headingStyle?: React.CSSProperties;
   subHeadingStyle?: React.CSSProperties;
 }
