@@ -9,10 +9,8 @@ import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
 
 interface HeaderState {
-  activeElement: activeElementType;
   isMobile: boolean;
   isOpen: boolean;
-  isSticky: boolean;
   isDropdown: boolean;
 }
 
@@ -38,8 +36,8 @@ const Dropdown = ({ isOpen, isDropdown, isMobile, linkNodes }) => (
       (props => (
         <animated.div style={props} className="dropdown-content">
           {linkNodes &&
-            linkNodes.map(menuItem => (
-              <Link to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
+            linkNodes.map((menuItem, i) => (
+              <Link key={i} to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
                 {menuItem.to}
               </Link>
             ))}
@@ -57,6 +55,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     this.state = {
       isMobile: window.innerWidth <= 800,
       isOpen: false,
+      isDropdown: false,
     };
   }
 
@@ -71,8 +70,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
     }));
-
-  
      handleSetActive = (id: activeElementType, el: Element) => {
          const { isMobile } = this.state
          const { setHeaderScroll } = this.props
