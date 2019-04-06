@@ -49,6 +49,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
         this.notifySuccess()
       })
       .catch(error => {
+        this.notifyError()
         this.setState({
           error,
           isFetching: false,
