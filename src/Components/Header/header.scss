@@ -10,7 +10,6 @@
   height: 78px;
   background-color: transparent;
   position: fixed;
-  transform: translateY(48px);
 }
 
 .s-header > .row {
@@ -24,7 +23,6 @@
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   position: fixed;
-  transform: translateY(0);
   
 }
 .network-status {

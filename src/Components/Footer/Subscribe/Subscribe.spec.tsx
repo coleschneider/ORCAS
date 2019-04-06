@@ -1,13 +1,22 @@
 import * as React from 'react';
 import Subscribe from './Subscribe';
 import apiService from 'utils/apiService';
-import * as subscribe from 'utils/validate';
-import { toast } from 'react-toastify';
+import * as sinon from 'sinon';
+import * as validation from 'utils/validate';
 
 jest.mock('utils/validate');
 
 jest.mock('utils/apiService');
+
 describe('Subscribe', () => {
+  let wrapper;
+  const submitForm = async (email = 'testing@gmail.com') => {
+    wrapper = mount(<Subscribe />);
+    await wrapper
+      .find('Formik')
+      .props()
+      .onSubmit(email);
+  };
   it('should match the snapshot', () => {
     const wrapper = shallow(<Subscribe />);
     expect(wrapper).toMatchSnapshot();
@@ -25,8 +34,9 @@ describe('Subscribe', () => {
       expect(subscribeSpy).toHaveBeenCalled();
       expect(subscribeSpy).toHaveBeenCalledWith('/', 'testing@gmail.com');
     });
+
     it('should call validate when the form changes', async () => {
-      const validateSpy = jest.spyOn(subscribe, 'validateSubscribe');
+      const validateSpy = jest.spyOn(validation, 'validateSubscribe');
       const wrapper = mount(<Subscribe />);
       wrapper.find('input').simulate('change', {
         target: {
@@ -40,27 +50,32 @@ describe('Subscribe', () => {
         .validate({ email_address: 'asdsad' });
       expect(validateSpy).toHaveBeenCalled();
     });
-    it('should show the correct toast when the form submits succesfully', () => {
-      const wrapper = mount(<Subscribe />);
-      const toastSpy = jest.spyOn(toast, 'success');
-      wrapper.instance().notifySuccess({ message: 'Testing' });
-      expect(toastSpy).toHaveBeenCalled();
-      expect(toastSpy).toHaveBeenCalledWith('Testing', {
-        autoClose: 5000,
-        className: 'notification-formSuccess',
-        position: 'bottom-right',
-      });
+  });
+  describe('Form Messages', () => {
+    const clock = sinon.useFakeTimers();
+    let apiInstanceSpy;
+
+    it('should handle succes messages correctly', async () => {
+      apiInstanceSpy = jest.spyOn(apiService, 'post');
+      await submitForm();
+      clock.tick(5);
+      wrapper.update();
+      expect(apiInstanceSpy).toBeCalledWith('/', 'testing@gmail.com');
+      expect(
+        wrapper
+          .find('.Toastify__toast-body')
+          .first()
+          .text(),
+      ).toBe('Successfully subscribed to newsletter!');
     });
-    it('should show a generic error when submit fails', () => {
-      const wrapper = mount(<Subscribe />);
-      const toastSpy = jest.spyOn(toast, 'warn');
-      wrapper.instance().notifyError();
-      expect(toastSpy).toHaveBeenCalled();
-      expect(toastSpy).toHaveBeenCalledWith('There was an error attempting to subscribe to newsletter', {
-        autoClose: 5000,
-        className: 'notification-formError',
-        position: 'bottom-right',
-      });
+    it('should handle error messages correctly', async () => {
+      apiInstanceSpy = jest.spyOn(apiService, 'post').mockImplementation(() => Promise.reject());
+      await submitForm();
+      clock.tick(5);
+      wrapper.update();
+      expect(wrapper.find('.Toastify__toast-body').text()).toBe(
+        'There was an error attempting to subscribe to newsletter',
+      );
     });
   });
 });

@@ -2,7 +2,7 @@ export default {
   post: (arg: any) =>
     Promise.resolve({
       data: {
-        message: 'test',
+        message: 'Successfully subscribed to newsletter!',
       },
     }),
 };

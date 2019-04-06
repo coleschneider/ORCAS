@@ -35,7 +35,12 @@ class App extends React.Component<RouteComponentProps> {
         <Header setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} />
         <Notifications />
         <Switch location={isModal ? this.previousLocation : location}>
-          <Route path="/" component={Routes} />
+          <Route exact path="/" component={Routes} />
+          <Route render={() => (
+            <h1>
+              Not found
+            </h1>
+          )}/>
         </Switch>
         {ModalRoutes}
         <Footer showScroller={showScroller} />
