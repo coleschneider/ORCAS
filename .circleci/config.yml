@@ -29,4 +29,4 @@ jobs:
       - run: sudo python get-pip.py
       - run: sudo pip install awscli --upgrade
       - run: aws --version
-      - run: npm run deploy
+      - run: ./scripts/sync.sh ${S3BUCKETNAME}
