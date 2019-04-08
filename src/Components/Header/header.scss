@@ -305,8 +305,6 @@ li a.current .underlined {
     // transform: translateY(-120%);
     overflow: hidden;
     margin: 0px;
-    top: 78px;
-    // top: 0;
 
    
   }
@@ -320,7 +318,7 @@ li a.current .underlined {
     display: block;
     font-size: 12px;
     padding-left: 0;
-    
+    padding-top: 100px;
     // height: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
   }
@@ -470,6 +468,14 @@ display: inline-flex;
   overflow: hidden;
   top: 50px;
   
+}
+#header-it > div > nav > ul > li:nth-child(5) > div > a:nth-child(1) {
+  color: black;
+  line-height: 30px;
+}
+#header-it > div > nav > ul > li:nth-child(5) > div > a:nth-child(2) {
+  color: black;
+  line-height: 30px;
 }
 
 .dropdown-content a {

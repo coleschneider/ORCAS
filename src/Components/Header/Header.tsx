@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { animated, Spring, Transition } from 'react-spring/renderprops.cjs';
+import posed from 'react-pose';
 
 import Logo from './Logo/Logo';
 import { Link } from 'react-scroll';
@@ -8,6 +8,7 @@ import './header.scss';
 import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
 import { RouteComponentProps } from 'react-router';
+
 
 interface HeaderState {
   isMobile: boolean;
@@ -20,32 +21,16 @@ interface HeaderProps extends RouteComponentProps {
 }
 
 const Dropdown = ({ isOpen, isDropdown, isMobile, linkNodes }) => (
-  <Transition
-    unique={true}
-    reset={true}
-    items={isMobile ? isDropdown && isOpen : isDropdown}
-    from={{
-      height: 0,
-    }}
-    enter={{
-      height: 'auto',
-    }}
-    leave={{ height: 0 }}
-  >
-    {item =>
-      item &&
-      (props => (
-        <animated.div style={props} className="dropdown-content">
+        <SubItem
+        pose={isDropdown ? "open" : "closed"}
+        className="dropdown-content">
           {linkNodes &&
             linkNodes.map((menuItem, i) => (
               <Link key={i} to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
                 {menuItem.to}
               </Link>
             ))}
-        </animated.div>
-      ))
-    }
-  </Transition>
+        </SubItem>
 );
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
@@ -91,18 +76,19 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     });
   renderDropdown = ({ linkNodes, to }) => {
     return (
-      <div
+      <Item
+        pose={this.props.isDropdown ? "dropdownOpen" : "dropdownClosed"}
         tabIndex={1}
         key={to}
-        onBlur={this.toggleDropdown}
+        // onBlur={this.toggleDropdown}
         onClick={this.toggleDropdown}
-        className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
+        // className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
       >
         <li>
           <a className="dropdown-text">{to}</a>
         </li>
         <Dropdown {...this.state} linkNodes={linkNodes} />
-      </div>
+      </Item>
     );
   };
   renderHeaderLinks = link => {
@@ -110,7 +96,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     return link.linkNodes ? (
       this.renderDropdown(link)
     ) : (
-      <li key={link.to}>
+      <Item>
         <Link
           {...link}
           onSetActive={(id, el) => this.handleSetActive(id, el)}
@@ -123,35 +109,78 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           {link.to}
           <div className="underlined" />
         </Link>
-      </li>
+        </Item>
     );
   };
+  renderMobileNav = () => {
+    const { isOpen } = this.state;
+      return (
+      <AnimatedNav pose={isOpen ? "open" : "closed"} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+        <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
+          {NavLinks.map(link => this.renderHeaderLinks(link))}
+          <DonateButton />
+        </ul>
+      </AnimatedNav>
+      )
+  }
+  renderNav = () => {
+    const { isOpen, isMobile } = this.state;
+      return isMobile ? this.renderMobileNav() : (
+      <nav pose={isOpen ? "open" : "closed"} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+        <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
+          {NavLinks.map(link => this.renderHeaderLinks(link))}
+          <DonateButton />
+        </ul>
+      </nav>
+      )
+  }
   render() {
-    const { isMobile, isOpen } = this.state;
+    const { isMobile, isOpen, isDropdown } = this.state;
     return (
       <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
           <Logo />
-          <Spring
-            native={true}
-            force={true}
-            config={{ tension: 1500, friction: 100, precision: 1 }}
-            from={{ height: isOpen ? 0 : 'auto' }}
-            to={{ height: isOpen ? 'auto' : 0 }}
-          >
-            {props => (
-              <animated.nav className={`header-nav-wrap ${isOpen && 'is-open'}`} style={isMobile ? props : undefined}>
-                <animated.ul className={`header-main-nav ${isOpen && 'is-open'}`} style={props}>
-                  {NavLinks.map(link => this.renderHeaderLinks(link))}
-                  <DonateButton />
-                </animated.ul>
-              </animated.nav>
-            )}
-          </Spring>
+            {this.renderNav()}
           {isMobile ? <Toggle onClick={this.toggle} isOpen={isOpen} /> : null}
         </div>
-      </header>
+        </header>
+      
     );
   }
 }
+
+
+const AnimatedNav = posed.nav({
+  open: {
+    y: '0%',
+  delayChildren: 100,
+  staggerChildren: 200,
+  beforeChildren: true,
+  },
+  closed: {
+    y: '-100%',
+    delay: 100,
+  }
+})
+
+const Item = posed.li({
+  open: {
+    y: 0,
+    opacity: 1,
+    // delayChildren: 50,
+    // staggerChildren: 200,
+    // beforeChildren: true
+  },
+  closed: { y: 20, opacity: 0, },
+  dropdownOpen: {
+    height: "auto"
+  },
+  dropdownClosed: {
+    height: 'auto'
+  }
+});
+const SubItem = posed.div({
+  open: { height: 0, },
+  closed: { height: "auto" }
+});
 export default Header;
