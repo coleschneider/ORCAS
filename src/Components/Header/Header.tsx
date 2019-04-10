@@ -8,6 +8,7 @@ import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
 import * as Animated from 'Common/NavLinks/AnimatedLinks';
 import { RouteComponentProps } from 'react-router';
+import { SubItem, AnimatedNav, Item } from './Nav/Nav';
 import Dropdown from './Dropdown/Dropdown';
 
 interface HeaderState {
@@ -19,7 +20,6 @@ interface HeaderState {
 interface HeaderProps extends RouteComponentProps {
   setHeaderScroll: (isGreater: boolean) => void;
 }
-
 
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
@@ -65,18 +65,18 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   };
   renderDropdown = ({ linkNodes, to }) => {
     return (
-      <Animated.Item
-        className="list-dropdown"
+      <Item
+        pose={this.props.isDropdown ? 'dropdownOpen' : 'dropdownClosed'}
         tabIndex={1}
         key={to}
         // onBlur={!this.state.isMobile && this.toggleDropdown}
         onClick={this.toggleDropdown}
-        className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
+        className="tab-drop"
       >
         <a className="dropdown-text">{to}</a>
 
-        <Dropdown isDropdown={this.state.isDropdown} linkNodes={linkNodes} />
-      </Animated.Item>
+        <Dropdown {...this.state} linkNodes={linkNodes} />
+      </Item>
     );
   };
   renderHeaderLinks = link => {
@@ -84,7 +84,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     return link.linkNodes ? (
       this.renderDropdown(link)
     ) : (
-      <Animated.Item key={link.to}>
+      <Item key={link.to}>
         <Link
           {...link}
           onSetActive={(id, el) => this.handleSetActive(id, el)}
@@ -97,18 +97,18 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           {link.to}
           <div className="underlined" />
         </Link>
-      </Animated.Item>
+      </Item>
     );
   };
   renderMobileNav = () => {
     const { isOpen } = this.state;
     return (
-      <Animated.AnimatedNav pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+      <AnimatedNav pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
           {NavLinks.map(link => this.renderHeaderLinks(link))}
           <DonateButton style={{ lineHeight: '4.6rem' }} />
         </ul>
-      </Animated.AnimatedNav>
+      </AnimatedNav>
     );
   };
   renderNav = () => {
@@ -116,7 +116,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     return isMobile ? (
       this.renderMobileNav()
     ) : (
-      <nav className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+      <nav pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
           {NavLinks.map(link => this.renderHeaderLinks(link))}
           <DonateButton />
@@ -137,8 +137,5 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     );
   }
 }
-
-
-
 
 export default Header;

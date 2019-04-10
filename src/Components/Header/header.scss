@@ -11,7 +11,9 @@
   background-color: transparent;
   position: fixed;
 }
-
+.tab-drop {
+  outline: none;
+}
 .s-header > .row {
   max-width: 1300px;
   height: 78px;
@@ -294,7 +296,7 @@ li.list-dropdown {
 
   .header-logo {
     margin: 8px 0 0 0;
-    left: 44px;
+    
   }
 
   

@@ -31,7 +31,20 @@ exports[`Services matches the snapshot 1`] = `
       icon="icon-building"
       title="Building Plans"
     >
-      Here are the building plans, and schematics. Probably go into a bit more detail here once its more clear
+      We are excited to share the new and upcoming schematics. Here are the new
+       
+      <Link
+        to={
+          Object {
+            "pathname": "/img/building_plans",
+            "state": Object {
+              "modal": true,
+            },
+          }
+        }
+      >
+        building plans
+      </Link>
     </ServiceItem>
     <ServiceItem
       icon="icon-group"

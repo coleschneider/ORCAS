@@ -20,9 +20,8 @@ describe('Header', () => {
   });
   it('renders with the navigation closed', () => {
     wrapper = shallow(<Header />);
-    // console.log(wrapper.debug())
-    const Posed = wrapper.find('nav');
-    expect(Posed.props().pose).toBe('closed');
+    const PosedComponent = wrapper.find('nav');
+    expect(PosedComponent.props().pose).toBe('closed');
   });
   it('renders with the navigation closed on mobile', () => {
     wrapper = mount(<Header />);

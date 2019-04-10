@@ -5,7 +5,7 @@ import './meet.scss';
 import { createSection } from 'utils/sectionUtils';
 const TeamWrapper = createSection({
   className: 'about-how',
-  displayTitle: 'Meet the team!',
+  displayTitle: 'Meet the Team!',
   sectionName: 'team',
 });
 const TestimonialWrapper = createSection({

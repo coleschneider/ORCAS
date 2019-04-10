@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import posed from 'react-pose';
 import { Link } from 'react-scroll';
 
 interface NavConfig {
@@ -48,3 +48,38 @@ const NavLink = ({ to, handleSetActive }) => (
 );
 
 export default NavLink;
+
+export const AnimatedNav = posed.nav({
+  closed: {
+    delay: 100,
+    y: '-88%',
+  },
+  open: {
+    beforeChildren: true,
+    delayChildren: 100,
+    staggerChildren: 200,
+    y: '0%',
+  },
+});
+
+export const Item = posed.li({
+  closed: { y: 20, opacity: 0 },
+  dropdownClosed: {
+    height: 'auto',
+  },
+  dropdownOpen: {
+    height: 'auto',
+  },
+
+  open: {
+    opacity: 1,
+    y: 0,
+    // delayChildren: 50,
+    // staggerChildren: 200,
+    // beforeChildren: true
+  },
+});
+export const SubItem = posed.div({
+  closed: { height: 'auto' },
+  open: { height: 0 },
+});
