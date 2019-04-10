@@ -18,13 +18,9 @@ describe('Header', () => {
     window['IntersectionObserver'] = windowIntersectionObserver;
   });
   it('renders with the navigation closed', () => {
-    wrapper = mount(<Header />);
-    const Spring = wrapper.find('Spring');
-    expect(
-      Spring.find('ul')
-        .children()
-        .children(),
-    ).toHaveLength(9);
+    wrapper = shallow(<Header />);
+    const PosedComponent = wrapper.find('nav');
+    expect(PosedComponent.props().pose).toBe('closed');
   });
   it('renders with the navigation closed on mobile', () => {
     wrapper = mount(<Header />);

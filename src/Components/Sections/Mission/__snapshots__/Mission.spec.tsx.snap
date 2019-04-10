@@ -43,7 +43,9 @@ exports[`Mission matches the snapshot 1`] = `
     }
     subHeadingStyle={
       Object {
+        "color": "#121619",
         "fontSize": "4rem",
+        "fontWeight": 800,
       }
     }
   />
