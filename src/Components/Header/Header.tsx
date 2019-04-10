@@ -1,5 +1,4 @@
 import * as React from 'react';
-import posed from 'react-pose';
 
 import Logo from './Logo/Logo';
 import { Link } from 'react-scroll';
@@ -7,8 +6,9 @@ import Toggle from './Toggle/Toggle';
 import './header.scss';
 import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
+import * as Animated from 'Common/NavLinks/AnimatedLinks';
 import { RouteComponentProps } from 'react-router';
-
+import Dropdown from './Dropdown/Dropdown';
 
 interface HeaderState {
   isMobile: boolean;
@@ -20,18 +20,7 @@ interface HeaderProps extends RouteComponentProps {
   setHeaderScroll: (isGreater: boolean) => void;
 }
 
-const Dropdown = ({ isOpen, isDropdown, isMobile, linkNodes }) => (
-        <SubItem
-        pose={isDropdown ? "open" : "closed"}
-        className="dropdown-content">
-          {linkNodes &&
-            linkNodes.map((menuItem, i) => (
-              <Link key={i} to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
-                {menuItem.to}
-              </Link>
-            ))}
-        </SubItem>
-);
+
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
   missionRef: Element;
@@ -52,10 +41,18 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     window.removeEventListener('resize', this.setDisplay);
   }
 
-  toggle = () =>
-    this.setState(({ isOpen }) => ({
+  toggle = () => this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
     }));
+  toggleDropdown = () =>
+    this.setState(({ isDropdown }) => ({
+      isDropdown: !isDropdown,
+    }));
+  setDisplay = () => this.setState({
+      isMobile: window.innerWidth <= 800,
+      isOpen: false,
+      isDropdown: false,
+    });
   handleSetActive = (id: activeElementType, el: Element) => {
     const { isMobile } = this.state;
     const { setHeaderScroll } = this.props;
@@ -66,29 +63,20 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     }
     setHeaderScroll(id !== 'home');
   };
-  toggleDropdown = () =>
-    this.setState(({ isDropdown }) => ({
-      isDropdown: !isDropdown,
-    }));
-  setDisplay = () =>
-    this.setState({
-      isMobile: window.innerWidth <= 800,
-    });
   renderDropdown = ({ linkNodes, to }) => {
     return (
-      <Item
-        pose={this.props.isDropdown ? "dropdownOpen" : "dropdownClosed"}
+      <Animated.Item
+        className="list-dropdown"
         tabIndex={1}
         key={to}
-        // onBlur={this.toggleDropdown}
+        // onBlur={!this.state.isMobile && this.toggleDropdown}
         onClick={this.toggleDropdown}
-        // className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
+        className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
       >
-        <li>
-          <a className="dropdown-text">{to}</a>
-        </li>
-        <Dropdown {...this.state} linkNodes={linkNodes} />
-      </Item>
+        <a className="dropdown-text">{to}</a>
+
+        <Dropdown isDropdown={this.state.isDropdown} linkNodes={linkNodes} />
+      </Animated.Item>
     );
   };
   renderHeaderLinks = link => {
@@ -96,7 +84,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     return link.linkNodes ? (
       this.renderDropdown(link)
     ) : (
-      <Item>
+      <Animated.Item key={link.to}>
         <Link
           {...link}
           onSetActive={(id, el) => this.handleSetActive(id, el)}
@@ -109,78 +97,48 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           {link.to}
           <div className="underlined" />
         </Link>
-        </Item>
+      </Animated.Item>
     );
   };
   renderMobileNav = () => {
     const { isOpen } = this.state;
-      return (
-      <AnimatedNav pose={isOpen ? "open" : "closed"} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+    return (
+      <Animated.AnimatedNav pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
           {NavLinks.map(link => this.renderHeaderLinks(link))}
-          <DonateButton />
+          <DonateButton style={{ lineHeight: '4.6rem' }} />
         </ul>
-      </AnimatedNav>
-      )
-  }
+      </Animated.AnimatedNav>
+    );
+  };
   renderNav = () => {
     const { isOpen, isMobile } = this.state;
-      return isMobile ? this.renderMobileNav() : (
-      <nav pose={isOpen ? "open" : "closed"} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+    return isMobile ? (
+      this.renderMobileNav()
+    ) : (
+      <nav className={`header-nav-wrap ${isOpen && 'is-open'}`}>
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
           {NavLinks.map(link => this.renderHeaderLinks(link))}
           <DonateButton />
         </ul>
       </nav>
-      )
-  }
+    );
+  };
   render() {
     const { isMobile, isOpen, isDropdown } = this.state;
     return (
       <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
           <Logo />
-            {this.renderNav()}
+          {this.renderNav()}
           {isMobile ? <Toggle onClick={this.toggle} isOpen={isOpen} /> : null}
         </div>
-        </header>
-      
+      </header>
     );
   }
 }
 
 
-const AnimatedNav = posed.nav({
-  open: {
-    y: '0%',
-  delayChildren: 100,
-  staggerChildren: 200,
-  beforeChildren: true,
-  },
-  closed: {
-    y: '-100%',
-    delay: 100,
-  }
-})
 
-const Item = posed.li({
-  open: {
-    y: 0,
-    opacity: 1,
-    // delayChildren: 50,
-    // staggerChildren: 200,
-    // beforeChildren: true
-  },
-  closed: { y: 20, opacity: 0, },
-  dropdownOpen: {
-    height: "auto"
-  },
-  dropdownClosed: {
-    height: 'auto'
-  }
-});
-const SubItem = posed.div({
-  open: { height: 0, },
-  closed: { height: "auto" }
-});
+
 export default Header;

@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import Header from './Header';
+
 describe('Header', () => {
   const windowIntersectionObserver = window['IntersectionObserver'];
 
@@ -18,13 +19,10 @@ describe('Header', () => {
     window['IntersectionObserver'] = windowIntersectionObserver;
   });
   it('renders with the navigation closed', () => {
-    wrapper = mount(<Header />);
-    const Spring = wrapper.find('Spring');
-    expect(
-      Spring.find('ul')
-        .children()
-        .children(),
-    ).toHaveLength(9);
+    wrapper = shallow(<Header />);
+    // console.log(wrapper.debug())
+    const Posed = wrapper.find('nav');
+    expect(Posed.props().pose).toBe('closed');
   });
   it('renders with the navigation closed on mobile', () => {
     wrapper = mount(<Header />);

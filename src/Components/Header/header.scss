@@ -98,7 +98,11 @@ li a.current .underlined {
   letter-spacing: 2px;
   margin: 0;
 }
-
+li.list-dropdown {
+  outline: none;
+  margin-right: 0px;
+ 
+}
 .header-nav-wrap .header-main-nav li {
   display: inline-block;
   padding-left: 0;
@@ -318,8 +322,7 @@ li a.current .underlined {
     display: block;
     font-size: 12px;
     padding-left: 0;
-    padding-top: 100px;
-    // height: auto;
+    height: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
   }
 
@@ -359,9 +362,9 @@ li a.current .underlined {
 
 }
 
-@media only screen and (max-width:400px) {
+@media only screen and (max-width:500px) {
   .header-logo {
-    left: 40px;
+    left: -20px;
   }
 
 
@@ -442,8 +445,8 @@ display: inline-flex;
     }
 }
 @media screen and (min-width: 800px) {
-
   .dropdown-content {
+    height: auto;
     position: absolute;
   }
 }
@@ -531,7 +534,6 @@ display: inline-flex;
     text-align: left;
   }
 }
-
 
 
 
