@@ -57,7 +57,7 @@ export const AnimatedNav = posed.nav({
   beforeChildren: true,
   },
   closed: {
-    y: '-100%',
+    y: '-88%',
     delay: 100,
   }
 })

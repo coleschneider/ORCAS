@@ -72,7 +72,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         key={to}
         // onBlur={this.toggleDropdown}
         onClick={this.toggleDropdown}
-        // className={this.state.isDropdown ? 'dropdown show-items' : 'dropdown'}
+        className="tab-drop"
       >
         <li>
           <a className="dropdown-text">{to}</a>
