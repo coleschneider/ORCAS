@@ -8,6 +8,8 @@ import './header.scss';
 import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
 import { RouteComponentProps } from 'react-router';
+import { SubItem , AnimatedNav, Item} from './Nav/Nav';
+import Dropdown from './Dropdown/Dropdown';
 
 
 interface HeaderState {
@@ -20,18 +22,6 @@ interface HeaderProps extends RouteComponentProps {
   setHeaderScroll: (isGreater: boolean) => void;
 }
 
-const Dropdown = ({ isOpen, isDropdown, isMobile, linkNodes }) => (
-        <SubItem
-        pose={isDropdown ? "open" : "closed"}
-        className="dropdown-content">
-          {linkNodes &&
-            linkNodes.map((menuItem, i) => (
-              <Link key={i} to={menuItem.to} activeClass="active-submenu" smooth={true} duration={500}>
-                {menuItem.to}
-              </Link>
-            ))}
-        </SubItem>
-);
 class Header extends React.Component<HeaderProps, HeaderState> {
   headerRef: Element;
   missionRef: Element;
@@ -150,37 +140,4 @@ class Header extends React.Component<HeaderProps, HeaderState> {
 }
 
 
-const AnimatedNav = posed.nav({
-  open: {
-    y: '0%',
-  delayChildren: 100,
-  staggerChildren: 200,
-  beforeChildren: true,
-  },
-  closed: {
-    y: '-100%',
-    delay: 100,
-  }
-})
-
-const Item = posed.li({
-  open: {
-    y: 0,
-    opacity: 1,
-    // delayChildren: 50,
-    // staggerChildren: 200,
-    // beforeChildren: true
-  },
-  closed: { y: 20, opacity: 0, },
-  dropdownOpen: {
-    height: "auto"
-  },
-  dropdownClosed: {
-    height: 'auto'
-  }
-});
-const SubItem = posed.div({
-  open: { height: 0, },
-  closed: { height: "auto" }
-});
 export default Header;
