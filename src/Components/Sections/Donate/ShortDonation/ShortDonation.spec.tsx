@@ -17,7 +17,7 @@ describe('DonationForm', () => {
         }}
       />,
     );
-    expect(wrapper.find('[test-id="donationForm"]').text()).toBe('test error');
+    expect(wrapper.find('[test-id="donation-form-errors"]').text()).toBe('test error');
   });
   it('should not show the error if it hasnt been touched', () => {
     const wrapper = shallow(
@@ -30,6 +30,6 @@ describe('DonationForm', () => {
         }}
       />,
     );
-    expect(wrapper.find('[test-id="donationForm"]').exists()).toBeFalsy();
+    expect(wrapper.find('[test-id="donation-form-errors"]').exists()).toBeFalsy();
   });
 });

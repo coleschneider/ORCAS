@@ -21,6 +21,7 @@ exports[`VideoPlayer should match the snapshot 1`] = `
     loop={false}
     muted={false}
     onBuffer={[Function]}
+    onBufferEnd={[Function]}
     onDisablePIP={[Function]}
     onDuration={[Function]}
     onEnablePIP={[Function]}

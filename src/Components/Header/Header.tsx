@@ -41,17 +41,19 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     window.removeEventListener('resize', this.setDisplay);
   }
 
-  toggle = () => this.setState(({ isOpen }) => ({
+  toggle = () =>
+    this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
     }));
   toggleDropdown = () =>
     this.setState(({ isDropdown }) => ({
       isDropdown: !isDropdown,
     }));
-  setDisplay = () => this.setState({
+  setDisplay = () =>
+    this.setState({
+      isDropdown: false,
       isMobile: window.innerWidth <= 800,
       isOpen: false,
-      isDropdown: false,
     });
   handleSetActive = (id: activeElementType, el: Element) => {
     const { isMobile } = this.state;
@@ -103,7 +105,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   renderMobileNav = () => {
     const { isOpen } = this.state;
     return (
-      <AnimatedNav test-id="mobileHeader-nav" pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+      <AnimatedNav
+        test-id="mobileHeader-nav"
+        pose={isOpen ? 'open' : 'closed'}
+        className={`header-nav-wrap ${isOpen && 'is-open'}`}
+      >
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
           {NavLinks.map(link => this.renderHeaderLinks(link))}
           <DonateButton style={{ lineHeight: '4.6rem' }} />
@@ -111,8 +117,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       </AnimatedNav>
     );
   };
-  renderNav = () =>{
-    const {isOpen} = this.state
+  renderNav = () => {
+    const { isOpen } = this.state;
     return (
       <nav test-id="header-nav" pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
@@ -121,9 +127,9 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         </ul>
       </nav>
     );
-  }
+  };
   render() {
-    const { isMobile, isOpen, isDropdown } = this.state;
+    const { isMobile, isOpen } = this.state;
     return (
       <header test-id="header" ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">

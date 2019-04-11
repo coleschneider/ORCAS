@@ -1,7 +1,6 @@
 import * as React from 'react';
 import posed from 'react-pose';
 
-
 export const AnimatedNav = posed.nav({
   closed: {
     delay: 100,
@@ -28,6 +27,6 @@ export const Item = posed.li({
   },
 });
 export const SubItem = posed.div({
-  closed: { height: 0, },
+  closed: { height: 0 },
   open: { height: 'auto' },
 });

@@ -53,7 +53,9 @@ exports[`Landing matches the snapshot 1`] = `
         <div
           className="home-content__left"
         >
-          <h1>
+          <h1
+            id="landing_text"
+          >
             The Future of Oxnard's Senior Center 
             <br />
             is Bright

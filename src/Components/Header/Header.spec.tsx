@@ -2,8 +2,6 @@ import * as React from 'react';
 import Header from './Header';
 
 describe('Header', () => {
-  
-
   const observe = jest.fn();
   let wrapper;
 
@@ -24,7 +22,4 @@ describe('Header', () => {
     wrapper.update();
     expect(wrapper.find('.is-open')).toBeDefined();
   });
-  it('sets the dropdown state', () => {
-    
-  })
 });

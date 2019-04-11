@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-scroll';
 interface DonateButtonProps {
-  style?: React.CSSProperties
+  style?: React.CSSProperties;
 }
 const DonateButton = ({ style }: DonateButtonProps) => (
   <div className="mobile-nav-content__btn-wrap" style={style}>
