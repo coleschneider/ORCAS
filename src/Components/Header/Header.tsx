@@ -103,7 +103,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   renderMobileNav = () => {
     const { isOpen } = this.state;
     return (
-      <AnimatedNav pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+      <AnimatedNav test-id="mobileHeader-nav" pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
           {NavLinks.map(link => this.renderHeaderLinks(link))}
           <DonateButton style={{ lineHeight: '4.6rem' }} />
@@ -111,26 +111,24 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       </AnimatedNav>
     );
   };
-  renderNav = () => {
-    const { isOpen, isMobile } = this.state;
-    return isMobile ? (
-      this.renderMobileNav()
-    ) : (
-      <nav pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
+  renderNav = () =>{
+    const {isOpen} = this.state
+    return (
+      <nav test-id="header-nav" pose={isOpen ? 'open' : 'closed'} className={`header-nav-wrap ${isOpen && 'is-open'}`}>
         <ul className={`header-main-nav ${isOpen && 'is-open'}`}>
           {NavLinks.map(link => this.renderHeaderLinks(link))}
           <DonateButton />
         </ul>
       </nav>
     );
-  };
+  }
   render() {
     const { isMobile, isOpen, isDropdown } = this.state;
     return (
-      <header ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
+      <header test-id="header" ref={el => (this.headerRef = el)} className="s-header sticky" id="header-it">
         <div className="row">
           <Logo />
-          {this.renderNav()}
+          {isMobile ? this.renderMobileNav() : this.renderNav()}
           {isMobile ? <Toggle onClick={this.toggle} isOpen={isOpen} /> : null}
         </div>
       </header>

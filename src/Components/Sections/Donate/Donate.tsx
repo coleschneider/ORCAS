@@ -62,7 +62,7 @@ class Donate extends React.Component<{}, DonateState> {
                   </li>
                   <li>Subscribe</li>
                 </ul>
-                <div className="btn btn--primary large full-width" onClick={this.handleSubmit}>
+                <div test-id="donate-btn" className="btn btn--primary large full-width" onClick={this.handleSubmit}>
                   Donate
                 </div>
               </div>

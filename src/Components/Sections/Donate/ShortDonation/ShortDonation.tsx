@@ -23,6 +23,7 @@ export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>
       <h3 className="item-plan__title">Another amount?</h3>
 
       <input
+        test-id="donation-input"
         type="text"
         name="amount"
         placeholder="Enter an amount to give"
@@ -34,7 +35,7 @@ export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>
 
       <p className="item-plan__per">Or give monthly</p>
       {errors.amount && touched.amount && (
-        <div className="input-feedback" test-id="donationForm">
+        <div className="input-feedback" test-id="donation-form-errors">
           {errors.amount}
         </div>
       )}

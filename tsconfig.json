@@ -20,6 +20,9 @@
     "noEmit": true,
     "jsx": "preserve",
     "baseUrl": "./",
+    "types": [
+      "cypress"
+    ],
     "plugins": [
       {"name": "typescript-tslint-plugin"}
     ],
@@ -37,7 +40,8 @@
   ],
   "include": [
     "src",
-    "types"
+    "types",
+    "cypress/*/*.ts"
   ]
   
 }

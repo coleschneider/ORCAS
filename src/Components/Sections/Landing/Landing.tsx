@@ -11,7 +11,7 @@ export default (props, ref) => (
       <div className="home-content">
         <div className="row home-content__main">
           <div className="home-content__left">
-            <h1>
+            <h1 id="landing_text">
               The Future of Oxnard's Senior Center <br />
               is Bright
             </h1>
