@@ -32,7 +32,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
       className: 'notification-formError',
       position: 'bottom-right',
     });
-  subscribeUser = async (values: FormFields) => {
+  subscribeUser = async (values: FormFields, cb) => {
     this.setState({
       isFetching: true,
     });
@@ -43,6 +43,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
           isFetching: false,
         });
         this.notifySuccess(res.data);
+        cb()
       })
       .catch(error => {
         this.notifyError();
@@ -53,13 +54,19 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
       });
   };
   render() {
+    const { isFetching } = this.state
     return (
       <div className="subscribe-form">
         <Formik initialValues={{ email_address: '' }} onSubmit={this.subscribeUser} validate={validateSubscribe}>
-          {({ values, touched, handleSubmit, errors, isSubmitting, handleChange, handleBlur, handleReset, dirty }) => {
+          {({ values, touched, handleSubmit, errors, isSubmitting, handleChange, handleBlur, resetForm, initialValues }) => {
             return (
-              <form onSubmit={handleSubmit} id="mc-form" className="group">
+              <form onSubmit={(e) => {
+                handleSubmit(e, resetForm)
+              }} id="mc-form" className="group"
+              test-id="contact-form" 
+              >
                 <input
+                  
                   type="email"
                   name="email_address"
                   onChange={handleChange}
@@ -72,10 +79,10 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
                   className={errors.email_address && touched.email_address ? 'email text-input error' : 'email'}
                 />
                 {errors.email_address && touched.email_address && (
-                  <div className="input-feedback">{errors.email_address}</div>
+                  <div test-id="contact-form-errors" className="input-feedback">{errors.email_address}</div>
                 )}
 
-                <button className="btn" type="submit" disabled={isSubmitting}>
+                <button className="btn" type="submit" disabled={isSubmitting || isFetching}>
                   Submit
                 </button>
                 <label className="subscribe-message" />
