@@ -23,7 +23,6 @@ exports[`MediaModal matches the snapshot 1`] = `
         "bottom": "auto",
         "display": "flex",
         "flexDirection": "column",
-        "flexShrink": 1,
         "height": "80vh",
         "justifyContent": "center",
         "left": "50%",

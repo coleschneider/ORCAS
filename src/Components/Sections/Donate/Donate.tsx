@@ -15,16 +15,13 @@ const DonateWrapper = createSection({
 
 class Donate extends React.Component<{}, DonateState> {
   submitDonation = null;
-  resetForm = null;
   handleSubmit = e => {
-    if (this.submitDonation && this.resetForm) {
+    if (this.submitDonation) {
       this.submitDonation(e);
-      this.resetForm();
     }
   };
-  bindSubmitForm = (submitDonation: () => void, resetForm) => {
+  bindSubmitForm = (submitDonation: () => void) => {
     this.submitDonation = submitDonation;
-    this.resetForm = resetForm
   };
   render() {
     return (

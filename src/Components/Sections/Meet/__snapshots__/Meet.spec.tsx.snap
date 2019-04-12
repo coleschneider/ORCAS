@@ -63,7 +63,7 @@ exports[`Meet MeetTheSeniors should match the screenshot 1`] = `
 exports[`Meet MeetTheTeam should match the screenshot 1`] = `
 <Component>
   <Carousel>
-    <Component
+    <UserSlide
       author="Kay Brainard"
       avatar={
         Object {
@@ -83,8 +83,8 @@ exports[`Meet MeetTheTeam should match the screenshot 1`] = `
       role="President"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-    </Component>
-    <Component
+    </UserSlide>
+    <UserSlide
       author="Alison O’Neill"
       avatar={
         Object {
@@ -104,8 +104,8 @@ exports[`Meet MeetTheTeam should match the screenshot 1`] = `
       role="Vice-President"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-    </Component>
-    <Component
+    </UserSlide>
+    <UserSlide
       author="Lori Nasatir"
       avatar={
         Object {
@@ -125,8 +125,8 @@ exports[`Meet MeetTheTeam should match the screenshot 1`] = `
       role="Second-In-Command"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-    </Component>
-    <Component
+    </UserSlide>
+    <UserSlide
       author="Barbara Page"
       avatar={
         Object {
@@ -146,8 +146,8 @@ exports[`Meet MeetTheTeam should match the screenshot 1`] = `
       role="Publicity Contact"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-    </Component>
-    <Component
+    </UserSlide>
+    <UserSlide
       author="Kathie Lanker"
       avatar={
         Object {
@@ -167,8 +167,8 @@ exports[`Meet MeetTheTeam should match the screenshot 1`] = `
       role="Member"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-    </Component>
-    <Component
+    </UserSlide>
+    <UserSlide
       author="Michael Williams"
       avatar={
         Object {
@@ -188,8 +188,8 @@ exports[`Meet MeetTheTeam should match the screenshot 1`] = `
       role="Member"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-    </Component>
-    <Component
+    </UserSlide>
+    <UserSlide
       author="Clark Owens"
       avatar={
         Object {
@@ -209,7 +209,7 @@ exports[`Meet MeetTheTeam should match the screenshot 1`] = `
       role="Member"
     >
       Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-    </Component>
+    </UserSlide>
   </Carousel>
 </Component>
 `;

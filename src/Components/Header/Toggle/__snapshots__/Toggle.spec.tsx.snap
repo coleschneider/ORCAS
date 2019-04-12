@@ -3,9 +3,9 @@
 exports[`Toggle matches the snapshot 1`] = `
 <div
   className="header-menu-toggle false"
-  data-testid="toggle"
   id="header-menu-toggle-it"
   onClick={[MockFunction]}
+  test-id="toggle"
 >
   <span>
     Menu

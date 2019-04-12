@@ -3,7 +3,7 @@
 exports[`Carousel should match the snapshot 1`] = `
 <Carousel>
   <div
-    className="row meet slick-slider"
+    className="row slick-slider"
   >
     <BindKeyboard
       enableMouseEvents={true}
@@ -90,26 +90,6 @@ exports[`Carousel should match the snapshot 1`] = `
         </ReactSwipableView>
       </EventListener>
     </BindKeyboard>
-    <PrevPage
-      onClick={[Function]}
-    >
-      <a
-        className="prev"
-        onClick={[Function]}
-      >
-        ❮
-      </a>
-    </PrevPage>
-    <NextPage
-      onClick={[Function]}
-    >
-      <a
-        className="next"
-        onClick={[Function]}
-      >
-        ❯
-      </a>
-    </NextPage>
     <Pagination
       index={0}
       onChangeIndex={[Function]}
@@ -130,6 +110,26 @@ exports[`Carousel should match the snapshot 1`] = `
         </li>
       </ul>
     </Pagination>
+    <PrevPage
+      onClick={[Function]}
+    >
+      <a
+        className="prev"
+        onClick={[Function]}
+      >
+        ❮
+      </a>
+    </PrevPage>
+    <NextPage
+      onClick={[Function]}
+    >
+      <a
+        className="next"
+        onClick={[Function]}
+      >
+        ❯
+      </a>
+    </NextPage>
   </div>
 </Carousel>
 `;

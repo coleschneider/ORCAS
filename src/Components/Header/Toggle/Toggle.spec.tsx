@@ -26,7 +26,7 @@ describe('Toggle', () => {
     const mockClick = jest.fn();
     setup({ onClick: mockClick });
     expect(mockClick.mock.invocationCallOrder).toMatchObject([]);
-    wrapper.find('[data-testid="toggle"]').simulate('click');
+    wrapper.find('[test-id="toggle"]').simulate('click');
     expect(mockClick.mock.invocationCallOrder[0]).toBe(1);
   });
 });

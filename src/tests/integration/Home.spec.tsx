@@ -14,12 +14,12 @@ describe('Home Page', () => {
     it('The home page displays the header correctly on devices less than 800px', () => {
       HomePage.resize(800);
       HomePage.page.update();
-      expect(HomePage.page.find('[data-testid="toggle"]').exists()).toBe(true);
+      expect(HomePage.page.find('[test-id="toggle"]').exists()).toBe(true);
     });
     it('The home page displays the header correctly on devices greater than 800px', () => {
       HomePage.resize(801);
       HomePage.page.update();
-      expect(HomePage.page.find('[data-testid="toggle"]').exists()).toBe(false);
+      expect(HomePage.page.find('[test-id="toggle"]').exists()).toBe(false);
     });
   });
   describe('Mobile Toggle', () => {
@@ -35,7 +35,7 @@ describe('Home Page', () => {
           .first()
           .props().pose,
       ).toBe('closed');
-      const btn = HomePage.page.find('[data-testid="toggle"]');
+      const btn = HomePage.page.find('[test-id="toggle"]');
       btn.simulate('click');
       HomePage.page.update();
       expect(
