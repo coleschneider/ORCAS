@@ -20,7 +20,7 @@ class Pagination extends React.Component<PaginationProps> {
 
   renderDot(index) {
     const isActive = index === this.props.index;
-    const { style } = this.props;
+    const { style, slideStyles } = this.props;
     return (
       <li
         className={isActive ? 'slick-active' : undefined}
@@ -34,12 +34,17 @@ class Pagination extends React.Component<PaginationProps> {
   }
   render() {
     const children = [];
-    const { total } = this.props;
+    const { total, slideStyles } = this.props;
+
     for (let index = 0; index < total; index += 1) {
       children.push(this.renderDot(index));
     }
 
-    return <ul className="slick-dots">{children}</ul>;
+    return (
+      <ul className="slick-dots" style={slideStyles}>
+        {children}
+      </ul>
+    );
   }
 }
 export default Pagination;

@@ -9,3 +9,12 @@ declare module NodeJS {
 declare const IntersectionObserver: IntersectionObserver;
 
 type activeElementType = 'home' | 'mission' | 'about' | 'services' | 'donate' | 'contact' | 'seniors';
+
+declare module "*.png" {
+  const value: any;
+  export default value;
+}
+declare module "*.jpg" {
+  const value: any;
+  export default value;
+}

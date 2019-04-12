@@ -26,6 +26,7 @@ interface CarouselProps {
   children: React.ReactChildren;
   style?: React.CSSProperties;
   arrowStyle?: React.CSSProperties;
+  slideStyles?: React.CSSProperties;
   paginationStyle?: React.CSSProperties;
 }
 interface CarouselState {
@@ -48,10 +49,12 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   render() {
-    const { children, paginationStyle, arrowStyle } = this.props;
+    const { children, paginationStyle, arrowStyle, slideStyles } = this.props;
     const total = React.Children.count(children);
     const { index } = this.state;
-    return (
+    return total === 1 ? (
+      this.props.children
+    ) : (
       <div className="row slick-slider">
         <Swipable
           index={index}
@@ -62,7 +65,13 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         >
           {this.props.children}
         </Swipable>
-        <Pagination style={paginationStyle} total={total} index={index} onChangeIndex={this.handleChangeIndex} />
+        <Pagination
+          slideStyles={slideStyles}
+          style={paginationStyle}
+          total={total}
+          index={index}
+          onChangeIndex={this.handleChangeIndex}
+        />
         <PrevPage style={arrowStyle} onClick={() => this.handleChangeIndex(index - 1)} />
         <NextPage style={arrowStyle} onClick={() => this.handleChangeIndex(index + 1)} />
       </div>

@@ -60,7 +60,7 @@
     "build": "node scripts/build.js --output-filename out.js --entry ./cypress/integration/spec.ts",
     "swcache": "aws s3 cp s3://orcaseniors.org/service-worker.js s3://orcaseniors.org/service-worker.js --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type application/javascript --acl public-read",
     "postswcache": "aws s3 cp s3://orcaseniors.org/index.html s3://orcaseniors.org/index.html --metadata-directive REPLACE --cache-control max-age=0,no-cache,no-store,must-revalidate --content-type text/html --acl public-read",
-    "test": "npm run clear-cache && npm run prettier:test && npm run lint-ts && npm run coverage",
+    "test": "npm run clear-cache && npm run prettier:test && npm run lint && npm run coverage",
     "unit-test:watch": "NODE_ENV=test jest --watch --config jest-config.json",
     "predeploy": "npm run build",
     "cypress:run": "NODE_ENV=test node_modules/.bin/cypress run",
@@ -71,7 +71,7 @@
     "unit-test": "NODE_ENV=test jest --config jest-config.json",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "jest --coverage --config jest-config.json",
-    "lint-ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "prettier:test": "prettier --parser=typescript --single-quote --trailing-comma=all --print-width=120 --list-different '{src,test}/**/*.{ts,tsx}'",
     "prettier": "prettier --parser=typescript --single-quote --trailing-comma=all --print-width=120 --write '{src,test}/**/*.{ts,tsx}'"
   },
