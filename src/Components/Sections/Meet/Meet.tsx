@@ -42,37 +42,54 @@ export const MeetTheSeniors = () => (
     </div>
   </TestimonialWrapper>
 );
+
+
+const UserSlide = ({avatar, role, children, author}) => (
+  <div className="meet__slide">
+  <img alt="Author image" src={avatar} className="meet__avatar" />
+      <p>{children}</p>
+      <div className="meet__author">
+        <span className="meet__name">{author}</span>
+        <a href="#0" className="meet__link">
+          - {role}
+        </a>
+      </div> 
+      </div>      
+)
 export const MeetTheTeam = () => (
   <TeamWrapper>
     <Carousel>
-      <Carousel.Slide author="Kay Brainard" role="President" avatar={PlaceholderAvatar}>
+      <UserSlide author="Kay Brainard" role="President" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author="Alison O’Neill" role="Vice-President" avatar={PlaceholderAvatar}>
+      </UserSlide>
+      <UserSlide author="Alison O’Neill" role="Vice-President" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author="Lori Nasatir" role="Second-In-Command" avatar={PlaceholderAvatar}>
+      </UserSlide>
+      <UserSlide author="Lori Nasatir" role="Second-In-Command" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author="Barbara Page" role="Publicity Contact" avatar={PlaceholderAvatar}>
+      </UserSlide>
+      <UserSlide author="Barbara Page" role="Publicity Contact" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author="Kathie Lanker" role="Member" avatar={PlaceholderAvatar}>
+      </UserSlide>
+      <UserSlide author="Kathie Lanker" role="Member" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author="Michael Williams" role="Member" avatar={PlaceholderAvatar}>
+      </UserSlide>
+      <UserSlide author="Michael Williams" role="Member" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
-      <Carousel.Slide author="Clark Owens" role="Member" avatar={PlaceholderAvatar}>
+      </UserSlide>
+      
+      
+      <UserSlide author="Clark Owens" role="Member" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
-      </Carousel.Slide>
+      </UserSlide>
+      
     </Carousel>
   </TeamWrapper>
 );

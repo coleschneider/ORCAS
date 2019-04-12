@@ -24,23 +24,15 @@ const styles = {
 
 interface CarouselProps {
   children: React.ReactChildren;
+  style?: React.CSSProperties
+  arrowStyle?: React.CSSProperties
+  paginationStyle?: React.CSSProperties
 }
 interface CarouselState {
   index: number;
 }
 class Carousel extends React.Component<CarouselProps, CarouselState> {
-  static Slide = ({ children, author, avatar, role }) => (
-    <div className="meet__slide">
-      <img alt="Author image" src={avatar} className="meet__avatar" />
-      <p>{children}</p>
-      <div className="meet__author">
-        <span className="meet__name">{author}</span>
-        <a href="#0" className="meet__link">
-          - {role}
-        </a>
-      </div>
-    </div>
-  );
+  
   constructor(props) {
     super(props);
 
@@ -57,11 +49,11 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
   }
 
   render() {
-    const { children } = this.props;
+    const { children, paginationStyle, arrowStyle } = this.props;
     const total = React.Children.count(children);
     const { index } = this.state;
     return (
-      <div className="row meet slick-slider">
+      <div className="row slick-slider">
         <Swipable
           index={index}
           slideClassName="senior-card"
@@ -71,9 +63,10 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         >
           {this.props.children}
         </Swipable>
-        <PrevPage onClick={() => this.handleChangeIndex(index - 1)} />
-        <NextPage onClick={() => this.handleChangeIndex(index + 1)} />
-        <Pagination total={total} index={index} onChangeIndex={this.handleChangeIndex} />
+        <Pagination style={paginationStyle}total={total} index={index} onChangeIndex={this.handleChangeIndex} />
+        <PrevPage style={arrowStyle} onClick={() => this.handleChangeIndex(index - 1)} />
+        <NextPage style={arrowStyle} onClick={() => this.handleChangeIndex(index + 1)} />
+        
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Formik } from 'formik';
 import { ToastContainer, toast } from 'react-toastify';
-import './subscribe.scss';
+import './newsletter.scss';
 import { validateSubscribe } from 'utils/validate';
 import instance from 'utils/apiService';
 
@@ -82,7 +82,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
                   <div test-id="contact-form-errors" className="input-feedback">{errors.email_address}</div>
                 )}
 
-                <button className="btn" type="submit" disabled={isSubmitting || isFetching}>
+                <button test-id="newsletter-btn" className="btn" type="submit" disabled={isSubmitting || isFetching}>
                   Submit
                 </button>
                 <label className="subscribe-message" />

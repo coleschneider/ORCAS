@@ -27,6 +27,6 @@ export const Item = posed.li({
   },
 });
 export const SubItem = posed.div({
-  closed: { height: 0 },
-  open: { height: 'auto' },
+  // closed: { height: 0 },
+  // open: { height: 'auto' },
 });

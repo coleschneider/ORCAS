@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Subscribe from './Subscribe';
+import Newsletter from './Newsletter';
 import apiService from 'utils/apiService';
 import * as sinon from 'sinon';
 import * as validation from 'utils/validate';
@@ -8,24 +8,24 @@ jest.mock('utils/validate');
 
 jest.mock('utils/apiService');
 
-describe('Subscribe', () => {
+describe('Newsletter', () => {
   let wrapper;
   const submitForm = async (email = 'testing@gmail.com') => {
-    wrapper = mount(<Subscribe />);
+    wrapper = mount(<Newsletter />);
     await wrapper
       .find('Formik')
       .props()
       .onSubmit(email);
   };
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Subscribe />);
+    const wrapper = shallow(<Newsletter />);
     expect(wrapper).toMatchSnapshot();
   });
 
-  describe('Subscribe Form', () => {
+  describe('Newsletter Form', () => {
     it('should call subscribeUser', async () => {
       const subscribeSpy = jest.spyOn(apiService, 'post');
-      const wrapper = mount(<Subscribe />);
+      const wrapper = mount(<Newsletter />);
       await wrapper
         .find('Formik')
         .props()
@@ -37,7 +37,7 @@ describe('Subscribe', () => {
 
     it('should call validate when the form changes', async () => {
       const validateSpy = jest.spyOn(validation, 'validateSubscribe');
-      const wrapper = mount(<Subscribe />);
+      const wrapper = mount(<Newsletter />);
       wrapper.find('input').simulate('change', {
         target: {
           name: 'email_address',

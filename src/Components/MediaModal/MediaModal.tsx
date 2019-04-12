@@ -17,7 +17,7 @@ const customStyles = {
     bottom: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    flexShrink: 1,
+    // flexShrink: 1,
     height: '80vh',
     justifyContent: 'center',
     left: '50%',

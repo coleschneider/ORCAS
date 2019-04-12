@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import NavLink, { navlinks } from '../Header/Nav/Nav';
 import { Link } from 'react-scroll';
-import Subscribe from './Subscribe/Subscribe';
+import Newsletter from './Newsletter/Newsletter';
 import './footer.scss';
 
 export default ({ showScroller }) => (
@@ -15,7 +15,7 @@ export default ({ showScroller }) => (
     </div>
     <div className="row footer__top">
       <div className="col-full footer__subscribe end">
-        <Subscribe />
+        <Newsletter />
       </div>
     </div>
     <div className="row footer__bottom">

@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 
 interface PaginationProps {
@@ -20,7 +21,7 @@ class Pagination extends React.Component<PaginationProps> {
 
   renderDot(index) {
     const isActive = index === this.props.index;
-
+const {style} = this.props
     return (
       <li
         className={isActive ? 'slick-active' : undefined}
@@ -28,13 +29,13 @@ class Pagination extends React.Component<PaginationProps> {
         id={`slick-slide1${index}`}
         key={index}
       >
-        <button>{index}</button>
+        <button style={!isActive ? style : undefined}>{index}</button>
       </li>
     );
   }
   render() {
     const children = [];
-    const { total } = this.props;
+    const { total  } = this.props;
     for (let index = 0; index < total; index += 1) {
       children.push(this.renderDot(index));
     }
@@ -43,13 +44,13 @@ class Pagination extends React.Component<PaginationProps> {
   }
 }
 export default Pagination;
-export const PrevPage = ({ onClick }) => (
-  <a className="prev" onClick={onClick}>
+export const PrevPage = ({ onClick, style }) => (
+  <a style={style} className="prev" onClick={onClick}>
     ❮
   </a>
 );
-export const NextPage = ({ onClick }) => (
-  <a className="next" onClick={onClick}>
+export const NextPage = ({ onClick, style }) => (
+  <a style={style} className="next" onClick={onClick}>
     ❯
   </a>
 );
