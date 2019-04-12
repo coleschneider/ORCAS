@@ -19,31 +19,6 @@ export default ({ showScroller }) => (
       </div>
     </div>
     <div className="row footer__bottom">
-      <div className="footer__about col-five tab-full left">
-        <h4>About ORCAS.</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          consectetur adipisicing elit do eiusmod tempor.
-        </p>
-        <ul className="footer__social">
-          <li>
-            <a href="#0">
-              <i className="fab fa-facebook-f" aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a href="#0">
-              <i className="fab fa-twitter" aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a href="#0">
-              <i className="fab fa-instagram" aria-hidden="true" />
-            </a>
-          </li>
-        </ul>
-      </div>
       <div className="col-five md-seven tab-full right end">
         <div className="row">
           <div className="footer__site-links col-five mob-full">
@@ -72,6 +47,29 @@ export default ({ showScroller }) => (
             </p>
           </div>
         </div>
+      </div>
+      <div className="footer__about col-five tab-full left">
+        <h4>About ORCAS.</h4>
+        <p className="footer-text">
+        Oxnard Recreational Center for Adult and Seniors (ORCAS) is a newly established nonprofit organization based in Oxnard, California. ORCAS was formed out of concerns for the current state of the senior centers in the city. ORCAS seek to address the aging individuals within the community who are seeking access to a newer and safer community senior center.
+        </p>
+        <ul className="footer__social">
+          <li>
+            <a href="#0">
+              <i className="fab fa-facebook-f" aria-hidden="true" />
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fab fa-twitter" aria-hidden="true" />
+            </a>
+          </li>
+          <li>
+            <a href="#0">
+              <i className="fab fa-instagram" aria-hidden="true" />
+            </a>
+          </li>
+        </ul>
       </div>
       <div className="col-full ss-copyright">
         <span>&copy; Copyright ORCAS 2019</span>
