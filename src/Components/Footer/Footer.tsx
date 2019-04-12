@@ -78,7 +78,7 @@ export default ({ showScroller }) => (
       </div>
     </div>
     <div id="message" className="network-status" />
-    <div className={showScroller ? 'go-top link-is-visible' : 'go-top'}>
+    <div test-id="footer-scroll" className={showScroller ? 'go-top link-is-visible' : 'go-top'}>
       <Link
         to="home"
         className="smoothscroll"

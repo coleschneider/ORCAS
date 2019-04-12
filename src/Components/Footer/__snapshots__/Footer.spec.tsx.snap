@@ -167,6 +167,7 @@ exports[`Footer matches the snapshot 1`] = `
   />
   <div
     className="go-top"
+    test-id="footer-scroll"
   >
     <Link
       className="smoothscroll"

@@ -1,14 +1,12 @@
-const { configure, shallow, mount } = require('enzyme');
+const { configure, shallow, render, mount } = require('enzyme');
 const enzyme = require('enzyme')
 const Adapter = require('enzyme-adapter-react-16');
-// const jestDom = require('jest-dom/extend-expect');
-const {render, Simulate} = require('react-testing-library');
+
 configure({ adapter: new Adapter() });
 
 global.shallow = shallow;
 global.render = render;
 global.mount = mount;
-global.Simulate = Simulate;
 global.IntersectionObserver = window.IntersectionObserver
 const windowAdditions = {}
 Object.assign(global.window, windowAdditions);

@@ -30,4 +30,20 @@ describe('Notifications', () => {
 
     expect(toastSpy).toHaveBeenCalledWith(idleToastId, { autoClose: 3000, onClose: expect.any(Function) });
   });
+  it('should set the idleToast instance to null after seconds following activity', () => {
+    const wrapper = mount(<Notifications />);
+    const onCloseSpy = jest.spyOn(toast, 'update');
+    wrapper.instance().onIdle({ idle: true });
+    wrapper.instance().onActive();
+    setTimeout(() => {
+      expect(wrapper.instance().idleToast).toBe(null);
+    }, 5000);
+
+    expect(onCloseSpy).toBeCalledWith(
+      expect.any(String),
+      expect.objectContaining({
+        onClose: expect.any(Function),
+      }),
+    );
+  });
 });
