@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimatedLinks AnimatedNav should match the screenshot when the prop is closed 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`AnimatedLinks AnimatedNav should match the screenshot when the prop is open 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`AnimatedLinks Item should match the screenshot when the props is closed 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`AnimatedLinks Item should match the screenshot when the props is open 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

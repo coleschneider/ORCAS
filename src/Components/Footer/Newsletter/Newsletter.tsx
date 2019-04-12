@@ -43,7 +43,7 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
           isFetching: false,
         });
         this.notifySuccess(res.data);
-        cb()
+        cb();
       })
       .catch(error => {
         this.notifyError();
@@ -54,19 +54,31 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
       });
   };
   render() {
-    const { isFetching } = this.state
+    const { isFetching } = this.state;
     return (
       <div className="subscribe-form">
         <Formik initialValues={{ email_address: '' }} onSubmit={this.subscribeUser} validate={validateSubscribe}>
-          {({ values, touched, handleSubmit, errors, isSubmitting, handleChange, handleBlur, resetForm, initialValues }) => {
+          {({
+            values,
+            touched,
+            handleSubmit,
+            errors,
+            isSubmitting,
+            handleChange,
+            handleBlur,
+            resetForm,
+            initialValues,
+          }) => {
             return (
-              <form onSubmit={(e) => {
-                handleSubmit(e, resetForm)
-              }} id="mc-form" className="group"
-              test-id="contact-form" 
+              <form
+                onSubmit={e => {
+                  handleSubmit(e, resetForm);
+                }}
+                id="mc-form"
+                className="group"
+                test-id="contact-form"
               >
                 <input
-                  
                   type="email"
                   name="email_address"
                   onChange={handleChange}
@@ -79,7 +91,9 @@ class NewsletterForm extends React.Component<{}, NewsletterState> {
                   className={errors.email_address && touched.email_address ? 'email text-input error' : 'email'}
                 />
                 {errors.email_address && touched.email_address && (
-                  <div test-id="contact-form-errors" className="input-feedback">{errors.email_address}</div>
+                  <div test-id="contact-form-errors" className="input-feedback">
+                    {errors.email_address}
+                  </div>
                 )}
 
                 <button test-id="newsletter-btn" className="btn" type="submit" disabled={isSubmitting || isFetching}>

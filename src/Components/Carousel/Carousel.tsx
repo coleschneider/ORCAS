@@ -24,15 +24,14 @@ const styles = {
 
 interface CarouselProps {
   children: React.ReactChildren;
-  style?: React.CSSProperties
-  arrowStyle?: React.CSSProperties
-  paginationStyle?: React.CSSProperties
+  style?: React.CSSProperties;
+  arrowStyle?: React.CSSProperties;
+  paginationStyle?: React.CSSProperties;
 }
 interface CarouselState {
   index: number;
 }
 class Carousel extends React.Component<CarouselProps, CarouselState> {
-  
   constructor(props) {
     super(props);
 
@@ -63,10 +62,9 @@ class Carousel extends React.Component<CarouselProps, CarouselState> {
         >
           {this.props.children}
         </Swipable>
-        <Pagination style={paginationStyle}total={total} index={index} onChangeIndex={this.handleChangeIndex} />
+        <Pagination style={paginationStyle} total={total} index={index} onChangeIndex={this.handleChangeIndex} />
         <PrevPage style={arrowStyle} onClick={() => this.handleChangeIndex(index - 1)} />
         <NextPage style={arrowStyle} onClick={() => this.handleChangeIndex(index + 1)} />
-        
       </div>
     );
   }

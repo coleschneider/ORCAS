@@ -16,7 +16,17 @@ interface DonationFormProps {
 }
 
 export const ShortDonationForm = (props: DonationProps & FormikProps<FormValues>) => {
-  const { values, touched, bindSubmitForm, errors, submitForm, handleChange, handleBlur, resetForm, initialValues} = props;
+  const {
+    values,
+    touched,
+    bindSubmitForm,
+    errors,
+    submitForm,
+    handleChange,
+    handleBlur,
+    resetForm,
+    initialValues,
+  } = props;
   bindSubmitForm(submitForm, () => resetForm(initialValues));
   return (
     <div className="item-plan__top-part">
@@ -51,7 +61,6 @@ const EnhancedDonationForm = withFormik<DonationFormProps, FormValues>({
   validate: validateDonation,
 
   handleSubmit: (props, values) => {
-    
     window.alert("We're currently not accepting donation right now.");
   },
 })(ShortDonationForm);

@@ -14,15 +14,15 @@ import Services from 'Sections/Services/Services';
 import VideoPlayer from 'Components/VideoPlayer/VideoPlayer';
 import Carousel from 'Components/Carousel/Carousel';
 const ImageViewer = ({ match }) => (
-  <Carousel paginationStyle={{background: 'grey'}} arrowStyle={{color: 'white', }}>
-    <div style={{ display: 'flex', justifyContent: 'center'}}>
-      <img style={{width: '80%', height: '100%'}} src={Brochure_Two}/>
+  <Carousel paginationStyle={{ background: 'grey' }} arrowStyle={{ color: 'white' }}>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <img style={{ width: '80%', height: '100%' }} src={Brochure_Two} />
     </div>
-    <div style={{ display: 'flex', justifyContent: 'center'}}>
-      <img style={{width: '80%', height: '100%'}} src={Brochure_One}/>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <img style={{ width: '80%', height: '100%' }} src={Brochure_One} />
     </div>
   </Carousel>
-)
+);
 const images = {
   brochure: CaseStatement,
   case_statement: CaseStatement,

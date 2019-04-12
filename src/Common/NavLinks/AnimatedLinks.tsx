@@ -20,13 +20,13 @@ export const Item = posed.li({
   closed: { y: 20, opacity: 0 },
   open: {
     // delayChildren: 50,
-    beforeChildren: true,
+    // beforeChildren: true,
     opacity: 1,
     // staggerChildren: 0,
     y: 0,
   },
 });
-export const SubItem = posed.div({
-  // closed: { height: 0 },
-  // open: { height: 'auto' },
-});
+// export const SubItem = posed.div({
+//   closed: { height: 0 },
+//   open: { height: 0 },
+// });

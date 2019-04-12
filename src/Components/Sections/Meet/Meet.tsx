@@ -43,19 +43,18 @@ export const MeetTheSeniors = () => (
   </TestimonialWrapper>
 );
 
-
-const UserSlide = ({avatar, role, children, author}) => (
+const UserSlide = ({ avatar, role, children, author }) => (
   <div className="meet__slide">
-  <img alt="Author image" src={avatar} className="meet__avatar" />
-      <p>{children}</p>
-      <div className="meet__author">
-        <span className="meet__name">{author}</span>
-        <a href="#0" className="meet__link">
-          - {role}
-        </a>
-      </div> 
-      </div>      
-)
+    <img alt="Author image" src={avatar} className="meet__avatar" />
+    <p>{children}</p>
+    <div className="meet__author">
+      <span className="meet__name">{author}</span>
+      <a href="#0" className="meet__link">
+        - {role}
+      </a>
+    </div>
+  </div>
+);
 export const MeetTheTeam = () => (
   <TeamWrapper>
     <Carousel>
@@ -83,13 +82,11 @@ export const MeetTheTeam = () => (
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
       </UserSlide>
-      
-      
+
       <UserSlide author="Clark Owens" role="Member" avatar={PlaceholderAvatar}>
         Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi
         eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.
       </UserSlide>
-      
     </Carousel>
   </TeamWrapper>
 );

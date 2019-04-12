@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 
 interface PaginationProps {
@@ -21,7 +20,7 @@ class Pagination extends React.Component<PaginationProps> {
 
   renderDot(index) {
     const isActive = index === this.props.index;
-const {style} = this.props
+    const { style } = this.props;
     return (
       <li
         className={isActive ? 'slick-active' : undefined}
@@ -35,7 +34,7 @@ const {style} = this.props
   }
   render() {
     const children = [];
-    const { total  } = this.props;
+    const { total } = this.props;
     for (let index = 0; index < total; index += 1) {
       children.push(this.renderDot(index));
     }
