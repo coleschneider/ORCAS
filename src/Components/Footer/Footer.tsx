@@ -51,7 +51,10 @@ export default ({ showScroller }) => (
       <div className="footer__about col-five tab-full left">
         <h4>About ORCAS.</h4>
         <p className="footer-text">
-        Oxnard Recreational Center for Adult and Seniors (ORCAS) is a newly established nonprofit organization based in Oxnard, California. ORCAS was formed out of concerns for the current state of the senior centers in the city. ORCAS seek to address the aging individuals within the community who are seeking access to a newer and safer community senior center.
+          Oxnard Recreational Center for Adult and Seniors (ORCAS) is a newly established nonprofit organization based
+          in Oxnard, California. ORCAS was formed out of concerns for the current state of the senior centers in the
+          city. ORCAS seek to address the aging individuals within the community who are seeking access to a newer and
+          safer community senior center.
         </p>
         <ul className="footer__social">
           <li>
