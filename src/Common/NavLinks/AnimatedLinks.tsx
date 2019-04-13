@@ -26,7 +26,7 @@ export const Item = posed.li({
     y: 0,
   },
 });
-// export const SubItem = posed.div({
-//   closed: { height: 0 },
-//   open: { height: 0 },
-// });
+export const SubItem = posed.div({
+  dropdownClosed: { height: '0px' },
+  dropdownOpen: { height: 'auto' },
+});

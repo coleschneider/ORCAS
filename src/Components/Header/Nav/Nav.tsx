@@ -63,21 +63,8 @@ export const AnimatedNav = posed.nav({
 });
 
 export const Item = posed.li({
-  closed: { y: 20, opacity: 0 },
-  dropdownClosed: {
-    // height: 'auto',
-  },
-  dropdownOpen: {
-    // height: 'auto',
-  },
-
-  open: {
-    opacity: 1,
-    y: 0,
-    // delayChildren: 50,
-    // staggerChildren: 200,
-    // beforeChildren: true
-  },
+  closed: { y: 20, opacity: 0 }, 
+  open: { opacity: 1, y: 0 },
 });
 export const SubItem = posed.div({
   closed: { height: '0px' },

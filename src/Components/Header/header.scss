@@ -19,7 +19,9 @@
   height: 78px;
   position: relative;
 }
-
+.dropdown-content {
+  height: 0px;
+}
 .s-header.sticky {
   background-color: $dark-sky;
   -webkit-transition: all 0.3s ease-in-out;
