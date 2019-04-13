@@ -10,14 +10,12 @@ import ReactModal from 'react-modal';
 
 const customStyles = {
   content: {
-    // width: '1000px',
     alignItems: 'center',
     backgroundColor: 'black',
     borderRadius: '5px',
     bottom: 'auto',
     display: 'flex',
     flexDirection: 'column',
-    // flexShrink: 1,
     height: '80vh',
     justifyContent: 'center',
     left: '50%',
@@ -25,7 +23,7 @@ const customStyles = {
     overflowY: 'hidden',
     position: 'absolute',
     right: 'auto',
-    top: '50%',
+    top: '52%',
     transform: 'translate(-50%, -50%)',
   },
   overlay: {

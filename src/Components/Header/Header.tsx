@@ -6,9 +6,8 @@ import Toggle from './Toggle/Toggle';
 import './header.scss';
 import DonateButton from 'Common/DonateButton/DonateButton';
 import NavLinks from 'Common/NavLinks/NavLinks';
-import * as Animated from 'Common/NavLinks/AnimatedLinks';
 import { RouteComponentProps } from 'react-router';
-import { SubItem, AnimatedNav, Item } from './Nav/Nav';
+import { AnimatedNav, Item } from 'Common/NavLinks/AnimatedLinks';
 import Dropdown from './Dropdown/Dropdown';
 
 interface HeaderState {
@@ -66,17 +65,18 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     setHeaderScroll(id !== 'home');
   };
   renderDropdown = ({ linkNodes, to }) => {
+    const { isMobile } = this.state;
     return (
       <Item
-        pose={this.props.isDropdown ? 'dropdownOpen' : 'dropdownClosed'}
         tabIndex={1}
         key={to}
-        // onBlur={!this.state.isMobile && this.toggleDropdown}
+        onBlur={!isMobile ? this.toggleDropdown : undefined}
+        onMouseEnter={!isMobile ? this.toggleDropdown : undefined}
+        onMouseLeave={!isMobile ? this.toggleDropdown : undefined}
         onClick={this.toggleDropdown}
         className="tab-drop"
       >
         <a className="dropdown-text">{to}</a>
-
         <Dropdown {...this.state} linkNodes={linkNodes} />
       </Item>
     );

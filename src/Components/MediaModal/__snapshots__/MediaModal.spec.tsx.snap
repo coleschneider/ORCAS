@@ -30,7 +30,7 @@ exports[`MediaModal matches the snapshot 1`] = `
         "overflowY": "hidden",
         "position": "absolute",
         "right": "auto",
-        "top": "50%",
+        "top": "52%",
         "transform": "translate(-50%, -50%)",
       },
       "overlay": Object {

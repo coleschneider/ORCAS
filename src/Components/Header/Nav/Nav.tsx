@@ -63,7 +63,7 @@ export const AnimatedNav = posed.nav({
 });
 
 export const Item = posed.li({
-  closed: { y: 20, opacity: 0 }, 
+  closed: { y: 20, opacity: 0 },
   open: { opacity: 1, y: 0 },
 });
 export const SubItem = posed.div({
