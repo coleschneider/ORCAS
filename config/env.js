@@ -8,7 +8,9 @@ const paths = require('./paths');
 delete require.cache[require.resolve('./paths')];
 
 const NODE_ENV = process.env.NODE_ENV;
-const lambdaCdn = NODE_ENV === 'production' ? process.env.LAMBDA_CDN : 'http://localhost:3000'
+const isProd = process.env.NODE_ENV === 'production'
+const lambdaCdn = isProd ? process.env.LAMBDA_CDN : 'http://localhost:3000'
+const googleTagId = isProd ? 'UA-139879052-1' : ''
 if (!NODE_ENV) {
   throw new Error(
     'The NODE_ENV environment variable is required but was not specified.'
@@ -74,6 +76,7 @@ function getClientEnvironment(publicUrl) {
         // Most importantly, it switches React into the correct mode.
         NODE_ENV: process.env.NODE_ENV || 'development',
         LAMBDA_CDN: lambdaCdn,
+        GA_ID: googleTagId,
         // Useful for resolving the correct path to static assets in `public`.
         // For example, <img src={process.env.PUBLIC_URL + '/img/logo.png'} />.
         // This should only be used as an escape hatch. Normally you would put

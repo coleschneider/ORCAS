@@ -95,7 +95,6 @@
     "@types/react-toastify": "^4.0.2",
     "@types/recompose": "^0.30.5",
     "@types/sinon": "^7.0.11",
-    "@types/styled-components": "^4.1.12",
     "axios": "^0.18.0",
     "axios-mock-adapter": "^1.16.0",
     "coveralls": "^3.0.3",

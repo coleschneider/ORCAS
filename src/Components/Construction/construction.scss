@@ -1,0 +1,76 @@
+@import '../../stylesheets/layout/colors.scss';
+  .shade {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .modal {
+    z-index: 4;
+    position: absolute;
+    // width: 80%;
+    right: 0;
+    left: 0;
+    background: white;
+    border-radius: 10px;
+    top: 10%;
+    height: 50vh;
+    
+  }
+  .modal_content-wrapper {
+    display: flex; 
+    padding: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal_text-wrapper {
+    font-size: 2.1rem;
+    color: $dark-sky;
+    font-weight: 800;
+  }
+  .modal_content-container {
+    flex-direction: column;
+    display: flex;
+  }
+  .modal_button-group {
+   align-items: stretch;
+   display: flex;
+   flex-direction: column;
+  }
+
+  .modal_button {
+     display: flex;
+     align-items: center;
+     margin: 10px 10px;
+     justify-content: center;
+     border: 1px solid $bg-grey;
+     font-weight: 600;
+     cursor: pointer;
+  }
+  
+.button-1 {
+    flex: 1;
+  }
+  .button-2 {
+    flex: 1;
+  }
+
+
+  @media only screen and (min-width: 800px){
+    .modal {
+      right: 10%;
+      left: 10%;
+      // width: 50%;
+      height: 300px;
+      bottom: 50%;
+    }
+    .modal_button-group {
+      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+     }
+  }

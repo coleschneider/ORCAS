@@ -9,11 +9,11 @@ import Notifications from 'Common/Notifications/Notifications';
 import { Routes, ModalRoutes } from './Routes';
 import 'stylesheets/main.scss'; // stylesheets
 import NotFound from 'Components/NotFound/NotFound';
-
+import Construction from 'Components/Construction/Construction'
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
   state = {
-    showScroller: false,
+    showScroller: false
   };
   componentDidMount() {
     window.onbeforeunload = () => {
@@ -35,6 +35,7 @@ class App extends React.Component<RouteComponentProps> {
       <ErrorBoundary>
         <Header {...this.props} setHeaderScroll={(isGreater: boolean) => this.setState({ showScroller: isGreater })} />
         <Notifications />
+        <Construction />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route exact={true} path="/" component={Routes} />
           <Route component={NotFound} />
