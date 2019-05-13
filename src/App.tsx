@@ -11,8 +11,8 @@ import 'stylesheets/main.scss'; // stylesheets
 import NotFound from 'Components/NotFound/NotFound';
 import Construction from 'Components/Construction/Construction';
 ReactGA.initialize(process.env.GA_ID, {
-  testMode: process.env.NODE_ENV !== 'production'
-})
+  testMode: process.env.NODE_ENV !== 'production',
+});
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
   state = {
@@ -45,7 +45,6 @@ class App extends React.Component<RouteComponentProps> {
         </Switch>
         {ModalRoutes}
         <Footer showScroller={showScroller} />
-        
       </ErrorBoundary>
     );
   }
