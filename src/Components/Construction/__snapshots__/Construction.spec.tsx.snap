@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Construction Modal should match the snapshot 1`] = `
+<PoseGroup
+  flipMove={true}
+>
+  <ForwardRef
+    className="shade"
+    key="shade"
+  />
+  <ForwardRef
+    className="modal"
+    key="modal"
+  >
+    <div
+      className="modal_content-wrapper"
+    >
+      <div
+        className="modal_content-container"
+      >
+        <div
+          className="modal_text-wrapper"
+        >
+          ORCASENIORS.org is currently under construction.
+        </div>
+        <div
+          className="modal_text-sub"
+        >
+          Please leave your email if you wish to be contacted.
+        </div>
+        <div
+          className="modal_button-group"
+        >
+          <Link
+            className="modal_button button-1"
+            duration={500}
+            offset={-70}
+            onClick={[Function]}
+            smooth={true}
+            spy={true}
+            to="contact"
+          >
+            Sign up for newsletter
+          </Link>
+          <a
+            className="modal_button button-1"
+            onClick={[Function]}
+          >
+            Continue to site
+          </a>
+        </div>
+      </div>
+    </div>
+  </ForwardRef>
+</PoseGroup>
+`;

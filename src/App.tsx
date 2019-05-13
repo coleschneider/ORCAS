@@ -9,11 +9,11 @@ import Notifications from 'Common/Notifications/Notifications';
 import { Routes, ModalRoutes } from './Routes';
 import 'stylesheets/main.scss'; // stylesheets
 import NotFound from 'Components/NotFound/NotFound';
-import Construction from 'Components/Construction/Construction'
+import Construction from 'Components/Construction/Construction';
 class App extends React.Component<RouteComponentProps> {
   previousLocation = this.props.location;
   state = {
-    showScroller: false
+    showScroller: false,
   };
   componentDidMount() {
     window.onbeforeunload = () => {
