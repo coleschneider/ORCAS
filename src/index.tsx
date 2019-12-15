@@ -7,7 +7,7 @@ import Beach from 'Images/beach.jpg';
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
-console.log(process.env.PUBLIC_URL)
+console.log(process.env.PUBLIC_URL);
 ReactDOM.render(
   <BrowserRouter>
     <Helmet>
