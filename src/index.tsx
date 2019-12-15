@@ -12,7 +12,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Helmet>
       <meta property="og:title" content="ORCAS" />
-      <meta property="og:description" content="Oxnard Recreation Center for Seniors & Adults" />
+      <meta property="og:description" content="Oxnard Recreation Center for Adults & Seniors" />
       <meta property="og:image" content={ImageLogo} />
     </Helmet>
     <Route component={App} />
