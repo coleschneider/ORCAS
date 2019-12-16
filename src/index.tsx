@@ -15,11 +15,13 @@ ReactDOM.render(
       <link rel="canonical" href="https://orcaseniors.org/" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
+      <meta name="author" content="Cole Schneider" />
+      <meta name="description" property="og:description" content="The Future of Oxnard's Senior Center is Bright" />
       <meta property="og:title" content="ORCAS — The Future of Oxnard's Senior Center is Bright" />
       <meta property="og:description" content="The Future of Oxnard's Senior Center is Bright" />
       <meta property="og:url" content="https://orcaseniors.org/" />
       <meta property="og:site_name" content="orcaseniors" />
-      <meta property="og:image" content={`https://orcaseniors.org${Beach}`} />
+      <meta name="image" property="og:image" content={`https://orcaseniors.org${Beach}`} />
       <meta property="og:image:secure_url" content={`https://orcaseniors.org${Beach}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="600" />
