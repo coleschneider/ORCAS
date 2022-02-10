@@ -102,7 +102,7 @@
     "coveralls": "^3.0.3",
     "enzyme-to-json": "^3.3.5",
     "formik": "^1.5.1",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "prettier": "^1.16.4",
     "react-helmet": "^5.2.1",
     "react-idle": "^3.0.0",
